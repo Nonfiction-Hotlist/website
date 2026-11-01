@@ -1,0 +1,1502 @@
+{
+ "nav": {
+  "items": [
+   {
+    "label": "About",
+    "children": [
+     {
+      "label": "News",
+      "href": "/news"
+     },
+     {
+      "label": "Terms of Use",
+      "href": "/terms-of-use"
+     },
+     {
+      "label": "Privacy Policy",
+      "href": "/privacy-policy"
+     }
+    ]
+   },
+   {
+    "label": "Yahoo x NFH",
+    "href": "/yahoo"
+   },
+   {
+    "label": "The Hotlist",
+    "children": [
+     {
+      "label": "2026 Hotlist",
+      "href": "/the-2026-hotlist"
+     },
+     {
+      "label": "2025 Hotlist",
+      "href": "/the-2025-hotlist"
+     },
+     {
+      "label": "Contributors",
+      "href": "/contributors"
+     }
+    ]
+   }
+  ],
+  "buttons": [
+   {
+    "label": "Subscribe",
+    "href": "https://nonfictionhotlist.com/home#contact"
+   }
+  ]
+ },
+ "footer": [
+  {
+   "type": "text",
+   "text": "## nonfiction hotlist."
+  },
+  {
+   "type": "text",
+   "text": "Some Stuff"
+  },
+  {
+   "type": "text",
+   "text": "[Terms of Use](/terms-of-use)\n\n[Privacy Policy](/privacy-policy)"
+  },
+  {
+   "type": "text",
+   "text": "Follow Us"
+  },
+  {
+   "type": "text",
+   "text": "[Instagram](https://www.instagram.com/nonfictionhotlist/?hl=en)\n\n[LinkedIn](https://www.linkedin.com/company/nonfictionhotlist)"
+  },
+  {
+   "type": "text",
+   "text": "Contact"
+  },
+  {
+   "type": "text",
+   "text": "[info@nonfictionhotlist.com](mailto:info@nonfictionhotlist.com?)"
+  },
+  {
+   "type": "newsletter",
+   "fields": [
+    "Email Address"
+   ],
+   "text": "Newsletter Block\n\nThis newsletter signup form needs a storage option. Edit the block and enter a storage location via the\n\nStorage\n\ntab.\n\nSign up for the latest events and news\n\nEmail Address\n\nSign Up\n\nThank you!"
+  }
+ ],
+ "pages": [
+  {
+   "url": "https://nonfictionhotlist.com/",
+   "title": "nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/a0d84ff4-25a4-4733-8ea6-e9e99303f4e8/Website+Logo+%282+x+1+in%29.png",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "The Nonfiction Hotlist curates and champions exceptional nonfiction storytelling, connecting creators with audiences, industry opportunities, and sustainable pathways forward.\n\nThrough thoughtful conversation, community building and curiosity we’re discovering new and unexpected ways to offer support to creators at any stage of their journey, while also joining forces with long-standing industry organizations who seek meaningful change."
+      },
+      {
+       "type": "text",
+       "text": "## about"
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/30413107-116c-4e60-8ebc-dfe1ae753c57/NFH_Events12.jpeg",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "### Hear From Our Storytellers"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## values"
+      },
+      {
+       "type": "text",
+       "text": "- We lead with generosity, respect, and thoughtful relationship-building.\n\n- We convene rather than gatekeep, creating spaces where storytellers, funders, and audiences engage directly with projects and each other.\n\n- We believe collaboration within a community creates alchemy impossible to replicate, and building with a village leads to the best work.\n\n- Everyone is invited."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "# **The 2026**\n\n# **Hotlist is**\n\n# **Open!**"
+      },
+      {
+       "type": "text",
+       "text": "Submissions are open!\n\nThe 2026 Hotlist is a curated slate of standout nonfiction works in progress, spanning documentary features, shorts, series, podcasts, and reality.\n\nWe connect creators with audiences, industry opportunities, and partners who can move a project forward.\n\nDeadline to Submit **September 25th, 2026**"
+      },
+      {
+       "type": "button",
+       "label": "Learn More and Submit",
+       "href": "/the-2026-hotlist"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "scrolling",
+       "text": "# 2025 nonfiction hotlist\n\n# 2025 nonfiction hotlist"
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/82943c2f-59d6-486c-a308-a52377da23bd/Screenshot+2025-12-03+at+1.23.02%E2%80%AFPM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "The 2025 Nonfiction Hotlist is a curation of 23 nonfiction projects. **Check out the list.**"
+      },
+      {
+       "type": "button",
+       "label": "Read here.",
+       "href": "/the-2025-hotlist"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## subscribe"
+      },
+      {
+       "type": "text",
+       "text": "Stay in touch with the latest initiatives from the Nonfiction Hotlist"
+      },
+      {
+       "type": "form",
+       "formName": "Contact Us Form 3 3 2",
+       "submit": "Submit",
+       "thanks": "Thank you!",
+       "formFields": [
+        {
+         "type": "name",
+         "title": "Name",
+         "required": true
+        },
+        {
+         "type": "email",
+         "title": "Email",
+         "required": true
+        },
+        {
+         "type": "textarea",
+         "title": "Tell us about you!",
+         "required": false
+        },
+        {
+         "type": "textarea",
+         "title": "How did you find us?",
+         "required": false
+        }
+       ],
+       "fields": [],
+       "text": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/news",
+   "title": "News — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "# news"
+      }
+     ]
+    },
+    {
+     "blocks": [],
+     "items": [
+      {
+       "title": "Yahoo Inc",
+       "href": "/news/yahoo-inc",
+       "excerpt": "Yahoo Media Group and The Nonfiction Hotlist are teaming up to create a new pathway for nonfiction filmmakers to showcase their work to a global audience. Through the partnership, Yahoo will continue to grow its video offering by promoting and distributing 20 short documentary films curated from open call submissions. The Nonfiction Hotlist, a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities, will oversee the entire curatorial process.\nBy combining the distribution of Yahoo with the deep industry expertise and curatorial rigor of The Nonfiction Hotlist, the partnership aims to bring meaningful visibility, awareness, and monetization to great filmmakers and their films.\nYahoo will distribute the selected films across its properties, including yahoosports.tv and its Yahoo Sports Network and Yahoo Finance FAST channels.\nYahoo will further amplify the films with additional content such as filmmaker interviews, behind-the-scenes features, and in-depth companion articles.\nSelected filmmakers will also be paid for their work, ensuring fair compensation for creators.",
+       "date": "5/28/26",
+       "image": {
+        "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/5830dd1e-2a99-45bd-a12c-701720adf171/Screenshot+2026-05-28+at+2.23.27%E2%80%AFPM.png/",
+        "alt": ""
+       }
+      },
+      {
+       "title": "Indiewire",
+       "href": "/news/indiewire",
+       "excerpt": "Hot List founder Adam Neuhaus is urging filmmakers to create audience, content, and business infrastructure long before a premiere.\nBy Dana Harris-Bridson",
+       "date": "5/28/26",
+       "image": {
+        "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/1779992324942-7JHY9ETHR4IWZHKU8LWI/Screenshot+2026-05-28+at+2.18.40%E2%80%AFPM.png/",
+        "alt": ""
+       }
+      },
+      {
+       "title": "DEADLINE",
+       "href": "/news/deadline",
+       "excerpt": "EXCLUSIVE: Welcome news for makers of documentary shorts, who often struggle to reach a wide array of viewers with their work. Yahoo Media Group and The Nonfiction Hotlist have announced a partnership that will see Yahoo promote and distribute 20 short docs across a variety of genres to a global audience.",
+       "date": "1/13/26",
+       "image": {
+        "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/1768341183322-N0DIV97E2L7OKIPZCTXA/Screenshot+2026-01-13+at+10.05.00%E2%80%AFAM.png/",
+        "alt": ""
+       }
+      },
+      {
+       "title": "Pure Nonfiction",
+       "href": "/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr",
+       "excerpt": "In March, the inaugural Nonfiction Hotlist was unveiled: 23 yet to be realised documentaries, series, and podcast projects selected to represent some of the outstanding projects deserving to be championed in today's nonfiction landscape.\nFeature Documentaries…",
+       "date": "4/1/25",
+       "image": {
+        "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/1767798398681-FR1UVBG9P5CJVO98CFVN/Screenshot+2026-01-07+at+10.05.48%E2%80%AFAM.png/",
+        "alt": ""
+       }
+      },
+      {
+       "title": "Realscreen",
+       "href": "/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr-27jam",
+       "excerpt": "A mere few months ago, non-fiction development and production veteran Adam Neuhaus — a former exec with RadicalMedia and ESPN Films, among others — took to LinkedIn to share his experiences as a producer pitching in a contracting market. Significantly, he closed the post with a proposal to both his network and the industry at large: to create a non-fiction version of the popular Hollywood Black List survey, which brings a curated compendium of yet-to-be-produced screenplays to industry members’ inboxes. The idea of bringing that model to a challenged documentary business generated palpable excitement…",
+       "date": "3/10/25",
+       "image": {
+        "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/1767798969029-2V64G4WSKR0V8SZ1ZYPZ/Screenshot+2026-01-07+at+10.14.43%E2%80%AFAM.png/",
+        "alt": ""
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/news/yahoo-inc",
+   "title": "Yahoo Inc — nonfiction hotlist.",
+   "description": " Yahoo Media Group and  The Nonfiction Hotlist  are teaming up to create a new pathway for nonfiction filmmakers to showcase their work to a global audience. Through the partnership, Yahoo will continue to grow its video offering by promoting and distributing 20 short documentary films curated from open call submissions. The Nonfiction Hotlist, a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities, will oversee the entire curatorial process.  By combining the distribution of Yahoo with the deep industry expertise and curatorial rigor of The Nonfiction Hotlist, the partnership aims to bring meaningful visibility, awareness, and monetization to great filmmakers and their films.    Yahoo will distribute the selected films across its properties, including  yahoosports.tv  and its  Yahoo Sports Network  and  Yahoo Finance  FAST channels.    Yahoo will further amplify the films with additional content such as filmmaker interviews, behind-the-scenes features, and in-depth companion articles.&nbsp;    Selected filmmakers will also be paid for their work, ensuring fair compensation for creators.&nbsp;   ",
+   "ogImage": "http://static1.squarespace.com/static/6924b498b48ca60c1fc8e5af/695c3ca186f12b3b1fa914d5/6a18880501e304706f7566c6/1779992742345/Screenshot+2026-05-28+at+2.23.27%E2%80%AFPM.png",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image-classic",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/5830dd1e-2a99-45bd-a12c-701720adf171/Screenshot+2026-05-28+at+2.23.27%E2%80%AFPM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Yahoo Media Group and [The Nonfiction Hotlist](https://nonfictionhotlist.com/) are teaming up to create a new pathway for nonfiction filmmakers to showcase their work to a global audience. Through the partnership, Yahoo will continue to grow its video offering by promoting and distributing 20 short documentary films curated from open call submissions. The Nonfiction Hotlist, a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities, will oversee the entire curatorial process.\n\nBy combining the distribution of Yahoo with the deep industry expertise and curatorial rigor of The Nonfiction Hotlist, the partnership aims to bring meaningful visibility, awareness, and monetization to great filmmakers and their films.\n\n- Yahoo will distribute the selected films across its properties, including [yahoosports.tv](http://yahoosports.tv/) and its *Yahoo Sports Network* and *Yahoo Finance* FAST channels.\n\n- Yahoo will further amplify the films with additional content such as filmmaker interviews, behind-the-scenes features, and in-depth companion articles.\n\n- Selected filmmakers will also be paid for their work, ensuring fair compensation for creators.\n\nBeginning today, filmmakers can submit their projects for consideration in the following six categories: 1) Sports and Athleticism; 2) Business and Economics; 3) Science, Innovation and Technology; 4) Nature and Environment; 5) Arts and Culture; 6) Biography and Lifestyle. Films will be selected based on artistic merit, powerful storytelling, and cultural relevance."
+      },
+      {
+       "type": "text",
+       "text": "#### Read the whole article [here](https://www.yahooinc.com/press/yahoo-media-group-and-the-nonfiction-hotlist-partner-to-expand-reach-and-recognition-for-documentary-short-films)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/news/indiewire",
+   "title": "Indiewire — nonfiction hotlist.",
+   "description": " Hot List founder Adam Neuhaus is urging filmmakers to create audience, content, and business infrastructure long before a premiere.  By  Dana Harris-Bridson  ",
+   "ogImage": "http://static1.squarespace.com/static/6924b498b48ca60c1fc8e5af/695c3ca186f12b3b1fa914d5/6a188744518a4c7d0745e7b7/1779992567139/Screenshot+2026-05-28+at+2.18.40%E2%80%AFPM.png",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image-classic",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/1779992324942-7JHY9ETHR4IWZHKU8LWI/Screenshot+2026-05-28+at+2.18.40%E2%80%AFPM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Hot List founder Adam Neuhaus is urging filmmakers to create audience, content, and business infrastructure long before a premiere.\n\nBy [Dana Harris-Bridson](https://www.indiewire.com/author/dana-harris/)"
+      },
+      {
+       "type": "text",
+       "text": "#### Read the whole article [here.](https://www.indiewire.com/news/analysis/nonfiction-hot-list-adam-neuhaus-documentary-1235190113/)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/news/deadline",
+   "title": "DEADLINE — nonfiction hotlist.",
+   "description": "  EXCLUSIVE: &nbsp;Welcome news for makers of&nbsp; documentary &nbsp;shorts, who often struggle to reach a wide array of viewers with their work.&nbsp; Yahoo &nbsp;Media Group and&nbsp; The Nonfiction Hotlist &nbsp;have announced a partnership that will see Yahoo promote and distribute 20 short docs across a variety of genres to a global audience. ",
+   "ogImage": "http://static1.squarespace.com/static/6924b498b48ca60c1fc8e5af/695c3ca186f12b3b1fa914d5/6966be1f673d27215b2e91b4/1768341201996/Screenshot+2026-01-13+at+10.05.00%E2%80%AFAM.png",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image-classic",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/866d214e-fabc-4a6f-981d-551cf032f5e6/Screenshot+2026-01-13+at+10.05.00%E2%80%AFAM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "**Yahoo And The Nonfiction Hotlist Team Up For Distribution Of Documentary Shorts: Filmmakers To Receive Compensation, Worldwide Exposure**"
+      },
+      {
+       "type": "text",
+       "text": "**EXCLUSIVE:** Welcome news for makers of [documentary](https://deadline.com/tag/documentary/) shorts, who often struggle to reach a wide array of viewers with their work. [Yahoo](https://deadline.com/tag/yahoo/) Media Group and [The Nonfiction Hotlist](https://deadline.com/tag/the-nonfiction-hotlist/) have announced a partnership that will see Yahoo promote and distribute 20 short docs across a variety of genres to a global audience.\n\nThe Nonfiction Hotlist – “a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities” — will oversee the curatorial process. Beginning today and running through March 6, filmmakers can submit their projects for consideration (find the submission portal [here](https://nonfictionhotlist.com/yahooxnfh))…"
+      },
+      {
+       "type": "button",
+       "label": "Read the whole article here",
+       "href": "https://deadline.com/2026/01/yahoo-nonfiction-hotlist-documentary-distribution-announcement-1236681501/"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr",
+   "title": "Pure Nonfiction — nonfiction hotlist.",
+   "description": " In March, the inaugural&nbsp;  Nonfiction Hotlist  &nbsp;was unveiled:&nbsp; 23 yet to be realised &nbsp;documentaries, series, and podcast projects selected to represent some of the outstanding projects deserving to be championed in today's nonfiction landscape.  Feature Documentaries… ",
+   "ogImage": "http://static1.squarespace.com/static/6924b498b48ca60c1fc8e5af/695c3ca186f12b3b1fa914d5/695c3ca186f12b3b1fa914d6/1768268575271/Screenshot+2026-01-07+at+10.05.48%E2%80%AFAM.png",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "In March, the inaugural [**Nonfiction Hotlist**](https://nonfictionhotlist.com/) was unveiled: [23 yet to be realised](https://www.canva.com/design/DAGgT2RxqGc/vzqLi5ndnJY7rEN-POtTyg/view?utm_content=DAGgT2RxqGc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3e1fe80a01) documentaries, series, and podcast projects selected to represent some of the outstanding projects deserving to be championed in today's nonfiction landscape…."
+      },
+      {
+       "type": "image-classic",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/b7eb331c-d5f1-4ef9-b43c-317edc69fcfe/Screenshot+2026-01-07+at+10.07.49%E2%80%AFAM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Read the article here - [Pure Nonfiction](https://purenonfiction.substack.com/p/whats-behind-the-nonfiction-hotlist)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr-27jam",
+   "title": "Realscreen — nonfiction hotlist.",
+   "description": " A mere few months ago, non-fiction development and production veteran Adam Neuhaus — a former exec with RadicalMedia and ESPN Films, among others — took to LinkedIn to share his experiences as a producer pitching in a contracting market. Significantly, he closed the post with a proposal to both his network and the industry at large: to create a non-fiction version of the popular Hollywood Black List survey, which brings a curated compendium of yet-to-be-produced screenplays to industry members’ inboxes. The idea of bringing that model to a challenged documentary business generated palpable excitement… ",
+   "ogImage": "http://static1.squarespace.com/static/6924b498b48ca60c1fc8e5af/695c3ca186f12b3b1fa914d5/695e7830ca70b243beaf4799/1768401088398/Screenshot+2026-01-07+at+10.14.43%E2%80%AFAM.png",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "Taking its cue from the long-running “Hollywood Black List” survey of not-yet-produced scripted projects, a team of non-fiction industry figures has unveiled the projects for the inaugural Nonfiction Hotlist. Established by ..."
+      },
+      {
+       "type": "button",
+       "label": "Download Article to Read Here",
+       "href": "/s/Realscreen-Archive-Adam-Neuhaus-on-how-the-Nonfiction-Hotlist-might-reverse-power-dynamics-for-creat.pdf"
+      },
+      {
+       "type": "image-classic",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/c251baef-8b21-4a34-8fd1-d8c42d0a21e7/Screenshot+2026-01-07+at+10.14.33%E2%80%AFAM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Read the article here - [Reel Screen](https://realscreen.com/2025/03/10/team-behind-inaugural-nonfiction-hotlist-unveils-projects/)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/home",
+   "title": "nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/a0d84ff4-25a4-4733-8ea6-e9e99303f4e8/Website+Logo+%282+x+1+in%29.png",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "The Nonfiction Hotlist curates and champions exceptional nonfiction storytelling, connecting creators with audiences, industry opportunities, and sustainable pathways forward.\n\nThrough thoughtful conversation, community building and curiosity we’re discovering new and unexpected ways to offer support to creators at any stage of their journey, while also joining forces with long-standing industry organizations who seek meaningful change."
+      },
+      {
+       "type": "text",
+       "text": "## about"
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/30413107-116c-4e60-8ebc-dfe1ae753c57/NFH_Events12.jpeg",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "### Hear From Our Storytellers"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## values"
+      },
+      {
+       "type": "text",
+       "text": "- We lead with generosity, respect, and thoughtful relationship-building.\n\n- We convene rather than gatekeep, creating spaces where storytellers, funders, and audiences engage directly with projects and each other.\n\n- We believe collaboration within a community creates alchemy impossible to replicate, and building with a village leads to the best work.\n\n- Everyone is invited."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "# **The 2026**\n\n# **Hotlist is**\n\n# **Open!**"
+      },
+      {
+       "type": "text",
+       "text": "Submissions are open!\n\nThe 2026 Hotlist is a curated slate of standout nonfiction works in progress, spanning documentary features, shorts, series, podcasts, and reality.\n\nWe connect creators with audiences, industry opportunities, and partners who can move a project forward.\n\nDeadline to Submit **September 25th, 2026**"
+      },
+      {
+       "type": "button",
+       "label": "Learn More and Submit",
+       "href": "/the-2026-hotlist"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "scrolling",
+       "text": "# 2025 nonfiction hotlist\n\n# 2025 nonfiction hotlist"
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/82943c2f-59d6-486c-a308-a52377da23bd/Screenshot+2025-12-03+at+1.23.02%E2%80%AFPM.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "The 2025 Nonfiction Hotlist is a curation of 23 nonfiction projects. **Check out the list.**"
+      },
+      {
+       "type": "button",
+       "label": "Read here.",
+       "href": "/the-2025-hotlist"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## subscribe"
+      },
+      {
+       "type": "text",
+       "text": "Stay in touch with the latest initiatives from the Nonfiction Hotlist"
+      },
+      {
+       "type": "form",
+       "formName": "Contact Us Form 3 3 2",
+       "submit": "Submit",
+       "thanks": "Thank you!",
+       "formFields": [
+        {
+         "type": "name",
+         "title": "Name",
+         "required": true
+        },
+        {
+         "type": "email",
+         "title": "Email",
+         "required": true
+        },
+        {
+         "type": "textarea",
+         "title": "Tell us about you!",
+         "required": false
+        },
+        {
+         "type": "textarea",
+         "title": "How did you find us?",
+         "required": false
+        }
+       ],
+       "fields": [],
+       "text": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/contributors",
+   "title": "Contributors — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/26462301-1acb-4e76-acdf-5d5e97c0cabf/NFH_Events3.JPG",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "## meet the volunteers and reviewers for the nonfiction hotlist"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "[Adam Neuhaus](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fadam-neuhaus-91b9a44%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Isis Masoud](https://www.canva.com/link?target=http%3A%2F%2Flinkedin.com%2Fin%2Fisismasoud&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Carol Paik](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fcarolpaik%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Andrew Jacobs](https://www.canva.com/link?target=http%3A%2F%2Fwww.highfivecontent.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Aron Phillips](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Faronphillips%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Anna Rau](https://www.canva.com/link?target=http%3A%2F%2Fwww.fromtherange.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Ben Selkow](https://www.canva.com/link?target=https%3A%2F%2Fwww.benselkow.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Nicole Tossou](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fnicolet%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Mandi Gorenstein](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmandigorenstein%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Amanda Muscat](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Famanda-muscat-7802a2201%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Amita Patel](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Famitatv%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Cheryl Ottenritter](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fcheryl-ottenritter%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Todd Weiser](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Ftodd-weiser%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Ann Rose](https://www.canva.com/link?target=https%3A%2F%2Fwww.letsmakethings.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Zac Manuel](https://www.canva.com/link?target=https%3A%2F%2Fwww.zacmanuel.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Sarit Gabrielle](https://www.canva.com/link?target=https%3A%2F%2Fwww.saritgwork.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Sara McCrea](https://www.canva.com/link?target=https%3A%2F%2Fsaramccrea.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Rachel Holbrook](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Frachel-holbrook-6798726%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Matthew Smaglik](https://www.canva.com/link?target=https%3A%2F%2Fsmaglik.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Esther Dere](https://www.canva.com/link?target=http%3A%2F%2Fwww.estherdere.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Gautam Singhani](https://www.canva.com/link?target=http%3A%2F%2Fwww.gotoma.co&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Jasper Rogers](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fjasper-gitzendanner-5674b1214%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Sophie Saunders](https://www.canva.com/link?target=https%3A%2F%2Fwww.sophiejunephoto.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Shane Tilston](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fshanetilston%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Allyson Smith](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fallysonlsmith%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Atlas Reuben](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Freubenatlas%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Beatriz Browne](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fbeatrizbrowne%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Eden Sutley](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fedensutley%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Kevin Huffman](https://www.docstory911.com/)\n\n[Lauren Gerber](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Flauren-gerber-3331a672%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Rekha Murthy](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Frmurthy%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Matt Ogens](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fmatt-ogens-318b3870%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Tara Nadolny](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Ftara-nadolny-9141b283%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Joann Kohng](https://www.canva.com/link?target=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fjoannkohng%2F&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Fiona Murguia](https://www.canva.com/link?target=https%3A%2F%2Ffionamurguia.com&design=DAGgT2RxqGc&utl=h3e1fe80a01&accessRole=owner&linkSource=document)\n\n[Sara Kasen](https://www.linkedin.com/in/sara-kasen-18a429382/)\n\n[Catie Skipp](https://www.linkedin.com/in/catie-skipp-37705549/)\n\n[Julia Pontecorvo](https://www.linkedin.com/in/juliapontecorvo/)\n\n[Chloe Walters](https://www.linkedin.com/in/chloewalterswallace/)\n\n[Danny Wallace](https://www.linkedin.com/in/danny-wallace-b4212a243/)\n\n[Joe Sabia](https://www.linkedin.com/in/joesabia/)\n\n[N'Jeri Eaton](https://www.linkedin.com/in/njerieaton/)\n\n[Crystal Isaac](https://www.linkedin.com/in/crystal-isaac-297495106/)\n\n[Jon Crawford](https://www.linkedin.com/in/jonathan-crawford-mfa-3a27295/)\n\n[Darcy McKinnon](https://www.linkedin.com/in/darcytomeetyou/)\n\n[Nina Chaudry](https://www.linkedin.com/in/nina-chaudry-18a8024/)\n\n[Josh Asen](https://www.linkedin.com/in/joshua-asen/)\n\n[Dalton Mosely](https://www.linkedin.com/in/dalton-mosley/)\n\n[Kai Winston](https://www.linkedin.com/in/kai-winston-64885b322/)\n\n[Brad Clark](https://www.linkedin.com/in/bradley-clark-a16a79164/)\n\n[Trinity Campbell](https://www.linkedin.com/in/trinity-raya-campbell-28b44021b/)\n\n[Lara Heintz](https://www.linkedin.com/in/laraheintz/)\n\n[Richard Drew](https://www.linkedin.com/in/savannahmedia/)\n\n[Sofia Pate](https://www.linkedin.com/in/sofia-pate/)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/the-2025-hotlist",
+   "title": "General 1 — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "# the 2025 hotlist.\n\nExceptional nonfiction storytelling changes how we see the world."
+      }
+     ],
+     "background": {
+      "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/969df86f-8519-442f-8248-276456743577/NFH+Youtube+Banner.png",
+      "alt": ""
+     }
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## The 2025 Nonfiction Hotlist champions 23 exceptional unproduced projects, connecting bold visions with the partnerships and resources needed to reach audiences.\n\n#### Read it below"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "embed",
+       "url": "//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAGgT2RxqGc%2FvzqLi5ndnJY7rEN-POtTyg%2Fview%3Fembed%26meta&display_name=Canva&url=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAGgT2RxqGc%2FvzqLi5ndnJY7rEN-POtTyg%2Fview%3Futm_content%3DDAGgT2RxqGc%26utm_campaign%3Ddesignshare%26utm_medium%3Dlink2%26utm_source%3Duniquelinks%26utlId%3Dh3e1fe80a01&image=https%3A%2F%2Fstatic.canva.com%2Fstatic%2Fimages%2Ffb_cover-1.jpg&type=text%2Fhtml&schema=canva"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "newsletter",
+       "fields": [
+        "Email Address"
+       ],
+       "text": "Newsletter Block\n\nThis newsletter signup form needs a storage option. Edit the block and enter a storage location via the\n\nStorage\n\ntab.\n\n## Sign up for news and updates.\n\nEmail Address\n\nSign Up\n\nThank you!"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/yahooxnfh1",
+   "title": "Yahoo x NFH 1.0 — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/85ae72e5-64a2-457f-ac33-15c81860a148/NFH+x+Yahoo+Options.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Yahoo Media Group and The Nonfiction Hotlist are teaming up to create a new pathway for nonfiction filmmakers to showcase their work to a global audience. Through this partnership, Yahoo will promote and distribute **20 short documentary films** curated from open call submissions.\n\nThe Nonfiction Hotlist, a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities, will oversee the entire curatorial process."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Opportunity"
+      },
+      {
+       "type": "text",
+       "text": "- **Global Distribution** - Films will be distributed across Yahoo properties, including yahoosports.tv, Yahoo Sports Network, and Yahoo Finance FAST channels\n\n- **Compensation** - Selected filmmakers will be paid for their work, ensuring fair compensation for creators\n\n- **Promotional Support** - Yahoo will further amplify the films with additional content including filmmaker interviews, behind-the-scenes features, and in-depth companion articles\n\n- **End date of submission March 6, 2026**"
+      },
+      {
+       "type": "text",
+       "text": "### **Categories:**"
+      },
+      {
+       "type": "text",
+       "text": "#### 1. Sports and Athleticism\n\n#### 2. Business and Economics\n\n#### 3. Science, Innovation and Technology\n\n#### 4. Nature and Environment\n\n#### 5. Arts and Culture\n\n#### 6. Biography and Lifestyle"
+      },
+      {
+       "type": "text",
+       "text": "Films will be selected based on **artistic merit, powerful storytelling,**and**cultural relevance.**"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## **Eligibility**"
+      },
+      {
+       "type": "text",
+       "text": "To be eligible for consideration, submitted films must meet the following requirements:"
+      },
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "Format",
+         "a": "Completed short documentaries"
+        },
+        {
+         "q": "Runtime",
+         "a": "8 to 40 minutes in length"
+        },
+        {
+         "q": "Completion Date",
+         "a": "Films must have been finished between January 2023 and March 2026"
+        },
+        {
+         "q": "Language",
+         "a": "English Spoken or English Subtitled."
+        },
+        {
+         "q": "Submission Period",
+         "a": "January 13, 2026 to March 6th, 2026"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Submission"
+      },
+      {
+       "type": "text",
+       "text": "### submissions closed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/terms-of-use",
+   "title": "Terms of Use — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Terms of service."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "The Nonfiction Hotlist website, and all of its related web pages and locations (collectively referred to and taken together as the “**Site**”), provides information with respect to Nonfiction Hotlist’s business, products and services. Therefore, the following terms and conditions (“**Terms of Use**”), between Nonfiction Hotlist, LLC (also referred to as “**Nonfiction Hotlist**,” “**Company**” or “**us**”) and “**you**” govern your use of the Site and the materials accessible on or from the Site.\n\nBY USING THIS SITE, YOU AGREE TO THESE TERMS OF USE AND THE NONFICTION HOTLIST PRIVACY POLICY*.* IF YOU DO NOT ACCEPT THESE TERMS AND CONDITIONS, YOU MAY NOT ACCESS OR USE THE SITE. SERVICES AND INFORMATION INTENDED FOR USERS OF THE SITE ARE NOT FOR USE BY CHILDREN UNDER 13 YEARS OF AGE.\n\nIf you and Company have executed a written agreement governing your access to and use of the Services, then the terms of such signed agreement will control to the extent that services agreement conflicts with these Terms.\n\n[The Nonfiction Hotlist Privacy Policy](https://nonfictionhotlist.com/privacy-policy) is incorporated into and form part of the Agreement. In the event of any inconsistency between the Terms of Use and the Privacy Policy, the Terms of Use shall prevail.\n\n1. *Copyright*. The content of the Site, including all text, images, software, audio and video, links, as well as any such combination and/or compilation of the same (collectively referred to herein as “**Materials**”), is the property of Company and is protected by U.S. and international copyright laws. Neither the Site nor the Materials may be modified, reproduced, distributed, transmitted, publicly displayed, performed, or otherwise used, in whole or in part, without the prior written consent of Company. No use of Materials on this Site is allowed except as expressly stated herein. Some Materials may be copyrighted by Company’s suppliers, licensees and affiliates. Copyright law also applies to other companies’ advertisements or information presented on this Site.\n\n2. *Trademarks*. The “Nonfiction Hotlist” is the trademark of Company (collectively the “**Trademarks**”), within the United States as well as in other countries. You may not display, make reference to or use the Trademarks, in any manner without prior written permission by Company. All other trademarks, service marks, product and service names and company names or logos that appear on the Site are the property of their respective owners.\n\n3. *Age of Users*. Services and information intended for users of the Site are not for use by children under 13 years of age. Parents and legal guardians may not agree to these Terms of Use on their children’s behalf. If Company becomes aware that a child under 13 has provided or attempted to provide Company with personal information, Company will use best efforts to remove the information permanently from our files. If you are between the age of 13 and 18 years old, you may use this Site but only under the supervision of a parent or legal guardian who agrees to be bound by these Terms of Use. If you are a parent or legal guardian agreeing to these Terms of Use for the benefit of a child between 13 and 18 years old, be advised that you are fully responsible for his or her use of this Site and any and all legal liability that he or she may incur.\n\n4. *Privacy*. By using this Site, you signify your ongoing and continuing consent to the Company Privacy Policy (“**Privacy Policy**”). Personal information that you supply to Company, and any information about your use of the Site that Company obtains from you will be subject to the Privacy Policy. In addition, Company email addresses are provided solely for user queries relating to the Site. The capture of Company emails for use with unsolicited email is not permitted.\n\n5. *Non-Commercial Use & Illegal/Unpermitted Activities*. This Site and its contents are solely for your own personal non-commercial use. Beyond such personal non-commercial use, you may not copy, transmit, publish, distribute, display or in any other way exploit the Site and/or the Materials at any time. You may not aggregate or collect Materials from this Site to construct any kind of on-line or computer database. You may not use this Site or Materials to solicit the performance of any illegal activity or other activity which infringes the rights of Company or others. You may not use or export or re-export any Materials or any copy or adaptation of such Materials, or any product or service offered on the Site, in violation of any applicable laws or regulations, including without limitation United States export laws and regulation. You agree not to use any device, software or routine to interfere or attempt to interfere with the proper working of the Site or with any other person’s use of the Site. You may not attempt to gain unauthorized access to any portion or feature of the Site, by hacking, password “mining” or any other illegitimate means.\n\n6. *Links*. For your convenience only, Company has provided links within the Site to other web sites operated by third parties. Company exhibits no control over such third-party websites and Company is not responsible for their content or the privacy practices thereof. Company makes no representations or warranties and accept no responsibility for the quality, content, nature or reliability of any third-party web site or service accessible by hyperlink from the Site. Your correspondence or business dealings with, or participation in promotions of, advertisers found on or through this Site are solely between you and such advertiser. This includes payment and delivery of related goods or services, and any other terms, conditions, warranties or representations associated with such dealings. You agree that Company will not be responsible or liable for any loss or damage incurred as the result of any such dealings.\n\n7. *Indemnification*. You agree to defend, indemnify, and hold harmless Company from all liabilities, claims, and expenses, including attorney’s fees, that arise from any claim or demand, made by any third party due to or arising out of your use of the Site. Company reserves the right, at Company’s expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will cooperate with Company in asserting any available defenses.\n\n8. *Disclaimer of Warranties*. THE SITE AND THE MATERIALS ARE PROVIDED BY COMPANY ON AN “AS IS” AND “AS AVAILABLE” BASIS. COMPANY MAKES NO WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, AS TO THE OPERATION OF THIS SITE OR THE INFORMATION, CONTENT, MATERIALS, PRODUCTS OR SERVICES INCLUDED ON THIS SITE. YOU EXPRESSLY AGREE THAT YOUR USE OF THE SITE IS AT YOUR SOLE RISK AND RESPONSIBILITY. TO THE MAXIMUM EXTENT PERMITTED BY LAW, COMPANY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. COMPANY DOES NOT REPRESENT OR WARRANT THAT THE MATERIALS IN THE SITE ARE ACCURATE, COMPLETE, RELIABLE, CURRENT, SUBJECT TO CORRECTION, OR ERROR-FREE OR THAT THE SITE, ITS SERVERS, OR MATERIALS AVAILABLE FROM THE SITE ARE FREE OF ANY HARMFUL COMPONENTS. BECAUSE SOME JURISDICTIONS MAY NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, THE ABOVE EXCLUSION MAY NOT APPLY TO YOU.\n\n9.*Limitation of Liability*. IN NO EVENT WILL COMPANY BE LIABLE TO YOU, OR TO ANY PARTY CLAIMING THROUGH YOU, FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND IN CONNECTION WITH OR ARISING OUT OF THE FURNISHING, PERFORMANCE, OR USE OF THE SITE, SERVICES OR MATERIALS OFFERED HEREUNDER. COMPANY’S MAXIMUM AGGREGATE LIABILITY FOR DAMAGES OR LOSS, HOWSOEVER ARISING OR CAUSED, SHALL IN NO EVENT BE GREATER THAN ONE-HUNDRED UNITED STATES DOLLARS ($100). BECAUSE SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, THE ABOVE LIMITATION MAY NOT APPLY TO YOU.\n\n10. *Changes to Site*. Company reserves the right, in its sole discretion, of which Company may choose to do at any time and from time to time, to modify or discontinue, whether temporarily or permanently, the Site, or the content thereof, with or without notice. Company reserves the right to interrupt the operation of the Site, or any portion of the Site, as necessary to perform routine or non-routine maintenance, error correction, or other changes. You agree that Company will not be liable to you or to any third party for any modification, suspension, or discontinuance of the Site.\n\n11. *Changes to Terms of Use*. Company reserves the right, in its sole discretion, to change or modify the Terms of Use, whether in whole or in part, without notice. If Company changes the Terms of Use, Company will post such new terms on the Site and any such changes or modifications will become effective upon posting. Your access to and use of the Site, following the posting of any such changes or modifications, will constitute your acceptance of the Terms of Use as revised.\n\n12. *Applicable Law, Jurisdiction and Claims*. THIS TERMS OF USE IS MADE UNDER, AND WILL BE CONSTRUED ACCORDING TO, THE LAWS OF THE STATE OF NEW YORK, U.S.A. The parties agree that the Uniform Computer Information Transaction Act (or any statutory implementation of it) and the United Nations Convention on the International Sale of Goods will not apply with respect to this Agreement or the parties’ relationship. Subject to the last sentence of this section, any claim, dispute or controversy arising out of or relating to this Agreement shall be resolved by arbitration in accordance with the provisions of the commercial or business rules of the American Arbitration Association. The arbitration shall be held in New York, NY. Notwithstanding the foregoing, a party may seek preliminary judicial relief (such as a preliminary injunction) from the state and federal courts located in New York, NY, if in its judgment, such action is necessary to avoid irreparable damage, and such courts shall have exclusive jurisdiction and venue over all matters relating to such preliminary relief.\n\n13. *Termination*. Company reserves the right to terminate your use of this Site, including the right to remove any information provided to me or posted to the Site, in the event that you violate the Terms of Use, any rules or guidelines posted on this Site, any applicable federal, state or local laws, or for any other reason that Company shall determine in its sole discretion.\n\n14. *Copyright Complaints*. Company respects your intellectual property rights as well as the rights of other third parties. If you believe that your work has been copied in a way that constitutes copyright infringement, please e-mail Company at: [legal@nonfictionhotlist.com](mailto:legal@nonfictionhotlist.com)."
+      },
+      {
+       "type": "text",
+       "text": "15. *Notice*. You agree that Company may provide notice to you and other information concerning this Site electronically, including any notice to any email address supplied by you"
+      },
+      {
+       "type": "text",
+       "text": "16. *General Provisions*. You agree to comply with all applicable laws and regulations. The terms and conditions set forth herein constitute the entire agreement between you and Company with respect to the use of the Site. The waiver by one party of any default of the other party shall not waive subsequent defaults of the same or different kind. If for any reason a court of competent jurisdiction finds any provision of this Terms of Use, or portion thereof, to be unenforceable, that provision of the agreement will be enforced to the maximum extent permissible so as to effect the intent of the parties, and the remainder of this Terms of Use will continue in full force and effect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/privacy-policy",
+   "title": "Privacy Policy 1 — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Privacy policy."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "This Nonfiction Hotlist “**Privacy Policy**” applies to our various websites, applications and services located or accessed at [https://nonfictionhotlist.com/](https://nonfictionhotlist.com/) (“**Services**”), which is owned and operated by Nonfiction Hotlist, LLC (“**Nonfiction Hotlist**,” or “**we**” or “**us**”). We recognize and respect your privacy. This Privacy Policy explains how we collect, use and disclose personally identifying information (“**Personal Information**”) as well as other data and information that you provide to us or we gather through the Services.\n\nWhile this Privacy Policy may reference aspects of our other terms and agreements, use of the Services is subject to our Terms of Use (located at: [https://nonfictionhotlist.com/terms-of-use](https://nonfictionhotlist.com/terms-of-use)) and referred to collectively as “**Terms**.” Capitalized terms used but not defined in this Privacy Policy have their meaning set forth in the Terms.\n\nWe reserve the right to change this Privacy Policy from time to time without notice to you. You should check here periodically to review the current Privacy Policy, which is effective as of the revision date listed above. Your use of the Services and submission of any information, including Personal Information, to us constitutes acceptance and understanding of this Privacy Policy.\n\n**Collection of Your Information**\n\nDepending on how you use our Services, we may collect, store and process, on your and/or if applicable your organization’s behalf, any data or information (including Personal Information) transmitted to us directly from you or your organization including through the Services and our third-party partners and service providers. Your information we collect includes:\n\n- Your contact and account related Personal Information (such as name, age, gender, ethnicity, country/location, disability and/or veteran status, addresses, email addresses, telephone numbers, occupation and information imported from social log in permissions granted to us);\n\n- Information contained in legal agreements including transaction-related information (such as invoices and orders, credit card or other preferred means of payment, billing information, credit card number, expiration date, billing address and/or a history of purchases through our Services);\n\n- Information posted by you to the Services (such as comments, suggestions, feedback, opinions, or media);\n\n- Information you submit to us in the form of an email or via any function within the Services (such as requests for demos, contact forms, job postings, etc.);\n\n- Information you provide to us while registering for, or as a part of participation in, our tradeshows, webinars, seminars and conferences.\n\n**How We Use Your Information**\n\nWe collect, store and use the information as well as Personal Information you provide to us in various ways, always in accordance with this Privacy Policy, as follows:\n\n- To operate and improve the Services to better understand how users access and use the Services;\n\n- To create user profiles, authenticate visitors and users to the Services and administer accounts;\n\n- To generate de-identified and aggregated Usage Data for any lawful purpose and as specified in the Terms;\n\n- To conduct research about your use of our Services;\n\n- To communicate with you and to respond to your inquiries or requests including customer-service-related purposes;\n\n- To evaluate business opportunities;\n\n- To process product orders received through the Services or other ways you communicate them to us (e.g., email, phone) and to fulfill your requests for tools, software, functionality, features and other products and services;\n\n- To effectuate or enforce a transaction or agreement;\n\n- To provide you with information about our products and services that we believe you may find of interest, including to send you mailing lists, and marketing and promotional e-mails, as well as our materials such as whitepapers, webinars, videos, solution overviews, integration briefs, case studies and reports offered on our Site;\n\n- To personalize content and advertisements we provide to you;\n\n- To respond to job applications;\n\n- To provide customer support and technical assistance for our Services; and\n\n- We automatically collect through the Services information that is often not personally identifying, such as the website from which visitors came to the Services, Services visitors’ IP address, browser type and other information relating to the device through which they access the Services. We may combine this information with the Personal Information we have collected from you.\n\nFor clarity, we do not make any warranty, express, implied or otherwise, that we will be able to prevent loss, misuse, unauthorized access to, or alteration of information you provide to us. You make any disclosure of information to us at your own risk.\n\n**How We Share and/or Disclose Your Information**\n\nWe may share or disclose your information, including Personal Information, to third parties for the following purposes:\n\n- In aggregated, or non-personally identifying, forms about our users of our Services for marketing, advertising, research or other reasonable business purposes. For example, we may share information publicly to show trends about the general use of our Services;\n\n- To provide you with information relating to products or services that you have requested or that we believe you may find of interest;\n\n- In response to a subpoena or other legal process by a governmental entity or third party, or if otherwise required by law;\n\n- To protect or enforce our rights including with respect to our assets and properties; and\n\n- In the event of the sale or dissolution (bankruptcy) of assets, in whole or in part, of our business or any of its affiliates.\n\nWe do not rent or sell your Personal Information to unaffiliated third parties for their marketing purposes.\n\n**Mobile Marketing Communications**\n\nWe may contact you via text message (SMS or MMS) for service updates, account notifications, or other authorized purposes. By providing your mobile number, you consent to receive such communications. Message and data rates may apply depending on your carrier. You may opt out of text communications at any time by following the instructions provided in our messages or by contacting us directly. Opting out will not affect your ability to use our services, but may limit certain notifications. We are not responsible for any unauthorized text messages that appear to come from us. Official communications will only be sent from designated numbers disclosed in advance.\n\n**Cookies, Beacons and Analytics**\n\nOur Services use technology, or those of third-party service providers, such as cookies, web beacons (clear GIFs) and similar technologies to track user activity and collect data related to our Services. We may combine this data with your Personal Information provided to us by you.\n\n*Cookies*\n\nWe may use cookies to track visitor activity on the Services, to enhance and personalize your experience and gather information that helps us to optimize our Services. A cookie is a text file that a website transfers to your computer’s hard drive for record-keeping purposes. Our cookies assign a random, unique number to each visitor’s computer. They do not contain information that would personally identify the visitor, although we can associate a cookie with any identifying information that is or has been provided to us while visiting the Services. We use cookies that remain on your computer for a specified period of time or until they are deleted (persistent cookies). We may also use cookies that exist only temporarily during an online session (session cookies) – these cookies allow us to identify you temporarily as you move through the Services.\n\nYou can choose to accept or decline some cookies. Most web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. For further information about disabling cookies, you can visit [www.allaboutcookies.org](http://www.allaboutcookies.org). However, it is important to remember that many of our Services may not function properly if your cookies are disabled.\n\n*Web Beacons*\n\nWeb beacons are tiny graphics with a unique identifier, similar in function to cookies, that are used to track the online movements of Web users. In contrast to cookies, which are stored on your computer’s hard drive, Web beacons are embedded invisibly on webpages and may not be disabled or controlled through your browser.\n\n*Analytics & Third Parties*\n\nOur Services may include features or functionalities provided by “**Third-Party Vendors**,” or may integrate or interact with third-party products and services (including, without limitation, via APIs, plug ins, links, frames, embedding, or other interactions) (together, “**Third-Party Services**”). For example, we may use Third-Party Services for providing aspects of the Services, ad serving, retargeting, marketing and/or for analytics. Certain functionalities within our Services, including your browser, may send your information to the Third-Party Provider and/or Third-Party Services. Any access to and use of any Third-Party Services linked within the are governed by the privacy policies of those Third-Party Services. We are not responsible for the information practices of any Third-Party Vendors and/or Third-Party Services.\n\nThird-Party Vendors and/or Third-Party Services (for example, Google Analytics and AdWords,) may use cookies, web beacons, device identifiers, and other tracking technologies that collect information about your use of our Services. This information may be used by us and others to determine the popularity of our Services, deliver advertising and content targeted to your interests in the websites or other Services and to better understand your online activity. We use Google Analytics to track website views and general/aggregate data about our website users. To provide website visitors more choice on how their data is collected by Google Analytics, Google has developed an Opt-out Browser Add-on, available at: [https://tools.google.com/dlpage/gaoptout](https://tools.google.com/dlpage/gaoptout).\n\n*Do Not Track Disclosures*\n\nSome web browsers incorporate a \"Do Not Track\" feature that signals to websites and Services that you visit that you do not want to have your online activity tracked. Each browser communicates \"Do Not Track\" signals to websites differently, making it unworkable to honor each and every request correctly. In order to alleviate any communication error between browsers and our Services, we do not respond to or honor \"Do Not Track\" signals at this time.\n\n**User Content**\n\nThe Services allow users to post information. Any information that you post to the Services becomes public information and may be indexable by search engines, copied, forwarded, saved or archived by others. In addition, your name, as well as other optional information you choose to submit along with the information you post, will be publicly displayed along with your post. We are not responsible for the privacy of any information that you choose to post to the Services, or for the accuracy of any information contained in those postings. We cannot prevent such information from being used by others in a manner that may violate this Privacy Policy, the law or your personal privacy. Your posting of any content to any of the Services is subject to our Terms.\n\n**Email Policy**\n\nWe may use your email address to communicate with you about orders you have placed, inquiries you have made about our products and services or information you have shared with us. We may send you emails from time to time about information we believe may be of interest to you. We may also send you news and offers about our products and services, or those of our chosen partners. Examples include, but are not limited to, our blog, ebook, webinars, newsletter, information about special offers, or other products or offerings.\n\nIf, at any time, you would like to stop receiving promotional e-mails, you may follow the opt-out procedures stated in the email, by using the “Unsubscribe” (or similar) link, or make a request via email to privacy@nonfictionhotlist.com. It may take a few business days for us to process opt-out requests. If you opt-out of receiving emails or promotions, we still may send you e-mails to you in accordance with this Privacy Policy, as requested by you, or in reference to other customer service purposes.\n\n**Our Commitment to Security**\n\nWe have established safeguards to help prevent unauthorized access to or misuse of your information, but cannot guarantee that your information will never be disclosed in a manner inconsistent with this Privacy Policy (for example, as a result of unauthorized acts by third parties that violate applicable law or our and our affiliated providers' policies). To protect your privacy and security, we may use passwords or other technologies to register or authenticate you and enable you to take advantage of our Services, and before granting access or making corrections to your information. Do not provide your password to any other person.\n\n**Your Choices and Rights**\n\nSubject to applicable law, we will make reasonable efforts to ensure your collected information is accurate and complete and we will update or correct your information as needed when notified by you. If you would like to request access to your information including to verify, identify any inaccuracies, or change or delete your information, please contact us at privacy@nonfictionhotlist.com. We strive to respond to these requests within 30 days or as otherwise required under applicable law.\n\nWhenever you directly provide us with your information, be sure it is accurate and complete. We are not responsible for any information you provide to us that is incomplete or incorrect. At any time, you may access, edit or delete information within your account. If you delete information from your account, or deactivate your account, we may retain certain information as required by law or for legitimate business purposes. We may retain cached or archived copies of your information for a certain period of time.\n\n**Children’s Privacy**\n\nWe do not knowingly collect, maintain, or use personal information from children under 13 years of age, and no parts of our Services are directed to children. If you learn that a child has provided us with personal information in violation of this Privacy Policy, then you may alert us at privacy@nonfictionhotlist.com.\n\n**California Privacy Rights**\n\nIf you are a resident of California and interact with us as a consumer, you have certain rights under the California Consumer Privacy Act or “**CCPA**” (Cal. Civ. Code § 1798.100 et seq.), including to request access to and deletion of your Personal Information (as defined in the CCPA). You may exercise these rights by contacting us at privacy@nonfictionhotlist.com. We do not sell your Personal Information, but we may allow our advertising partners to collect certain device identifiers and electronic network activity that allows them to show ads within their systems that are targeted to your interests. To opt out of having your Personal Information used for targeted advertising purposes, please visit [www.aboutads.info/choices](http://www.aboutads.info/choices).\n\n**International Users**\n\nNonfiction Hotlist is located in the United States. When you access the Services, your information may be stored on servers in the United States and may also be stored or processed in other countries by our service providers, if and to the extent compliant with law. If you are accessing the Services from outside the United States, by providing your information to the Services, you are consenting to and authorizing the transfer of your information to the United States for storage, use, processing, maintenance and onward transfer of such information to other entities, regardless of their location, in accordance with this Privacy Policy and the Terms. For clarity, and as outlined in the Terms, you are also consenting to the application of United States law in all matters concerning the Services.\n\nPersonal data collected from the European Union, United Kingdom and Switzerland will, for example, be transferred to and processed by us in the United States or another country outside of the European Union, United Kingdom and Switzerland. In such instances, we shall ensure that the transfer of your personal data is carried out in accordance with applicable privacy laws and, in particular, that appropriate contractual, technical, and organisational measures are in place such as the Standard Contractual Clauses approved by the EU Commission or such other mechanism approved by applicable authority.\n\n**How to Contact Us**\n\nWhile we strive for error free performance, we cannot always catch an unintended privacy issue. As a result, we encourage your questions and comments about any privacy concerns. Please direct them to us by an email to the following: privacy@nonfictionhotlist.com."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/yahooxnfh/submit",
+   "title": "Submit — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/85ae72e5-64a2-457f-ac33-15c81860a148/NFH+x+Yahoo+Options.png",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "code",
+       "url": "https://nfh-submission-prod.vercel.app/submit?embedded=true"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/yahooxnfh/reviewer",
+   "title": "Reviewer — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/ca041625-8c51-4e72-8269-fd91df609c7b/NFH+x+Yahoo+Options.png",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "### reviewer login"
+      },
+      {
+       "type": "code",
+       "url": "https://nfh-custom-build.vercel.app/submit?embedded=true"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/submission-agreement",
+   "title": "Submission Agreement — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## submission agreement"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "This Submission Agreement (“**Agreement**”) is made between The Nonfiction Hotlist, LLC (“**Company**”) and the Submitter (also referred to as “you” and “I”) and governs your submission and Company’s use of Materials (each as further defined below).\n\n“**Submitter**” means a person or entity that accepts and agrees to the terms of this Agreement as of the earlier date (“**Effective Date**”) where such person or entity either clicks a box indicating acceptance of this Agreement or submits any Materials to Company.\n\nIF YOU DO NOT ACCEPT THIS AGREEMENT, YOU MAY NOT SUBMIT MATERIALS TO COMPANY. COMPANY’S SITE (AS DEFINED IN THE [TERMS OF USE]) AND SUBMISSION OF MATERIALS ARE NOT FOR CHILDREN UNDER 13 YEARS OF AGE. IF AN INDIVIDUAL IS ENTERING INTO THIS AGREEMENT ON BEHALF OF A LEGAL ENTITY, SUCH PERSON REPRESENTS AND WARRANTS THAT IT HAS THE LEGAL AUTHORITY TO BIND SUCH LEGAL ENTITY TO THIS AGREEMENT AND THIS AGREEMENT APPLIES TO SUCH ENTITY WHICH IS DEEMED THE SUBMITTER.\n\nIf Submitter and Company have executed a written agreement governing Submitter’s Materials, then the terms of such signed agreement will govern and will supersede this Agreement. By submitting any materials to Company (the “**Materials**”), I hereby agree to following:\n\n1. I request that Company review the Materials. Company has refused to accept or review the Materials without my acceptance of this Agreement. I have retained at least one copy of the Materials and understand that Company may destroy any copies of the Materials that I submit.\n\n2. Company has no obligation with regard to the Materials unless we enter into a separate written agreement. Any discussion we may have does not constitute an agreement or create a confidential relationship.\n\n3. Company is in the business of developing ideas and creative materials. Among such materials now in existence or created in the future (collectively, the “**Company Materials**”) may be materials similar or identical to the Materials in theme, idea, format, or other respects. I agree that I will NOT be entitled to any compensation (or any other right) because of any use by Company of any such similar or identical Company Materials that were independently created by Company and/or third parties.\n\n4. I hereby irrevocably release Company and its parent entities, board members, managers, partners, employees, officers, members, directors, subsidiaries, licensees, successors, assigns, and affiliates (collectively, the “**Released Entities**”) from any and all claims, demands, and liabilities of every kind, known or unknown, based on destruction or nonuse of the Materials, and/or arising from Company Materials independently created by the Released Entities and that are demonstrably similar to the Materials. I expressly waive all rights to injunctive or other equitable relief in connection with this agreement and/or Company Materials.\n\n5. I represent and warrant that I am the sole owner and author of the Materials, that I have the right and authority to submit the Materials to Company upon the terms of this Agreement, that the Materials do not and shall not infringe on any third-party rights, and that no consent, permission, or license is required from any third party for Company’s use of the Materials under this Agreement. I agree to indemnify and hold the Released Entities harmless from and against any and all loss, cost, liability or expenses (including without limitation court costs and reasonable fees of attorneys and other professionals) relating to any claimed breach by me of any term of this Agreement.\n\n6. This Agreement is the entire agreement between Company and me and supersedes all prior agreements and understandings and cannot be amended except in writing signed by the parties. This Agreement is governed in all respects by the laws of New York State and the parties hereby agree to the exclusive jurisdiction and venue of state and federal courts sitting in Kings County, New York. Company may assign this Agreement without restriction; this Agreement is personal to me and may not be assigned by me without Company’s written consent. This Agreement will be binding upon, inure to the benefit of, and be enforceable by and against the successors and assigns of each party to this Agreement."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/the-2025-hotlist-1",
+   "title": "General 1 — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "# the 2025 hotlist.\n\nExceptional nonfiction storytelling changes how we see the world."
+      }
+     ],
+     "background": {
+      "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/969df86f-8519-442f-8248-276456743577/NFH+Youtube+Banner.png",
+      "alt": ""
+     }
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## The 2025 Nonfiction Hotlist champions 23 exceptional unproduced projects, connecting bold visions with the partnerships and resources needed to reach audiences.\n\n#### Read it below"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "embed",
+       "url": "//cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAGgT2RxqGc%2FvzqLi5ndnJY7rEN-POtTyg%2Fview%3Fembed%26meta&display_name=Canva&url=https%3A%2F%2Fwww.canva.com%2Fdesign%2FDAGgT2RxqGc%2FvzqLi5ndnJY7rEN-POtTyg%2Fview%3Futm_content%3DDAGgT2RxqGc%26utm_campaign%3Ddesignshare%26utm_medium%3Dlink2%26utm_source%3Duniquelinks%26utlId%3Dh3e1fe80a01&image=https%3A%2F%2Fstatic.canva.com%2Fstatic%2Fimages%2Ffb_cover-1.jpg&type=text%2Fhtml&schema=canva"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "newsletter",
+       "fields": [
+        "Email Address"
+       ],
+       "text": "Newsletter Block\n\nThis newsletter signup form needs a storage option. Edit the block and enter a storage location via the\n\nStorage\n\ntab.\n\n## Sign up for news and updates.\n\nEmail Address\n\nSign Up\n\nThank you!"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/yahooxnfh-1",
+   "title": "Yahoo x NFH (Copy) — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/85ae72e5-64a2-457f-ac33-15c81860a148/NFH+x+Yahoo+Options.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Yahoo Media Group and The Nonfiction Hotlist are teaming up to create a new pathway for nonfiction filmmakers to showcase their work to a global audience. Through this partnership, Yahoo will promote and distribute **20 short documentary films** curated from open call submissions.\n\nThe Nonfiction Hotlist, a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities, will oversee the entire curatorial process."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Opportunity"
+      },
+      {
+       "type": "text",
+       "text": "- **Global Distribution** - Films will be distributed across Yahoo properties, including yahoosports.tv, Yahoo Sports Network, and Yahoo Finance FAST channels\n\n- **Compensation** - Selected filmmakers will be paid for their work, ensuring fair compensation for creators\n\n- **Promotional Support** - Yahoo will further amplify the films with additional content including filmmaker interviews, behind-the-scenes features, and in-depth companion articles\n\n- **End date of submission March 6, 2026**"
+      },
+      {
+       "type": "text",
+       "text": "### **Categories:**"
+      },
+      {
+       "type": "text",
+       "text": "#### 1. Sports and Athleticism\n\n#### 2. Business and Economics\n\n#### 3. Science, Innovation and Technology\n\n#### 4. Nature and Environment\n\n#### 5. Arts and Culture\n\n#### 6. Biography and Lifestyle"
+      },
+      {
+       "type": "text",
+       "text": "Films will be selected based on **artistic merit, powerful storytelling,**and**cultural relevance.**"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## **Eligibility**"
+      },
+      {
+       "type": "text",
+       "text": "To be eligible for consideration, submitted films must meet the following requirements:"
+      },
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "Format",
+         "a": "Completed short documentaries"
+        },
+        {
+         "q": "Runtime",
+         "a": "8 to 40 minutes in length"
+        },
+        {
+         "q": "Completion Date",
+         "a": "Films must have been finished between January 2023 and March 2026"
+        },
+        {
+         "q": "Language",
+         "a": "English Spoken or English Subtitled."
+        },
+        {
+         "q": "Submission Period",
+         "a": "January 13, 2026 to March 6th, 2026"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Submission"
+      },
+      {
+       "type": "text",
+       "text": "### submissions closed"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "### Frequently Asked Questions"
+      },
+      {
+       "type": "text",
+       "text": "Still have questions? Take a look at the FAQ or reach out anytime. If you’re feeling ready, go ahead and apply."
+      },
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "Is this the Nonfiction Hotlist Version 2?",
+         "a": "No, this is a separate initiative created specifically in partnership with Yahoo for completed short documentaries. The Nonfiction Hotlist Version 2 will launch later in 2026 with a different focus and structure—stay tuned for details."
+        },
+        {
+         "q": "Is there a submission fee?",
+         "a": "No, submission is completely free."
+        },
+        {
+         "q": "My film was completed prior to 2023. Can I still submit it?",
+         "a": "Unfortunately no. Films must have been completed between January 1, 2023 and March 2026 to be eligible."
+        },
+        {
+         "q": "My film is under 8 minutes long or over 40 minutes long. Can I still submit it?",
+         "a": "We're only able to consider films between 8-40 minutes in length for this partnership. If your film falls outside this range, we encourage you to watch for future Nonfiction Hotlist initiatives that may be a better fit."
+        },
+        {
+         "q": "What if my film is not complete?",
+         "a": "Please wait to submit until your film is fully finished. We're only reviewing completed films for this partnership."
+        },
+        {
+         "q": "Do I need to have the distribution rights to my film?",
+         "a": "Yes. You must either own the distribution rights outright or have authority from the rights holder to license the film to Yahoo."
+        },
+        {
+         "q": "Do I need to have all of the footage, music, appearances and other rights cleared?",
+         "a": "Yes. All third-party materials (archival footage, music, appearances, etc.) must be fully cleared (or feasibly clearable) with proper licenses and releases in place. Films with uncleared rights cannot be selected."
+        },
+        {
+         "q": "Can I submit it if it has been previously distributed?",
+         "a": "Yes, as long as the rights are currently available."
+        },
+        {
+         "q": "Can I submit more than one film?",
+         "a": "Yes, but please limit submissions to three films maximum."
+        },
+        {
+         "q": "Who will be reviewing my submission?",
+         "a": "The Nonfiction Hotlist team, along with carefully selected nonfiction industry professionals, will oversee the entire curatorial process - from initial review through final selection."
+        },
+        {
+         "q": "When will selected filmmakers be notified?",
+         "a": "Selected filmmakers will be notified in the Spring of 2026."
+        },
+        {
+         "q": "What happens if I’m not selected?",
+         "a": "All filmmakers will be notified of their status via email. While we can only select 20 films for this partnership, we encourage you to stay connected with The Nonfiction Hotlist for future opportunities that may be a better fit for your work."
+        },
+        {
+         "q": "What rights will Yahoo acquire if my film is selected?",
+         "a": "Selected filmmakers will grant Yahoo a non-exclusive license to distribute the film across Yahoo's platforms and channels for a specified period. You will retain ownership of your film. Specific terms will be detailed in the licensing agreement provided to selected filmmakers."
+        },
+        {
+         "q": "Can my film be on other platforms while it's on Yahoo?",
+         "a": "This will be addressed in the licensing agreement for selected films. Questions about exclusivity windows can be discussed if your film is selected."
+        },
+        {
+         "q": "What will selected filmmakers receive?",
+         "a": "Selected filmmakers will receive licensing fees for their work, ensuring fair compensation. Films will be distributed across Yahoo's properties including [yahoosports.tv](http://yahoosports.tv), Yahoo Sports Network, and Yahoo Finance FAST channels, with promotional support including filmmaker interviews, behind-the-scenes features, and companion articles."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/yahoo",
+   "title": "Yahoo x NFH — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/85ae72e5-64a2-457f-ac33-15c81860a148/NFH+x+Yahoo+Options.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "Yahoo Media Group and The Nonfiction Hotlist teamed up to create a new pathway for nonfiction filmmakers to showcase their work to a global audience. Through this partnership, Yahoo will promote and distribute **20 short documentary films** curated by the Nonfiction Hotlist."
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "Yahoo Media Group and the Nonfiction Hotlist teamed up to create new pathways for nonfiction projects to reach global audiences. Through this partnership, Yahoo is showcasing and celebrating a curation of 20 short documentary films that the Nonfiction Hotlist curated."
+      },
+      {
+       "type": "button",
+       "label": "Watch!",
+       "href": "https://www.yahoo.com/nonfictionhotlist/"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/85ae72e5-64a2-457f-ac33-15c81860a148/NFH+x+Yahoo+Options.png",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/the-2026-hotlist",
+   "title": "2026 Hotlist — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "scrolling",
+       "text": "# Deadline Extended\n\n# -\n\n# September 25th, 2026\n\n# -\n\n# Deadline Extended - September 25th, 2026 -"
+      },
+      {
+       "type": "text",
+       "text": "# The 2026\n\n# Hotlist is\n\n# Open!"
+      },
+      {
+       "type": "text",
+       "text": "Submissions are open!\n\nThe 2026 Hotlist is a curated slate of standout nonfiction works in progress, spanning documentary features, shorts, series, podcasts, and reality.\n\nWe connect creators with audiences, industry opportunities, and partners who can move a project forward.\n\nDeadline to Submit September 25th, 2026"
+      },
+      {
+       "type": "button",
+       "label": "Submit Here",
+       "href": "/submit2026"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "scrolling",
+       "text": "# Shorts\n\n# ✳︎\n\n# Podcasts\n\n# ✳︎\n\n# Features\n\n# ✳︎\n\n# Series\n\n# ✳︎\n\n# Reality\n\n# ✳︎\n\n# Shorts ✳︎ Podcasts ✳︎ Features ✳︎ Series ✳︎ Reality ✳︎"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/8291b8cb-d1fb-44f5-bae2-519d48ef789c/NFH_Events8.jpeg",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/1c2bd396-d055-4d98-a195-5fb2f918478b/NFH_Events11.jpeg",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "# **Where great****nonfiction****finds new pathways.**"
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/30413107-116c-4e60-8ebc-dfe1ae753c57/NFH_Events12.jpeg",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/c1e61529-10de-410a-a670-b190c70b4894/NFH_Events9.jpeg",
+         "alt": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "# The 2026 Hotlist"
+      },
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "What is the Nonfiction Hotlist?",
+         "a": "A curated list of standout nonfiction projects, spanning documentary features, shorts, series, podcasts, and reality, connecting creators with audiences, industry opportunities, and partners who can move projects forward."
+        },
+        {
+         "q": "What does it cost to submit?",
+         "a": "Nothing. Submission is free, and it stays free through every stage of the process."
+        },
+        {
+         "q": "What is the deadline to submit?",
+         "a": "September 9th, 2026"
+        },
+        {
+         "q": "Can I submit multiple projects?",
+         "a": "Yes. Submit as many as you'd like, just be intentional about what you put forward."
+        },
+        {
+         "q": "Can I submit a project I've already pitched?",
+         "a": "Yes. Widely pitched, never pitched, fully financed, or still looking for support, if it's a project you believe in, it's eligible."
+        },
+        {
+         "q": "I submitted to the first Nonfiction Hotlist. Can I submit again?",
+         "a": "Yes. Projects evolve, and yours may be in a different stage than it was last time. Each cycle is reviewed by a new pool of reviewers alongside a different slate of projects, so every submission gets a fresh look."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "What materials should I submit?",
+         "a": "Title, logline, and any supporting materials you're comfortable sharing: pitch decks, sizzle reels, trailers, or anything else that helps us understand the project."
+        },
+        {
+         "q": "Does my project need to be finished before I submit?",
+         "a": "No. The 2026 Hotlist is built for works in progress. Anything from a rough cut on down is welcome: treatment, early footage, assembly, wherever you are. This isn't about who has the most polished cut; it's about the strength of the story and the commitment and care of the team behind it."
+        },
+        {
+         "q": "Who sees my submission, and is it confidential?",
+         "a": "Only our reviewers and internal team have access to your materials, and everything stays strictly confidential. Nothing is shared publicly or outside our review process without your approval."
+        },
+        {
+         "q": "Who reviews the submissions?",
+         "a": "A paid reviewer cohort pulled from across the nonfiction industry: producers, directors, editors, executives, journalists, and programmers from different corners of the field."
+        },
+        {
+         "q": "How are projects selected?",
+         "a": "Every submission is reviewed by multiple people and scored against a shared rubric: excellence in storytelling, originality, emotional impact, crowd appeal, and cultural relevance. Reviewers also meet to discuss and debate projects beyond the scores, and every selection is checked for legal and eligibility clearance before it's confirmed."
+        },
+        {
+         "q": "What if a reviewer knows me or my project personally?",
+         "a": "They recuse themselves from scoring it. Every reviewer agrees to a conflict-of-interest and confidentiality policy before each cycle begins."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "How big is the list, and how does it break down by format?",
+         "a": "The 2026 Hotlist is one list of 20-25 projects, mixing formats within: documentary feature, documentary short, podcast, series, and reality. There's no fixed number of slots per format. We're building the strongest possible slate, wherever it comes from."
+        },
+        {
+         "q": "Can I submit a project that crosses formats?",
+         "a": "Yes. Series/podcast hybrids, docu-reality crossovers, whatever the project actually is. Submit under whichever format fits best and note the crossover in your materials."
+        },
+        {
+         "q": "What happens to strong projects that don't make the final 20-25?",
+         "a": "Not making the list isn't the same as not being valuable. We're building more ways to connect projects that don't make the final cut with opportunities and community, and that work is expanding in 2026."
+        },
+        {
+         "q": "How many projects were submitted / selected last cycle?",
+         "a": "Our first cycle drew 639 submissions. We selected 23 for the list."
+        },
+        {
+         "q": "What happens if my project is selected?",
+         "a": "We'll reach out directly with next steps and a timeline for the list going public."
+        },
+        {
+         "q": "Is there any pay or compensation if my project is selected?",
+         "a": "No. The Hotlist isn't a grant or funding program. We never ask for money and never take any stake in your project, you keep 100% of your IP."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "accordion",
+       "items": [
+        {
+         "q": "What does inclusion on the Hotlist lead to?",
+         "a": "Real industry exposure: your project on a published, curated list that reaches filmmakers, producers, executives, and investors. Beyond publication, we stay a resource as your project moves forward, and selected filmmakers join a monthly gathering to connect with fellow creators."
+        },
+        {
+         "q": "What's the time commitment if my project is selected?",
+         "a": "Almost none. Beyond reviewing and approving your listing, there's no required commitment. We're happy to be a resource for strategy, feedback, and guidance as your project moves forward."
+        },
+        {
+         "q": "When do submissions open?",
+         "a": "Now open."
+        },
+        {
+         "q": "When will the Nonfiction Hotlist be released?",
+         "a": "November."
+        },
+        {
+         "q": "Where will the list be released?",
+         "a": "The Nonfiction Hotlist is distributed as a published list to our industry newsletter and made available to the wider media community. It will live in our instagram link in bio. If you haven’t seen the [2025 Nonfiction Hotlist](/the-2025-hotlist)please check it out before submitting. [Join the mailing list here to receive it.](https://nonfictionhotlist.com/home#contact)"
+        },
+        {
+         "q": "How can I support the Nonfiction Hotlist?",
+         "a": "If you're interested in supporting the Nonfiction Hotlist, we'd love to hear from you. [Contact Us Here](mailto:info@nonfictionhotlist.com?)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Submissions"
+      },
+      {
+       "type": "text",
+       "text": "Submit your documentary feature, short, series, podcast, or reality project, still in progress. Every submission gets genuine consideration from nonfiction professionals, reviewed for craft, originality, impact and potential."
+      },
+      {
+       "type": "button",
+       "label": "Submit Here",
+       "href": "/submit2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://nonfictionhotlist.com/submit2026",
+   "title": "Submit 2026 — nonfiction hotlist.",
+   "description": "",
+   "ogImage": "",
+   "noindex": false,
+   "sections": [
+    {
+     "blocks": [
+      {
+       "type": "image",
+       "images": [
+        {
+         "src": "https://images.squarespace-cdn.com/content/v1/6924b498b48ca60c1fc8e5af/a0d84ff4-25a4-4733-8ea6-e9e99303f4e8/Website+Logo+%282+x+1+in%29.png",
+         "alt": ""
+        }
+       ]
+      },
+      {
+       "type": "text",
+       "text": "# 2026"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "text",
+       "text": "## Before You Begin"
+      },
+      {
+       "type": "text",
+       "text": "#### We are requesting links, documents, and info about your project. Please have the following items ready:\n\n- Private password-free links to audio/visual materials (sizzle reels, work samples, etc)\n\n- Written materials and pitch decks **(max 25mb)**\n\n- Links to your social media (instagram, linkedin, etc)\n\n- Links to personal or business and other biographical websites\n\n- Bios for you and your creative team"
+      }
+     ]
+    },
+    {
+     "blocks": [
+      {
+       "type": "code",
+       "url": "https://nfh-submission-prod.vercel.app/the-nonfiction-hotlist/the-2026-nonfiction-hotlist/submit?embedded=true"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+  "name": "nonfiction hotlist.",
+  "origin": "https://nonfictionhotlist.com",
+  "email": "info@nonfictionhotlist.com",
+  "nav": [
+    {
+      "label": "About",
+      "children": [
+        {
+          "label": "News",
+          "href": "/news/"
+        },
+        {
+          "label": "Terms of Use",
+          "href": "/terms-of-use/"
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "/privacy-policy/"
+        }
+      ]
+    },
+    {
+      "label": "Yahoo x NFH",
+      "href": "/yahoo/"
+    },
+    {
+      "label": "The Hotlist",
+      "children": [
+        {
+          "label": "2026 Hotlist",
+          "href": "/the-2026-hotlist/"
+        },
+        {
+          "label": "2025 Hotlist",
+          "href": "/the-2025-hotlist/"
+        },
+        {
+          "label": "Contributors",
+          "href": "/contributors/"
+        }
+      ]
+    }
+  ],
+  "navButton": {
+    "label": "Subscribe",
+    "href": "/#subscribe"
+  },
+  "footer": {
+    "columns": [
+      {
+        "heading": "Some Stuff",
+        "note": "Placeholder heading on the Squarespace site.",
+        "links": [
+          {
+            "label": "Terms of Use",
+            "href": "/terms-of-use/"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy-policy/"
+          }
+        ]
+      },
+      {
+        "heading": "Follow Us",
+        "links": []
+      },
+      {
+        "heading": "Contact",
+        "links": [
+          {
+            "label": "info@nonfictionhotlist.com",
+            "href": "mailto:info@nonfictionhotlist.com"
+          }
+        ]
+      }
+    ],
+    "newsletter": true
+  }
+}

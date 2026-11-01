@@ -1,0 +1,27 @@
+{
+  "name": "Contact Us Form 3 3 2",
+  "submit": "Submit",
+  "thanks": "Thank you!",
+  "fields": [
+    {
+      "type": "name",
+      "title": "Name",
+      "required": true
+    },
+    {
+      "type": "email",
+      "title": "Email",
+      "required": true
+    },
+    {
+      "type": "textarea",
+      "title": "Tell us about you!",
+      "required": false
+    },
+    {
+      "type": "textarea",
+      "title": "How did you find us?",
+      "required": false
+    }
+  ]
+}
