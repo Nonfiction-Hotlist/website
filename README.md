@@ -6,6 +6,8 @@ The yearly lists live in a separate repo, [Nonfiction-Hotlist/list](https://gith
 
 The rebuilt site is previewed at https://new.nonfictionhotlist.com (search engines are told to skip it). nonfictionhotlist.com itself is still Squarespace until the switch-over.
 
+How everything runs (both sites, the timers, keys that expire, what to do when an email arrives, and the switch from Squarespace): [OPERATIONS.md in the list repo](https://github.com/Nonfiction-Hotlist/list/blob/main/OPERATIONS.md).
+
 ## What's here
 
 ```

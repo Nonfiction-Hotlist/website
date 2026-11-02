@@ -28,9 +28,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # On pushes (code and design changes), the kit tests run first; a failure stops the deploy.
+  test:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run test:kit
+      - run: npm run test:kit:clean
+
   build:
+    needs: test
+    if: always() && (needs.test.result == 'success' || needs.test.result == 'skipped')
     runs-on: ubuntu-24.04
     outputs:
+      drive_failed: ${{ steps.pull.outcome == 'failure' }}
       publish: ${{ steps.decide.outputs.publish }}
       problems_changed: ${{ steps.pull2.outputs.problems_changed || steps.pull.outputs.problems_changed }}
     steps:
@@ -43,8 +60,10 @@ jobs:
           cache: npm
       - run: npm ci
 
+      # If Google can't be reached, the site still builds from the repo; the drive-error job reports it.
       - name: Pull text and images from the Drive kit
         id: pull
+        continue-on-error: true
         run: node scripts/kit/pull-drive.js
 
       # Only when a new or replaced video is waiting: install ffmpeg (about a minute) and sync again,
@@ -82,7 +101,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Update from Google Drive: ${SUMMARY}"
-          git push
+          git pull --rebase origin main
+          git push origin HEAD:main
 
       - if: steps.decide.outputs.publish == 'true'
         uses: actions/upload-pages-artifact@v3
@@ -99,6 +119,18 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # The Drive kit couldn't be read at all (Google down, the manifest unshared). The site was still built
+  # from the repo; failing here sends the repo owner an email.
+  drive-error:
+    needs: build
+    if: needs.build.outputs.drive_failed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - run: |
+          echo "### The Drive kit couldn't be read" >> "$GITHUB_STEP_SUMMARY"
+          echo "The site was published from the repo as it was. See the 'Pull text and images' step for the reason." >> "$GITHUB_STEP_SUMMARY"
+          exit 1
 
   # Edits that broke a rule were skipped (the site kept the previous text). Failing here sends the
   # repo owner an email, once each time the list changes.

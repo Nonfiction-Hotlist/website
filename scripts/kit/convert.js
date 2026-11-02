@@ -206,6 +206,13 @@ function check(model, mediaNames, videoNames) {
     if (m[1] === "background video" && videoNames && !videoNames.includes(videoName(arg))) issues.push(`video not in the Media folder: ${arg}`);
   }
   if (faq) issues.push("[faq] without [end faq]");
+  for (const p of model) {
+    // A bracket line that isn't a building block (a typo like [imgae: x.jpg]) would show as text.
+    const t = plain(p.runs).trim();
+    if (p.style !== "MARKER" && /^\[[a-z][a-z ]{1,24}(:[^\]]*)?\]$/i.test(t)) issues.push(`"${t}" isn't a building block; see the guide for the ones there are`);
+    // Links go to web pages or email; anything else (javascript:, file:) is refused.
+    for (const r of p.runs) if (r.href && !/^(https?:\/\/|mailto:|\/|#)/i.test(r.href)) issues.push(`link "${r.t}" goes to "${r.href}"; links must start with https://, mailto: or /`);
+  }
   return issues;
 }
 

@@ -95,7 +95,10 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const folderOf = key => (manifest.find(m => m.kind === "folder" && m.key === key) || {}).folder || "";
   const ids = { pages: {}, news: {} };
   const fromDoc = async (where, id) => {
-    const model = fromExport(await docMd(id)).map(p => ({ ...p, runs: p.runs.map(r => r.href && r.href.startsWith(site.origin + "/") ? { ...r, href: r.href.slice(site.origin.length) } : r) }));
+    // One Doc that can't be read (deleted, moved out of the kit, link sharing turned off) is skipped on its own.
+    let md;
+    try { md = await docMd(id); } catch (e) { warn(where, `its Doc couldn't be read (${e.message}); kept the previous text`); return null; }
+    const model = fromExport(md).map(p => ({ ...p, runs: p.runs.map(r => r.href && r.href.startsWith(site.origin + "/") ? { ...r, href: r.href.slice(site.origin.length) } : r) }));
     const issues = check(model, mediaNames, videoNames);
     if (issues.length) { issues.forEach(i => warn(where, i + "; kept the previous text")); return null; }
     // Images are named on the site the way they're saved there.
@@ -108,7 +111,10 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   // Pages
   const oldPages = Object.fromEntries(read("pages").map(p => [p.file, p]));
   const seenPages = new Set();
-  for (const [title, address, description, doc] of await tab("Pages")) {
+  // A tab that can't be read leaves its pages (or posts) as they were.
+  const readTab = async name => { try { return await tab(name); } catch (e) { warn(`${name} tab`, `${e.message}; kept the previous ${name.toLowerCase()}`); return null; } };
+  const pageRows = await readTab("Pages");
+  for (const [title, address, description, doc] of pageRows || []) {
     const where = `Pages tab, "${title || address}"`;
     if (!title || !address) { warn(where, "needs a Title and an Address"); continue; }
     if (!/^\/([a-z0-9-]+\/)*$/.test(address)) { warn(where, `address "${address}" should look like /about/ (lower case, starting and ending with /)`); continue; }
@@ -122,12 +128,13 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     const next = format({ title, path: address, description, source: prev && prev.meta.source }, text ?? (prev ? prev.body : ""));
     if (!prev || format(prev.meta, prev.body) !== next) { writes.push([path.join(C, "pages", file + ".md"), next]); changed.push(title); }
   }
-  for (const f of Object.keys(oldPages)) if (!seenPages.has(f)) warn(`Page "${oldPages[f].meta.title}"`, "is not in the Pages tab; kept it on the site");
+  if (pageRows) for (const f of Object.keys(oldPages)) if (!seenPages.has(f)) warn(`Page "${oldPages[f].meta.title}"`, "is not in the Pages tab; kept it on the site");
 
   // News
   const oldNews = read("news");
   const seenNews = new Set();
-  for (const [title, date, address, image, excerpt, doc] of await tab("News")) {
+  const newsRows = await readTab("News");
+  for (const [title, date, address, image, excerpt, doc] of newsRows || []) {
     const where = `News tab, "${title || address}"`;
     if (!title || !address || !date) { warn(where, "needs a Title, Date and Address"); continue; }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) { warn(where, `date "${date}" should look like 2026-05-28`); continue; }
@@ -144,7 +151,7 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     const next = format({ title, date, path: address, image: image ? "/media/" + toSite(image) : "", excerpt, source: prev && prev.meta.source }, text ?? (prev ? prev.body : ""));
     if (!prev || prev.file !== file || format(prev.meta, prev.body) !== next) { writes.push([path.join(C, "news", file + ".md"), next]); changed.push(title); }
   }
-  for (const n of oldNews) if (!seenNews.has(n.file) && !removes.includes(path.join(C, "news", n.file + ".md"))) warn(`News "${n.meta.title}"`, "is not in the News tab; kept it on the site");
+  if (newsRows) for (const n of oldNews) if (!seenNews.has(n.file) && !removes.includes(path.join(C, "news", n.file + ".md"))) warn(`News "${n.meta.title}"`, "is not in the News tab; kept it on the site");
 
   // Menu, footer, settings
   try {

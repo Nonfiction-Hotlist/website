@@ -40,6 +40,8 @@ const news = fs.readdirSync(path.join(C, "news")).filter(f => f.endsWith(".md"))
 const pages = fs.readdirSync(path.join(C, "pages")).filter(f => f.endsWith(".md")).map(f => parse(path.join(C, "pages", f)));
 
 /* ---------- Markdown with ::: blocks ---------- */
+// HTML typed or pasted into a Doc is shown as text, never run as code.
+marked.use({ renderer: { html(token) { return esc(token.text ?? token.raw ?? ""); } } });
 const md = s => marked.parse(s).replace(/<a href="([^"]*)"([^>]*)>([\s\S]*?)<\/a>\{\.button\}/g, '<a class="button" href="$1"$2>$3</a>');
 
 function render(text) {
