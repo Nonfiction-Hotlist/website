@@ -171,5 +171,5 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const before = fs.existsSync(PROBLEMS) ? fs.readFileSync(PROBLEMS, "utf8") : "";
   if (listed !== before) fs.writeFileSync(PROBLEMS, listed);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT,
-    `changed=${changed.length ? "true" : "false"}\nproblems_changed=${listed !== before ? "true" : "false"}\nproblems=${problems.length}\nsummary=${(changed.join("; ") || "skipped edits list").slice(0, 300)}\n`);
+    `changed=${changed.length ? "true" : "false"}\nproblems_changed=${listed !== before ? "true" : "false"}\nproblems=${problems.length}\nsummary=${(changed.join("; ") || (listed !== before ? "skipped edits list" : "image list")).slice(0, 300)}\n`);
 })().catch(e => { console.error(`Could not read the Drive kit: ${e.message}`); process.exit(1); });
