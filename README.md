@@ -4,7 +4,7 @@ The Nonfiction Hotlist's main website, being rebuilt from the Squarespace site a
 
 The yearly lists live in a separate repo, [Nonfiction-Hotlist/list](https://github.com/Nonfiction-Hotlist/list) (list.nonfictionhotlist.com).
 
-Nothing here is online yet. The live site is still Squarespace.
+The rebuilt site is previewed at https://new.nonfictionhotlist.com (search engines are told to skip it). nonfictionhotlist.com itself is still Squarespace until the switch-over.
 
 ## What's here
 
@@ -31,6 +31,8 @@ npm install        # first time only
 npm run serve      # builds into site/ and previews at http://localhost:8090
 npm run release    # build, then check every link, every old Squarespace address, and each page in a browser
 ```
+
+Every push to `main` runs `.github/workflows/publish.yml`: build, the same checks, then GitHub Pages publishes `site/`.
 
 `scripts/build.js` turns `content/` into `site/` using `src/layout.html`. The layout's styles are placeholders for reading the structure; design comes later. Forms are shown but not connected yet. Old Squarespace addresses in `content/redirects.json` get forwarding pages.
 
