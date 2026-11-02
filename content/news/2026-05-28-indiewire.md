@@ -9,7 +9,7 @@ source: "https://nonfictionhotlist.com/news/indiewire"
 
 ![](/media/screenshot-2026-05-28-at-2.18.40-pm.png)
 
-Hot List founder Adam Neuhaus is urging filmmakers to create audience, content, and business infrastructure long before a premiere.
+Hot List founder Adam Neuhaus is urging filmmakers to create audience, content, and business infrastructure long before a premiere. (sync test)
 
 By [Dana Harris-Bridson](https://www.indiewire.com/author/dana-harris/)
 
