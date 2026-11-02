@@ -24,6 +24,16 @@ capture/
   to-content.py      Turns capture.json into content/.
 ```
 
+## Working on it
+
+```sh
+npm install        # first time only
+npm run serve      # builds into site/ and previews at http://localhost:8090
+npm run release    # build, then check every link, every old Squarespace address, and each page in a browser
+```
+
+`scripts/build.js` turns `content/` into `site/` using `src/layout.html`. The layout's styles are placeholders for reading the structure; design comes later. Forms are shown but not connected yet. Old Squarespace addresses in `content/redirects.json` get forwarding pages.
+
 ## How pages are written
 
 Markdown, with a few additions for things Squarespace had:
@@ -60,4 +70,5 @@ Markdown, with a few additions for things Squarespace had:
 - The 2026 FAQ says the deadline is September 9th; the banner on the same page says it was extended to September 25th.
 - Contributor names linked through Canva redirect links; they now link straight to each person's page.
 - The 2025 Hotlist page embeds the Canva deck rather than list.nonfictionhotlist.com.
+- The Deadline news post links to /yahooxnfh, which was a 404; it now redirects to /yahoo/.
 - Submissions and reviewer login are separate apps (nfh-submission-prod.vercel.app, nfh-custom-build.vercel.app), embedded in the pages.

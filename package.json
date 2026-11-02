@@ -1,0 +1,15 @@
+{
+  "name": "nfh-website",
+  "private": true,
+  "description": "nonfictionhotlist.com, rebuilt from the Squarespace site",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "check": "node scripts/check.js",
+    "release": "npm run build && npm run check",
+    "serve": "npm run build && python3 -m http.server 8090 --directory site"
+  },
+  "devDependencies": {
+    "marked": "14.1.4",
+    "playwright": "1.56.0"
+  }
+}

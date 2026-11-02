@@ -32,7 +32,8 @@ NEWS = {
     "/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr": "pure-nonfiction",
     "/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr-27jam": "realscreen",
 }
-REDIRECTS = {"/home": "/", "/the-2025-hotlist-1": "/the-2025-hotlist/", "/yahooxnfh1": "/yahooxnfh1/", "/yahooxnfh-1": "/yahooxnfh1/"}
+# /yahooxnfh is linked from the Deadline post but was a 404 on Squarespace; it now goes to the Yahoo page.
+REDIRECTS = {"/yahooxnfh": "/yahoo/", "/home": "/", "/the-2025-hotlist-1": "/the-2025-hotlist/", "/yahooxnfh1": "/yahooxnfh1/", "/yahooxnfh-1": "/yahooxnfh1/"}
 for old, slug in NEWS.items():
     if slug not in old: REDIRECTS[old] = f"/news/{slug}/"
 
