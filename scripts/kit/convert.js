@@ -103,20 +103,19 @@ function toModel(md, top = true) {
   return out;
 }
 
-// Google's export: "# " headings, "* " bullets, **bold**, *italic*, [text](link), backslash escapes.
+// Google's export (File > Download > Markdown), as seen on the kit's own Docs: one paragraph per line
+// (often ending in two spaces), headings with blank lines around them, "* " bullets, **bold**, *italic*,
+// [text](link), backslash escapes like \!, and monospaced text (the bracket lines) in `backticks`.
 function fromExport(md) {
-  const lines = md.replace(/\r/g, "").split("\n").map(l => {
-    const u = l.trim().replace(/\\([\\`*_{}\[\]()#+\-.!>|~])/g, "$1");
-    return MARKER.test(u) ? "\u0000" + u : l;           // keep markers away from the Markdown parser
-  });
   const out = [];
-  let buf = [];
-  const flush = () => { if (buf.length) { out.push(...mdToModel(buf.join("\n"))); buf = []; } };
-  for (const l of lines) {
-    if (l.startsWith("\u0000")) { flush(); out.push(M(l.slice(1))); }
-    else buf.push(l.replace(/^(\s*)\* /, "$1- "));
+  for (const raw of md.replace(/\r/g, "").split("\n")) {
+    const line = raw.replace(/\s+$/, "").replace(/\\$/, "");
+    if (!line.trim()) continue;
+    const code = line.trim().match(/^`+\s*([\s\S]*?)\s*`+$/);
+    const u = (code ? code[1] : line.trim()).replace(/\\([\\`*_{}\[\]()#+\-.!>|~])/g, "$1");
+    if (MARKER.test(u)) { out.push(M(u)); continue; }
+    out.push(...mdToModel(line.replace(/^(\s*)\* /, "$1- ")));
   }
-  flush();
   return out;
 }
 
@@ -171,13 +170,20 @@ function toMarkdown(model) {
   return out.join("\n\n").replace(/\n\n:::/g, "\n:::").replace(/(^|\n)(::: [^\n]*)\n\n/g, "$1$2\n") + "\n";
 }
 
-// The way Google exports a Doc as Markdown (used by tests to stand in for Google).
+// The way Google exports a Doc as Markdown (tests stand in for Google with this): see fromExport.
 const escGoogle = s => s.replace(/([\\`*_\[\]#+\-.!])/g, "\\$1");
 function exportLike(model) {
-  return model.map(p => p.style === "MARKER" ? escGoogle(plain(p.runs))
-    : p.style === "BULLET" ? "* " + inline(p.runs, escGoogle)
-    : /^H\d$/.test(p.style) ? "#".repeat(+p.style[1]) + " " + inline(p.runs, escGoogle)
-    : inline(p.runs, escGoogle)).join("\n\n") + "\n";
+  const out = [];
+  model.forEach((p, k) => {
+    const heading = /^H\d$/.test(p.style);
+    const line = p.style === "MARKER" ? "`" + plain(p.runs) + "`"
+      : p.style === "BULLET" ? "* " + inline(p.runs, escGoogle)
+      : heading ? "#".repeat(+p.style[1]) + " " + inline(p.runs, escGoogle)
+      : inline(p.runs, escGoogle);
+    if (heading) out.push("", line, "");
+    else out.push(line + (k < model.length - 1 && !/^H\d$/.test(model[k + 1].style) ? "  " : ""));
+  });
+  return out.join("\n").replace(/^\n+/, "") + "\n";
 }
 
 // Problems an editor could cause in a Doc, for the sync to report.

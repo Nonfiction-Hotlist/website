@@ -48,5 +48,16 @@ for (const f of files) {
   const issues = check(toModel(original), media);
   if (issues.length) fail(issues.join("; "));
 }
-console.log(`${files.length} files, ${failed ? failed + " failed" : "all round-trip cleanly"}`);
+// Real exports saved from the kit's Docs (drive-kit/test/google-exports/<dir>__<file>.md) must read
+// back to exactly the repo's page. This is what caught Google's one-paragraph-per-line format.
+const origin = JSON.parse(fs.readFileSync(path.join(C, "site.json"), "utf8")).origin;
+const G = path.resolve(__dirname, "..", "..", "drive-kit", "test", "google-exports");
+for (const f of fs.existsSync(G) ? fs.readdirSync(G) : []) {
+  const [dir, file] = f.replace(/\.md$/, "").split("__");
+  const model = fromExport(fs.readFileSync(path.join(G, f), "utf8"))
+    .map(p => ({ ...p, runs: p.runs.map(r => r.href && r.href.startsWith(origin + "/") ? { ...r, href: r.href.slice(origin.length) } : r) }));
+  const got = toMarkdown(model), want = body(path.join(C, dir, file + ".md")).replace(/^\n+/, "");
+  if (got !== want) { failed++; const a = want.split("\n"), b = got.split("\n"), i = a.findIndex((l, k) => l !== b[k]); console.log(`FAIL Google export ${f}, line ${i + 1}:\n  repo:   ${a[i]}\n  export: ${b[i]}`); }
+}
+console.log(`${files.length} files${fs.existsSync(G) ? ` and ${fs.readdirSync(G).length} Google exports` : ""}, ${failed ? failed + " failed" : "all round-trip cleanly"}`);
 process.exit(failed ? 1 : 0);
