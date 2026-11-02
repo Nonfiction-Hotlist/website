@@ -669,6 +669,14 @@ const KIT = {
      "style": "MARKER",
      "runs": [
       {
+       "t": "[background video: nonfiction-hotlist.mp4]"
+      }
+     ]
+    },
+    {
+     "style": "MARKER",
+     "runs": [
+      {
        "t": "[image: website-logo-2-x-1-in-.png]"
       }
      ]
@@ -4359,6 +4367,7 @@ function makeGuide_(root) {
   L("[section name]: starts a new band of the page. The name is optional.");
   L("[button: Label | /link/]: a button. The link can be a page address like /submit2026/ or a full link.");
   L("[image: file name.jpg]: an image from the Media folder, by its file name.");
+  L("[background video: file name.mp4]: a video from the Media folder playing silently behind its section, like the home page. Put it right under the section's [section] line.");
   L("[faq] then [end faq]: questions and answers. Each question is a Heading 3; its answer is the text under it.");
   L("[marquee: Shorts · Podcasts · Features]: a line of words that scrolls by.");
   L("[form: contact], [embed: https://...], [news list]: a form, another website shown in the page, the list of news posts.");
@@ -4369,6 +4378,9 @@ function makeGuide_(root) {
   L("A change that breaks a rule (a [button] without a link, an [image] that isn't in Media, a [faq] without [end faq]) is skipped, and the page keeps its previous text. The site owner gets an email listing what was skipped.");
   L(`To publish right away, the site owner can run the Publish workflow: ${KIT.repoUrl}/actions`);
   L("Every Doc and Sheet keeps version history (File > Version history) if you need to roll back.");
+  H("Videos");
+  L("Background videos (silent, looping, up to 60 seconds): drop the exported file in Media at full quality. The website makes its own lighter versions within about 15 minutes. To replace one, upload the new file with the same name.");
+  L("Videos with sound, and anything longer (trailers, films, talks): put them on Vimeo or YouTube and place them with [embed: link]. They stream better there, and the website stays fast.");
   H("House style");
   L("Understated and direct. No em dashes.");
   doc.saveAndClose();
@@ -4442,12 +4454,13 @@ function writeManifest_(root, state) {
   const sh = ss.getSheets()[0].setName("Files");
   const rows = [["Kind", "Key", "Label", "File ID", "Tabs", "Folder ID", "Updated"]];
   rows.push(["site", "site", "Site", state.site.fileId, JSON.stringify(state.site.tabs), root.getId(), ""]);
-  // Every image in Media, with when it last changed, so the website fetches new and replaced ones.
+  // Every image and video in Media, with when it last changed, so the website fetches new and replaced ones.
   const files = folder_(root, "Media").getFiles();
   const media = [];
   while (files.hasNext()) {
     const f = files.next();
-    if (/^image\//.test(f.getMimeType())) media.push(["media", f.getName(), f.getName(), f.getId(), "{}", "", f.getLastUpdated().toISOString()]);
+    const mime = f.getMimeType();
+    if (/^(image|video)\//.test(mime)) media.push(["media", f.getName(), f.getName(), f.getId(), JSON.stringify({ mime }), "", f.getLastUpdated().toISOString()]);
   }
   media.sort((a, b) => a[1] < b[1] ? -1 : 1).forEach(r => rows.push(r));
   // Every page and news Doc (from the Doc column of the Pages and News tabs), so the publish trigger

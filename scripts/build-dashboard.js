@@ -31,6 +31,7 @@ const news = read("news").map(n => ({ ...n, docId: (drive.news || {})[n.file], c
   .sort((a, b) => b.meta.date.localeCompare(a.meta.date));
 const log = git("log", "-15", "--format=%cI\t%s", "--", "content").split("\n").filter(Boolean).map(l => { const [d, s] = l.split("\t"); return { d, s }; });
 const lastDrive = (log.find(l => l.s.startsWith("Update from Google Drive")) || {}).d;
+const videos = fs.existsSync(path.join(C, "video")) ? fs.readdirSync(path.join(C, "video")).filter(f => f.endsWith("-1080.mp4")).length : 0;
 const pageProblems = title => problems.filter(p => p.includes(`"${title}"`));
 
 const link = (href, label, cls = "") => href ? `<a class="${cls}" href="${esc(href)}" target="_blank" rel="noopener">${label}</a>` : `<span class="none">–</span>`;
@@ -171,7 +172,7 @@ const html = `<!doctype html>
     <div class="tile${problems.length ? " warn" : ""}"><div class="k">Sync</div>
       <div class="v small"><span class="dot${problems.length ? " warn" : ""}"></span>${problems.length ? `${problems.length} edit${problems.length > 1 ? "s" : ""} skipped` : "All edits live"}</div>
       <div class="s">${drive.manifestId ? `Last change from Drive ${ago(lastDrive)}` : "Drive kit not connected"}</div></div>
-    <div class="tile"><div class="k">Images</div><div class="v">${fs.readdirSync(path.join(C, "media")).length}</div><div class="s">in the Media folder</div></div>
+    <div class="tile"><div class="k">Media</div><div class="v">${fs.readdirSync(path.join(C, "media")).length}</div><div class="s">images${videos ? `, plus ${videos} video${videos > 1 ? "s" : ""}` : ""} in the Media folder</div></div>
     <div class="tile"><div class="k">Address</div><div class="v small">${PREVIEW.replace("https://", "")}</div><div class="s">preview until the switch from Squarespace</div></div>
   </section>
   ${quick.length ? `<nav class="quick" aria-label="Site sheet and folders"><span class="lbl">Edit</span>${quick.map(([l, u]) => `<a class="chip" href="${esc(u)}" target="_blank" rel="noopener">${esc(l)}</a>`).join("")}</nav>` : ""}

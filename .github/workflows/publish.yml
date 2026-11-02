@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-24.04
     outputs:
       publish: ${{ steps.decide.outputs.publish }}
-      problems_changed: ${{ steps.pull.outputs.problems_changed }}
+      problems_changed: ${{ steps.pull2.outputs.problems_changed || steps.pull.outputs.problems_changed }}
     steps:
       - uses: actions/checkout@v5
         with:
@@ -47,10 +47,20 @@ jobs:
         id: pull
         run: node scripts/kit/pull-drive.js
 
+      # Only when a new or replaced video is waiting: install ffmpeg (about a minute) and sync again,
+      # which makes the video's web versions. Ordinary runs skip this.
+      - name: Install ffmpeg for a new video
+        if: steps.pull.outputs.videos_pending == 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Pull again, making the video's web versions
+        id: pull2
+        if: steps.pull.outputs.videos_pending == 'true'
+        run: node scripts/kit/pull-drive.js
+
       - name: Decide whether to publish
         id: decide
         run: |
-          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.mode }}" = "sync" ]; } && [ "${{ steps.pull.outputs.changed }}" != "true" ] && [ "${{ steps.pull.outputs.problems_changed }}" != "true" ]; then
+          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.mode }}" = "sync" ]; } && [[ "${{ steps.pull.outputs.changed }}${{ steps.pull2.outputs.changed }}" != *true* ]] && [[ "${{ steps.pull.outputs.problems_changed }}${{ steps.pull2.outputs.problems_changed }}" != *true* ]]; then
             echo "publish=false" >> "$GITHUB_OUTPUT"; echo "No changes in Drive."
           else
             echo "publish=true" >> "$GITHUB_OUTPUT"
@@ -65,7 +75,7 @@ jobs:
       - name: Commit changes from Drive
         if: steps.decide.outputs.publish == 'true'
         env:
-          SUMMARY: ${{ steps.pull.outputs.summary }}
+          SUMMARY: ${{ steps.pull2.outputs.summary || steps.pull.outputs.summary }}
         run: |
           git add content
           git diff --cached --quiet && exit 0

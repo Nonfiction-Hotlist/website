@@ -54,6 +54,19 @@
   main > article { padding-block: clamp(40px, 6vw, 80px); }
   section img, article img { margin: 0 0 1.2em; max-height: 640px; object-fit: cover; }
 
+  /* A band with a background video (Squarespace's home page hero): the video fills the band, nearly a
+     screen tall; the section's content sits in a thin white frame over it, at the lower left. */
+  main section.has-video { position: relative; overflow: hidden; min-height: min(calc(100svh - 72px), 62vw); padding: clamp(14px, 2.2vw, 28px);
+    display: flex; background-color: var(--deep); background-size: cover; background-position: center; }
+  .bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .has-video .frame { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: flex-end;
+    border: 1px solid rgba(255, 255, 255, 0.9); border-radius: 12px; padding: clamp(24px, 6vw, 80px); }
+  .has-video .frame img { width: min(62vw, 780px); max-height: none; margin: 0; border-radius: 0; filter: drop-shadow(0 2px 18px rgba(0, 0, 0, 0.25)); }
+  .has-video .frame > :last-child { margin-bottom: 0; }
+  @media (max-width: 640px) { main section.has-video { min-height: calc(100svh - 150px); } .has-video .frame img { width: 100%; } }
+  /* Less motion: the first frame stays as a still picture (the band's background) instead of the video. */
+  @media (prefers-reduced-motion: reduce) { .bg-video { display: none; } }
+
   .button { display: inline-block; margin: 0.4em 0 1em; padding: 12px 24px; border-radius: 999px; background: var(--cream); color: var(--ink);
     font-family: var(--display); font-weight: 600; font-size: 1rem; text-decoration: none; }
   .button:hover { background: var(--soft); color: var(--ink); }
@@ -108,5 +121,18 @@
 <footer>
 {{footer}}
 </footer>
+<script>
+  // Background videos only play while on screen, and not at all for visitors who prefer less motion.
+  (function () {
+    var vids = document.querySelectorAll(".bg-video");
+    if (!vids.length) return;
+    var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    vids.forEach(function (v) {
+      if (still) { v.pause(); v.removeAttribute("autoplay"); return; }
+      if (!("IntersectionObserver" in window)) return;
+      new IntersectionObserver(function (e) { e[0].isIntersecting ? v.play().catch(function () {}) : v.pause(); }).observe(v);
+    });
+  })();
+</script>
 </body>
 </html>

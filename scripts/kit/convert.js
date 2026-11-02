@@ -5,6 +5,7 @@
 // MARKER paragraphs are the bracket lines editors see in a Doc for things Markdown can't show in a Doc:
 //   [section about]   [faq] ... [end faq]   [button: Label | /path/]   [image: photo.jpg]
 //   [marquee: Shorts · Podcasts]   [form: contact]   [embed: https://...]   [news list]
+//   [background video: name.mp4]   (a video playing behind its section, from the Media folder)
 //
 //   toModel(markdown)        repo Markdown -> paragraphs   (the setup script writes these into Docs)
 //   fromExport(markdown)     a Doc's Markdown export (File > Download > Markdown) -> paragraphs
@@ -12,8 +13,9 @@
 //   exportLike(paragraphs)   paragraphs -> Markdown the way Google exports a Doc (tests only)
 const { marked } = require("marked");
 const blocks = require("../lib/blocks");
+const { videoName } = require("../lib/video");
 
-const MARKER = /^\[(section|faq|end faq|marquee|form|embed|news list|button|image)(?:(?::\s*|\s+)(.*?))?\]$/;
+const MARKER = /^\[(section|faq|end faq|marquee|form|embed|news list|button|image|background video)(?:(?::\s*|\s+)(.*?))?\]$/;
 const plain = runs => runs.map(r => r.t).join("");
 const P = (style, runs) => ({ style, runs: tidy(runs) });
 const M = text => ({ style: "MARKER", runs: [{ t: text }] });
@@ -99,6 +101,7 @@ function toModel(md, top = true) {
     else if (b.kind === "form") out.push(M(`[form: ${b.arg}]`));
     else if (b.kind === "embed") out.push(M(`[embed: ${b.arg}]`));
     else if (b.kind === "news-list") out.push(M("[news list]"));
+    else if (b.kind === "background-video") out.push(M(`[background video: ${b.arg}]`));
   }
   return out;
 }
@@ -165,6 +168,7 @@ function toMarkdown(model) {
     else if (kind === "form") out.push(`::: form ${arg}\n:::`);
     else if (kind === "embed") out.push(`::: embed ${arg}\n:::`);
     else if (kind === "news list") out.push("::: news-list\n:::");
+    else if (kind === "background video") out.push(`::: background-video ${arg}\n:::`);
   }
   close();
   // ::: lines are kept tight; everything else is separated by a blank line.
@@ -188,7 +192,7 @@ function exportLike(model) {
 }
 
 // Problems an editor could cause in a Doc, for the sync to report.
-function check(model, mediaNames) {
+function check(model, mediaNames, videoNames) {
   const issues = [];
   let faq = false;
   for (const p of model) {
@@ -199,6 +203,7 @@ function check(model, mediaNames) {
     if (m[1] === "button" && !/^[^|]+\|\s*(\/|https?:\/\/|mailto:)\S*$/.test(arg)) issues.push(`button needs "Label | link": [button: ${arg}]`);
     if (m[1] === "image" && mediaNames && !mediaNames.includes(arg)) issues.push(`image not in the Media folder: ${arg}`);
     if (m[1] === "embed" && !/^https:\/\//.test(arg)) issues.push(`embed needs a full https:// link: ${arg}`);
+    if (m[1] === "background video" && videoNames && !videoNames.includes(videoName(arg))) issues.push(`video not in the Media folder: ${arg}`);
   }
   if (faq) issues.push("[faq] without [end faq]");
   return issues;

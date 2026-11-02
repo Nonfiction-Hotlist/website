@@ -14,6 +14,7 @@ const fs = require("fs");
 const path = require("path");
 const { marked } = require("marked");
 const blocks = require("./lib/blocks");
+const { videoName } = require("./lib/video");
 
 const ROOT = path.resolve(__dirname, "..");
 const C = path.join(ROOT, "content");
@@ -43,7 +44,20 @@ const md = s => marked.parse(s).replace(/<a href="([^"]*)"([^>]*)>([\s\S]*?)<\/a
 function render(text) {
   return blocks(text).map(b => {
     if (b.kind === "md") return md(b.text);
-    if (b.kind === "section") return `<section${b.arg ? ` id="${esc(b.arg)}"` : ""}>\n${render(b.text)}\n</section>`;
+    if (b.kind === "section") {
+      // A section with a background video: the video fills the band and the section's content sits in a frame over it.
+      const bg = blocks(b.text).find(x => x.kind === "background-video");
+      if (!bg) return `<section${b.arg ? ` id="${esc(b.arg)}"` : ""}>\n${render(b.text)}\n</section>`;
+      const v = "/video/" + videoName(bg.arg);
+      return `<section${b.arg ? ` id="${esc(b.arg)}"` : ""} class="has-video" style="background-image:url('${v}.jpg')">
+  <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="${v}.jpg" aria-hidden="true">
+    <source src="${v}-720.mp4" type="video/mp4" media="(max-width: 900px)">
+    <source src="${v}-1080.mp4" type="video/mp4">
+  </video>
+  <div class="frame">\n${render(b.text)}\n</div>
+</section>`;
+    }
+    if (b.kind === "background-video") return "";
     if (b.kind === "faq") {
       const qs = b.text.split(/^### /m).filter(s => s.trim()).map(s => { const [q, ...a] = s.split("\n"); return { q: q.trim(), a: a.join("\n") }; });
       return `<div class="faq">${qs.map(x => `<details><summary>${esc(x.q)}</summary>${md(x.a)}</details>`).join("\n")}</div>`;
@@ -119,7 +133,7 @@ for (const [from, to] of Object.entries(redirects)) {
   write(from, `<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="${esc(to)}"><meta http-equiv="refresh" content="0; url=${esc(to)}"><p>This page moved to <a href="${esc(to)}">${esc(to)}</a>.</p>`);
 }
 
-for (const d of ["media", "files"]) fs.cpSync(path.join(C, d), path.join(OUT, d), { recursive: true });
+for (const d of ["media", "files", "video"]) if (fs.existsSync(path.join(C, d))) fs.cpSync(path.join(C, d), path.join(OUT, d), { recursive: true, filter: f => !path.basename(f).startsWith(".") });
 fs.writeFileSync(path.join(OUT, "404.html"), page({ title: "Page not found", path: "/404" }, `<h1>Page not found</h1><p><a href="/">Go to the home page</a></p>`));
 const urls = [...pages, ...news].map(p => p.meta.path);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${site.origin}${encodeURI(u)}</loc></url>`).join("\n")}\n</urlset>\n`);

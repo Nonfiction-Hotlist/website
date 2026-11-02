@@ -60,6 +60,19 @@ In the Docs, the `:::` blocks below appear as grey bracket lines (`[section abou
 
 https://new.nonfictionhotlist.com/dashboard/ (unlisted, search engines told to skip it): a card for every page and news post with a preview (a screenshot taken at publish time by `scripts/build-previews.js`) and a one-click link to its Google Doc, the Site sheet's tabs and the kit's folders, when each page last changed, edits the sync skipped, and recent changes. Built by `scripts/build-dashboard.js` on every publish; the links come from `content/drive.json`, which the sync keeps up to date.
 
+## Video
+
+Background videos (silent, looping, up to 60 seconds, like the home page's) are handled like images, with one extra step: the site serves its own lighter versions, never the original.
+
+1. **Upload the original** to the kit's Media folder in Drive, at full quality (an H.264 or ProRes export is fine). Keep the name simple; the site names it in lower case with dashes (`Nonfiction Hotlist.mp4` becomes `nonfiction-hotlist`).
+2. **Place it** in a page Doc, right under a `[section]` line: `[background video: Nonfiction Hotlist.mp4]`. The section's content (the logo, on the home page) sits in a thin frame over the video.
+3. **The sync does the rest.** It downloads the original once, and `scripts/lib/video.js` makes `content/video/<name>-1080.mp4` (desktop), `<name>-720.mp4` (phones) and `<name>.jpg` (the first frame): H.264 so it plays everywhere, no sound, a keyframe every 2 seconds, and "faststart" so it starts before it has fully loaded. Only those are committed. GitHub installs ffmpeg only on runs where a video changed.
+4. **To replace a video**, upload the new file to Media with the same name. The sync notices the change and makes new versions.
+
+The page plays the video muted and on a loop, the phone or desktop version as fits the screen, and only while it's on screen. Visitors whose device asks for less motion see the still instead.
+
+Limits: 60 seconds and 20 MB per web version. Longer videos and anything with sound (trailers, films, talks) go on Vimeo or YouTube and are placed with `[embed: link]`; they stream at the right quality for each viewer there, and the repo and site stay light. To make web versions by hand: `node scripts/lib/video.js original.mp4 name`.
+
 ## How pages are written
 
 Markdown, with a few additions for things Squarespace had:

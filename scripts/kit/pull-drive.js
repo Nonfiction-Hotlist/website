@@ -9,6 +9,8 @@ const fs = require("fs");
 const path = require("path");
 const { fromExport, toMarkdown, check, MARKER } = require("./convert");
 const { C, parse, format, read, pageFile, newsFile, rowsToSite } = require("./site-files");
+const { encode, videoName, hasFfmpeg } = require("../lib/video");
+const os = require("os");
 
 const args = process.argv.slice(2);
 const fromDir = args.includes("--from-dir") ? args[args.indexOf("--from-dir") + 1] : null;
@@ -41,6 +43,8 @@ async function get(url, file, binary) {
 const sheetCsv = (id, gid) => get(`https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${gid}`, `${id}__${gid}.csv`);
 const docMd = id => get(`https://docs.google.com/document/d/${id}/export?format=md`, `${id}.md`);
 const fileBytes = id => get(`https://drive.google.com/uc?export=download&id=${id}`, `media__${id}`, true);
+// Videos can be large; this address serves big files without Google's "can't scan for viruses" page.
+const bigFileBytes = id => get(`https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`, `media__${id}`, true);
 
 function parseCsv(text) {
   const rows = []; let row = [], cell = "", q = false;
@@ -76,8 +80,14 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const S = manifest.find(m => m.kind === "site");
   if (!S) throw new Error("the manifest lists no Site sheet");
   const tab = async name => body(parseCsv(await sheetCsv(S.fileId, S.tabs[name])), { Pages: "Title", News: "Title", Menu: "Label", Footer: "Column", Settings: "Setting" }[name]);
-  const mediaRows = manifest.filter(m => m.kind === "media");
+  const isVideo = m => /^video\//.test(m.tabs.mime || "");
+  const mediaRows = manifest.filter(m => m.kind === "media" && !isVideo(m));
+  const videoRows = manifest.filter(m => m.kind === "media" && isVideo(m));
   const mediaNames = mediaRows.map(m => m.key);
+  const VIDEO_DIR = path.join(C, "video");
+  const videoNames = [...new Set([...videoRows.map(m => videoName(m.key)),
+    ...(fs.existsSync(VIDEO_DIR) ? fs.readdirSync(VIDEO_DIR).filter(f => f.endsWith("-1080.mp4")).map(f => f.replace(/-1080\.mp4$/, "")) : [])])];
+  let videosPending = false;
   const toSite = siteName;
 
   const changed = [], writes = [], removes = [];
@@ -86,7 +96,7 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const ids = { pages: {}, news: {} };
   const fromDoc = async (where, id) => {
     const model = fromExport(await docMd(id)).map(p => ({ ...p, runs: p.runs.map(r => r.href && r.href.startsWith(site.origin + "/") ? { ...r, href: r.href.slice(site.origin.length) } : r) }));
-    const issues = check(model, mediaNames);
+    const issues = check(model, mediaNames, videoNames);
     if (issues.length) { issues.forEach(i => warn(where, i + "; kept the previous text")); return null; }
     // Images are named on the site the way they're saved there.
     return toMarkdown(model.map(p => {
@@ -157,6 +167,24 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     try { writes.push([path.join(C, "media", name), await fileBytes(m.fileId)]); changed.push(`image ${name}`); }
     catch (e) { warn(`Image "${m.key}"`, e.message); delete nextIndex[name]; }
   }
+  // Videos: a new or replaced original is downloaded and turned into the web versions (scripts/lib/video.js).
+  for (const m of videoRows) {
+    const name = videoName(m.key), key = "video:" + name, had = index[key];
+    nextIndex[key] = { id: m.fileId, updated: m.updated };
+    const onDisk = fs.existsSync(path.join(VIDEO_DIR, `${name}-1080.mp4`));
+    if (onDisk && (!had || (had.id === m.fileId && had.updated === m.updated))) continue;
+    if (fromDir || dryRun) { changed.push(`video ${name}`); continue; }
+    // Without ffmpeg here, the workflow installs it and runs the sync again.
+    if (!hasFfmpeg()) { videosPending = true; if (had) nextIndex[key] = had; else delete nextIndex[key]; continue; }
+    const tmp = path.join(os.tmpdir(), `nfh-video-${m.fileId}`);
+    try {
+      fs.writeFileSync(tmp, await bigFileBytes(m.fileId));
+      const r = encode(tmp, name);
+      if (r.problems.length) { r.problems.forEach(p => warn(`Video "${m.key}"`, p + "; kept the previous version")); if (had) nextIndex[key] = had; else delete nextIndex[key]; }
+      else changed.push(`video ${name}`);
+    } catch (e) { warn(`Video "${m.key}"`, e.message); if (had) nextIndex[key] = had; else delete nextIndex[key]; }
+    finally { fs.rmSync(tmp, { force: true }); }
+  }
   if (!fromDir && JSON.stringify(nextIndex) !== JSON.stringify(index)) writes.push([MEDIA_INDEX, JSON.stringify(nextIndex, null, 1) + "\n"]);
 
   if (!fromDir) {
@@ -185,5 +213,5 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const before = fs.existsSync(PROBLEMS) ? fs.readFileSync(PROBLEMS, "utf8") : "";
   if (listed !== before) fs.writeFileSync(PROBLEMS, listed);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT,
-    `changed=${changed.length ? "true" : "false"}\nproblems_changed=${listed !== before ? "true" : "false"}\nproblems=${problems.length}\nsummary=${(changed.join("; ") || (listed !== before ? "skipped edits list" : "Drive links")).slice(0, 300)}\n`);
+    `videos_pending=${videosPending}\nchanged=${changed.length ? "true" : "false"}\nproblems_changed=${listed !== before ? "true" : "false"}\nproblems=${problems.length}\nsummary=${(changed.join("; ") || (listed !== before ? "skipped edits list" : "Drive links")).slice(0, 300)}\n`);
 })().catch(e => { console.error(`Could not read the Drive kit: ${e.message}`); process.exit(1); });

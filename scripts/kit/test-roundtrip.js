@@ -45,7 +45,8 @@ for (const f of files) {
   }
   if (JSON.stringify(A.links) !== JSON.stringify(B.links)) fail(`links differ: ${A.links.filter(l => !B.links.includes(l)).concat(B.links.filter(l => !A.links.includes(l))).join(", ")}`);
   if (JSON.stringify(A.images) !== JSON.stringify(B.images)) fail("images differ");
-  const issues = check(toModel(original), media);
+  const videos = fs.existsSync(path.join(C, "video")) ? fs.readdirSync(path.join(C, "video")).filter(f => f.endsWith("-1080.mp4")).map(f => f.replace(/-1080\.mp4$/, "")) : [];
+  const issues = check(toModel(original), media, videos);
   if (issues.length) fail(issues.join("; "));
 }
 // Real exports saved from the kit's Docs (drive-kit/test/google-exports/<dir>__<file>.md) must read
