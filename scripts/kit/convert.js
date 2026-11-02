@@ -112,7 +112,8 @@ function fromExport(md) {
     const line = raw.replace(/\s+$/, "").replace(/\\$/, "");
     if (!line.trim()) continue;
     const code = line.trim().match(/^`+\s*([\s\S]*?)\s*`+$/);
-    const u = (code ? code[1] : line.trim()).replace(/\\([\\`*_{}\[\]()#+\-.!>|~])/g, "$1");
+    // Google escapes more punctuation than Markdown needs (https\://); any escaped punctuation is literal.
+    const u = (code ? code[1] : line.trim()).replace(/\\([!-\/:-@\[-`{-~])/g, "$1");
     if (MARKER.test(u)) { out.push(M(u)); continue; }
     out.push(...mdToModel(line.replace(/^(\s*)\* /, "$1- ")));
   }
