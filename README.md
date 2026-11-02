@@ -56,6 +56,10 @@ In the Docs, the `:::` blocks below appear as grey bracket lines (`[section abou
 - `refreshKit` runs in the kit every 10 minutes: a new row in the Pages or News tab gets its own Doc, and the Media folder's images are listed for the sync.
 - `npm run test:kit` checks the conversion both ways on every page, then runs the setup script against a stand-in for Google and reads the result back. `npm run test:kit:clean` must report no changes.
 
+## Team dashboard
+
+https://new.nonfictionhotlist.com/dashboard/ (unlisted, search engines told to skip it): every page and news post with a one-click link to its Google Doc, the Site sheet's tabs and the kit's folders, when each page last changed, edits the sync skipped, and recent changes. Built by `scripts/build-dashboard.js` on every publish; the links come from `content/drive.json`, which the sync keeps up to date.
+
 ## How pages are written
 
 Markdown, with a few additions for things Squarespace had:

@@ -72,7 +72,7 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const drive = fromDir ? { manifestId: "manifest" } : JSON.parse(fs.readFileSync(DRIVE, "utf8"));
   const site = JSON.parse(fs.readFileSync(path.join(C, "site.json"), "utf8"));
   const manifest = parseCsv(await sheetCsv(drive.manifestId, 0)).slice(1).filter(r => clean(r[0]))
-    .map(r => ({ kind: clean(r[0]), key: clean(r[1]), fileId: clean(r[3]), tabs: JSON.parse(clean(r[4]) || "{}"), updated: clean(r[6]) }));
+    .map(r => ({ kind: clean(r[0]), key: clean(r[1]), fileId: clean(r[3]), tabs: JSON.parse(clean(r[4]) || "{}"), folder: clean(r[5]), updated: clean(r[6]) }));
   const S = manifest.find(m => m.kind === "site");
   if (!S) throw new Error("the manifest lists no Site sheet");
   const tab = async name => body(parseCsv(await sheetCsv(S.fileId, S.tabs[name])), { Pages: "Title", News: "Title", Menu: "Label", Footer: "Column", Settings: "Setting" }[name]);
@@ -81,6 +81,9 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const toSite = siteName;
 
   const changed = [], writes = [], removes = [];
+  // Where everything lives in Drive, kept in drive.json for the team dashboard's links.
+  const folderOf = key => (manifest.find(m => m.kind === "folder" && m.key === key) || {}).folder || "";
+  const ids = { pages: {}, news: {} };
   const fromDoc = async (where, id) => {
     const model = fromExport(await docMd(id)).map(p => ({ ...p, runs: p.runs.map(r => r.href && r.href.startsWith(site.origin + "/") ? { ...r, href: r.href.slice(site.origin.length) } : r) }));
     const issues = check(model, mediaNames);
@@ -103,6 +106,7 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     if (!id) continue;                                  // the kit makes its Doc within 10 minutes
     const file = pageFile(address);
     seenPages.add(file);
+    ids.pages[file] = id;
     const prev = oldPages[file];
     const text = await fromDoc(`Page "${title}"`, id);
     const next = format({ title, path: address, description, source: prev && prev.meta.source }, text ?? (prev ? prev.body : ""));
@@ -123,6 +127,7 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     if (!id) continue;
     const file = newsFile(date, address);
     seenNews.add(file);
+    ids.news[file] = id;
     const prev = oldNews.find(n => n.meta.path === address);
     if (prev && prev.file !== file) removes.push(path.join(C, "news", prev.file + ".md"));   // date changed
     const text = await fromDoc(`News "${title}"`, id);
@@ -153,6 +158,14 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   }
   if (JSON.stringify(nextIndex) !== JSON.stringify(index)) writes.push([MEDIA_INDEX, JSON.stringify(nextIndex, null, 1) + "\n"]);
 
+  if (!fromDir) {
+    const nextDrive = { _about: drive._about, manifestId: drive.manifestId, site: { sheet: S.fileId, tabs: S.tabs },
+      folders: { root: folderOf("root"), pages: folderOf("pages"), news: folderOf("news"), media: folderOf("media") },
+      guide: (manifest.find(m => m.kind === "guide") || {}).fileId || "", pages: ids.pages, news: ids.news };
+    const a = JSON.stringify(nextDrive, null, 2) + "\n";
+    if (a !== fs.readFileSync(DRIVE, "utf8")) writes.push([DRIVE, a]);
+  }
+
   console.log(changed.length ? `Changed: ${changed.join("; ")}` : "No changes in Drive.");
   if (problems.length) console.log(`\nProblems (${problems.length}):\n- ` + problems.join("\n- "));
   // Tests: a kit freshly built from the repo must read back with nothing changed and no problems.
@@ -171,5 +184,5 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   const before = fs.existsSync(PROBLEMS) ? fs.readFileSync(PROBLEMS, "utf8") : "";
   if (listed !== before) fs.writeFileSync(PROBLEMS, listed);
   if (process.env.GITHUB_OUTPUT) fs.appendFileSync(process.env.GITHUB_OUTPUT,
-    `changed=${changed.length ? "true" : "false"}\nproblems_changed=${listed !== before ? "true" : "false"}\nproblems=${problems.length}\nsummary=${(changed.join("; ") || (listed !== before ? "skipped edits list" : "image list")).slice(0, 300)}\n`);
+    `changed=${changed.length ? "true" : "false"}\nproblems_changed=${listed !== before ? "true" : "false"}\nproblems=${problems.length}\nsummary=${(changed.join("; ") || (listed !== before ? "skipped edits list" : "Drive links")).slice(0, 300)}\n`);
 })().catch(e => { console.error(`Could not read the Drive kit: ${e.message}`); process.exit(1); });

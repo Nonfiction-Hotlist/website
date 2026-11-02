@@ -35,6 +35,8 @@ jobs:
       problems_changed: ${{ steps.pull.outputs.problems_changed }}
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0          # the dashboard's "Changed" and "Recent changes" read the history
       - uses: actions/setup-node@v5
         with:
           node-version: 22

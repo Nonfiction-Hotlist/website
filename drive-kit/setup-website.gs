@@ -3827,7 +3827,7 @@ const KIT = {
       },
       {
        "t": "23 yet to be realised",
-       "href": "https://www.canva.com/design/DAGgT2RxqGc/vzqLi5ndnJY7rEN-POtTyg/view?utm_content=DAGgT2RxqGc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h3e1fe80a01"
+       "href": "https://list.nonfictionhotlist.com/2025/"
       },
       {
        "t": " documentaries, series, and podcast projects selected to represent some of the outstanding projects deserving to be championed in today's nonfiction landscape…."

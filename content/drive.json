@@ -1,4 +1,42 @@
 {
   "_about": "The Drive kit (NFH Website). The Publish workflow reads its manifest.",
-  "manifestId": "1Ob7tXbw4f4U5JmfPGdxrKKLj1FYZgXin7NlRGbTbwj4"
+  "manifestId": "1Ob7tXbw4f4U5JmfPGdxrKKLj1FYZgXin7NlRGbTbwj4",
+  "site": {
+    "sheet": "15U8293IiVq2Ugrbgbqzf4HSbGlTNosJysCHOrf6Oq6s",
+    "tabs": {
+      "Pages": 0,
+      "News": 200703182,
+      "Menu": 18669514,
+      "Footer": 1886037096,
+      "Settings": 2019941035
+    }
+  },
+  "folders": {
+    "root": "1rjORCQgEg4kOvjuvSYmYGETgYvlVhaIs",
+    "pages": "1jABrEof8Kbd1awg0uvyqDcc9PWHeA96m",
+    "news": "1M7K0v7o67fiwbOcWcMJ-ZPSU2rV4TJ8Q",
+    "media": "1C3rO8ssyFANzWyl6Yo54doLHPcbGF9Xq"
+  },
+  "guide": "16T02iUMPZLI4axUadI5iu06-FCTbjtIGw-WP54F91yA",
+  "pages": {
+    "contributors": "1UdePUpEVN4uet6566nqAzAKserD7vrVwoG3JX4uYq2w",
+    "index": "1Liq55enI5vcPhMFIn2u9mM9dlXnYWH0PJpEOIZsazhk",
+    "news": "1s5BK18tcQU9S-2Q2HvHGLHZeNVxaDZ4y3w9aXfM_Cm4",
+    "privacy-policy": "1bMtdQHdqRrU6UdyWXpBfoXXa-hd7Sgv_RvbUhLTrf1g",
+    "submission-agreement": "1tIlqKYkIPh8O-xveZaAC0DXXwQxZ_w9EZuLTIbmd2jw",
+    "submit2026": "1Wscm8GAX8EX8BLserRwHGXYSMuL-2HtmEUSJC5ydRIQ",
+    "terms-of-use": "1968BW4hGZzNfjgmySCkwWLr8oLa9KfVIJetGxHE1iKI",
+    "the-2026-hotlist": "13_0UBhdGai7qw0qRgfHNnHYcFvs3s1gL9h90nS8F3zE",
+    "yahoo": "1N0cd19J3P9eXH1-2RJm6dPBQy-hIiT-zI35FC0BT04g",
+    "yahooxnfh-reviewer": "1TRW-US-Xb5GP9IUDfaHEN4g0g8pFnJQzIhy4bvM4hFo",
+    "yahooxnfh-submit": "1LDOGqDEq0QO_kKB2zameavsba0r4J3ipTz71RNhNk2M",
+    "yahooxnfh1": "1x1Xub-pRhMes0V1i_Dx1UhOikooxTEygdbfCj_ahUFE"
+  },
+  "news": {
+    "2025-03-10-realscreen": "1W-KrFLe1WyoNcdLowTy0v9qJLqIqbq3Ypb9tPoCRXrA",
+    "2025-04-01-pure-nonfiction": "1YLXqblkWOozESbAwD06Qo8CsHm-6FV_hFBkJT5GE4yk",
+    "2026-01-13-deadline": "14yifDrDh9k7FAULfuS2d7eHk3xtjEqMkJop5kx3uMYE",
+    "2026-05-28-indiewire": "1vf4WUDiix7P-nit8FPKBm0Vy12jUCSJhXDPpcur81s4",
+    "2026-05-28-yahoo-inc": "1hbrWm4gwzfY0dvaoibZiHLcUlLrnKzzOqE-uzMYa1iA"
+  }
 }

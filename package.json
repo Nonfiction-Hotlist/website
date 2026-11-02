@@ -3,7 +3,7 @@
   "private": true,
   "description": "nonfictionhotlist.com, rebuilt from the Squarespace site",
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js && node scripts/build-dashboard.js",
     "check": "node scripts/check.js",
     "release": "npm run build && npm run check",
     "serve": "npm run build && python3 -m http.server 8090 --directory site",
