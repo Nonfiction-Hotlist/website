@@ -165,7 +165,7 @@ for old, (slug, path) in PAGES.items():
         if not body.strip(): continue
         sid = section_id(body)
         parts.append(f"::: section{(' ' + sid) if sid else ''}\n{body}\n:::")
-    title = {"index": "nonfiction hotlist.", "yahooxnfh1": "Yahoo x NFH 1.0"}.get(slug, title_of(p))
+    title = {"index": "Home Page", "yahooxnfh1": "Yahoo x NFH 1.0"}.get(slug, title_of(p))
     meta = {"title": title, "path": path, "description": re.sub(r"\s+", " ", p["description"]).strip()[:300], "source": p["url"]}
     open(os.path.join(C, "pages", slug + ".md"), "w").write(front(meta) + "\n" + "\n\n".join(parts) + "\n")
 
