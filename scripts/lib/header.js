@@ -19,11 +19,12 @@ function headerHTML(site) {
 <style>
 .nfh-bar { --nb-deep: #22382c; --nb-sage: #9aab8c; --nb-soft: #c6d0bb; --nb-cream: #ebe6d7; --nb-ink: #1d2b23; --nb-line: rgba(255,255,255,.18);
   background: var(--nb-deep); color: #fff; border-bottom: 1px solid var(--nb-line); position: relative; z-index: 20;
+  padding: 0 max(20px, env(safe-area-inset-left, 0px));
   font-family: "League Spartan", "Futura", "Avenir Next", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.2; }
 .nfh-bar * { box-sizing: border-box; }
 .nfh-bar a { color: inherit; text-decoration: none; }
 .nfh-bar a:hover, .nfh-bar .sub-toggle:hover { color: var(--nb-soft); }
-.nfh-bar .nb-in { max-width: 1180px; margin: 0 auto; padding: 14px max(16px, env(safe-area-inset-left, 0px)); display: flex; align-items: center; gap: 12px 28px; }
+.nfh-bar .nb-in { max-width: 1180px; margin: 0 auto; padding: 14px 0; display: flex; align-items: center; gap: 12px 28px; }
 .nfh-bar .nb-mark { font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; margin-right: auto; white-space: nowrap; }
 .nfh-bar nav { display: flex; align-items: center; gap: 22px; }
 .nfh-bar ul { list-style: none; margin: 0; padding: 0; }
