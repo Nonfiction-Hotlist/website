@@ -58,7 +58,7 @@ In the Docs, the `:::` blocks below appear as grey bracket lines (`[section abou
 
 ## Team dashboard
 
-https://new.nonfictionhotlist.com/dashboard/ (unlisted, search engines told to skip it): every page and news post with a one-click link to its Google Doc, the Site sheet's tabs and the kit's folders, when each page last changed, edits the sync skipped, and recent changes. Built by `scripts/build-dashboard.js` on every publish; the links come from `content/drive.json`, which the sync keeps up to date.
+https://new.nonfictionhotlist.com/dashboard/ (unlisted, search engines told to skip it): a card for every page and news post with a preview (a screenshot taken at publish time by `scripts/build-previews.js`) and a one-click link to its Google Doc, the Site sheet's tabs and the kit's folders, when each page last changed, edits the sync skipped, and recent changes. Built by `scripts/build-dashboard.js` on every publish; the links come from `content/drive.json`, which the sync keeps up to date.
 
 ## How pages are written
 

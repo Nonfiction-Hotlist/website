@@ -41,15 +41,20 @@ const quick = [
   ["News folder", folder((drive.folders || {}).news)], ["Media folder", folder((drive.folders || {}).media)], ["Editors' guide", doc(drive.guide)]
 ].filter(([, u]) => u);
 
-const row = (p, extra) => {
-  const issues = pageProblems(p.meta.title);
-  return `<tr${issues.length ? ' class="warn"' : ""}>
-    <td><b>${esc(p.meta.title)}</b>${issues.map(i => `<div class="issue">${esc(i.replace(/^[^:]+:\s*/, ""))}</div>`).join("")}</td>
-    <td><a href="${esc(PREVIEW + p.meta.path)}" target="_blank" rel="noopener"><code>${esc(p.meta.path)}</code></a></td>
-    ${extra}
-    <td class="when">${ago(p.changed)}</td>
-    <td class="act">${link(doc(p.docId), "Edit", "pill")}</td>
-  </tr>`;
+// One card per page or post: its preview (opens the live page), title, address, when it changed, and Edit.
+const preview = (dir, file) => fs.existsSync(path.join(ROOT, "site", "dashboard", "previews", `${dir}-${file}.jpg`)) ? `previews/${dir}-${file}.jpg` : "";
+const card = (dir, p, extra) => {
+  const issues = pageProblems(p.meta.title), img = preview(dir, p.file), live = PREVIEW + p.meta.path;
+  return `<li class="card${issues.length ? " warn" : ""}">
+    <a class="shot" href="${esc(live)}" target="_blank" rel="noopener" aria-label="Open ${esc(p.meta.title)}">${img ? `<img src="${img}" alt="" loading="lazy">` : `<span>${esc(p.meta.title)}</span>`}</a>
+    <div class="body">
+      <h3>${esc(p.meta.title)}</h3>
+      <a class="addr" href="${esc(live)}" target="_blank" rel="noopener"><code>${esc(p.meta.path)}</code></a>
+      <div class="meta">${extra}<span>Changed ${ago(p.changed)}</span></div>
+      ${issues.map(i => `<div class="issue">${esc(i.replace(/^[^:]+:\s*/, ""))}</div>`).join("")}
+      <div class="acts">${link(doc(p.docId), "Edit", "pill solid")}<a class="pill" href="${esc(live)}" target="_blank" rel="noopener">View</a></div>
+    </div>
+  </li>`;
 };
 
 const html = `<!doctype html>
@@ -109,6 +114,22 @@ const html = `<!doctype html>
   .act { text-align: right; }
   .none { color: var(--muted); }
   .issue { color: var(--warn); font-size: 12.5px; margin-top: 3px; }
+  .cards { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+  .card.warn { border-color: #ecd7ae; background: var(--warn-bg); }
+  .shot { display: block; aspect-ratio: 16 / 10; background: var(--forest); overflow: hidden; border-bottom: 1px solid var(--line); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; transition: transform .25s; }
+  .shot:hover img { transform: scale(1.03); }
+  .shot span { display: grid; place-items: center; height: 100%; color: var(--cream); font: 700 18px var(--display); padding: 12px; text-align: center; }
+  .card .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+  .card h3 { font: 700 16px/1.2 var(--display); margin: 0; }
+  .addr { text-decoration: none; color: var(--muted); }
+  .addr:hover { text-decoration: underline; }
+  .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--muted); font-size: 12.5px; }
+  .flag { color: var(--warn); }
+  .acts { display: flex; gap: 8px; margin-top: auto; padding-top: 10px; }
+  .pill.solid { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+  .pill.solid:hover { background: var(--deep); }
   .changes { list-style: none; padding: 0; margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
   .changes li { display: flex; gap: 14px; padding: 9px 14px; border-bottom: 1px solid var(--line); }
   .changes li:last-child { border-bottom: 0; }
@@ -116,8 +137,6 @@ const html = `<!doctype html>
   footer { color: var(--muted); font-size: 12px; padding: 28px 0 40px; }
   @media (max-width: 860px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   @media (max-width: 640px) {
-    table { min-width: 0; }
-    th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4) { display: none; }
     code { word-break: break-all; }
     .tile .v.small { font-size: 15px; word-break: break-word; }
   }
@@ -147,16 +166,10 @@ const html = `<!doctype html>
   ${problems.length ? `<h2>Edits skipped <small>the site kept the previous text; fix these in Drive</small></h2><ul class="changes">${problems.map(p => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}
 
   <h2>Pages <small>add a page with a new row in the Pages tab</small></h2>
-  <div class="table"><table>
-    <thead><tr><th>Page</th><th>Address</th><th>Description</th><th>Changed</th><th></th></tr></thead>
-    <tbody>${pages.map(p => row(p, `<td>${p.meta.description ? "✓" : '<span class="none">none</span>'}</td>`)).join("")}</tbody>
-  </table></div>
+  <ul class="cards">${pages.map(p => card("pages", p, p.meta.description ? "" : '<span class="flag">No description</span>')).join("")}</ul>
 
   <h2>News <small>newest first; add a post with a new row in the News tab</small></h2>
-  <div class="table"><table>
-    <thead><tr><th>Post</th><th>Address</th><th>Date</th><th>Changed</th><th></th></tr></thead>
-    <tbody>${news.map(n => row(n, `<td class="when">${esc(n.meta.date)}</td>`)).join("")}</tbody>
-  </table></div>
+  <ul class="cards">${news.map(n => card("news", n, `<span>${esc(n.meta.date)}</span>`)).join("")}</ul>
 
   <h2>Recent changes</h2>
   <ul class="changes">${log.map(l => `<li><time>${ago(l.d)}</time><span>${esc(l.s)}</span></li>`).join("") || "<li>None yet.</li>"}</ul>

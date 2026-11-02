@@ -24,6 +24,13 @@ for (const f of pages) {
     if (!exists(m[1])) problems.push(`${path.relative(SITE, f)}: broken link ${m[1]}`);
 }
 
+// Redirect pages must lead somewhere else.
+for (const f of pages) {
+  const m = fs.readFileSync(f, "utf8").match(/http-equiv="refresh" content="0; url=([^"]+)"/);
+  const here = "/" + path.relative(SITE, f).replace(/index\.html$/, "");
+  if (m && m[1].replace(/\/$/, "") === here.replace(/\/$/, "")) problems.push(`${here}: redirects to itself`);
+}
+
 // 2. Every old address still works
 const capture = JSON.parse(fs.readFileSync(path.resolve(__dirname, "..", "capture", "capture.json"), "utf8"));
 for (const p of capture.pages) {

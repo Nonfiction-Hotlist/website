@@ -112,7 +112,10 @@ for (const n of news) write(n.meta.path, page(n.meta, `<article><p><a href="/new
 
 // Old Squarespace addresses forward to their new pages.
 const redirects = JSON.parse(read("redirects.json"));
+const pagePaths = new Set([...pages, ...news].map(p => p.meta.path.replace(/\/$/, "") || "/"));
 for (const [from, to] of Object.entries(redirects)) {
+  // A redirect from a page's own address (with or without the final /) would replace the page.
+  if (pagePaths.has(from.replace(/\/$/, "") || "/")) { console.warn(`redirect ${from} skipped: that address is a page`); continue; }
   write(from, `<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="${esc(to)}"><meta http-equiv="refresh" content="0; url=${esc(to)}"><p>This page moved to <a href="${esc(to)}">${esc(to)}</a>.</p>`);
 }
 
