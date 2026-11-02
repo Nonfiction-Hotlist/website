@@ -62,6 +62,7 @@ def links_in(md):
 
 media_seen = {}
 by_hash = {}
+sources = {}   # file -> where it was first downloaded from (the Drive kit copies images from there)
 def fetch(url, folder):
     if url in media_seen: return media_seen[url]
     name = urllib.parse.unquote(url.rstrip("/").split("/")[-1])
@@ -76,6 +77,7 @@ def fetch(url, folder):
     if digest in by_hash: name = by_hash[digest]        # the same image uploaded twice: one file
     else: open(os.path.join(C, folder, name), "wb").write(data); by_hash[digest] = name
     media_seen[url] = name
+    sources.setdefault(folder + "/" + name, url)
     return name
 fetch_media = lambda url: fetch(url, "media")
 fetch_file = lambda url: fetch(url, "files")
@@ -200,4 +202,5 @@ site = {
 json.dump(site, open(os.path.join(C, "site.json"), "w"), indent=2, ensure_ascii=False)
 for k, f in forms.items(): json.dump(f, open(os.path.join(C, "forms", f"{k}.json"), "w"), indent=2, ensure_ascii=False)
 json.dump(dict(sorted(REDIRECTS.items())), open(os.path.join(C, "redirects.json"), "w"), indent=2)
+json.dump(dict(sorted(sources.items())), open(os.path.join(REPO, "capture", "sources.json"), "w"), indent=2)
 print(f"{len(PAGES)} pages, {len(NEWS)} news posts, {len(forms)} forms, {len(os.listdir(os.path.join(C, 'media')))} images, {len(os.listdir(os.path.join(C, 'files')))} files, {len(REDIRECTS)} redirects")
