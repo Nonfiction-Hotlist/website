@@ -1,1 +1,0 @@
-Page "nonfiction hotlist.": button needs "Label | link": [button: Read here. | https\://list.nonfictionhotlist.com/2025/]; kept the previous text
