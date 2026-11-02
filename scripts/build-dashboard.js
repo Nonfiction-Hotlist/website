@@ -23,7 +23,7 @@ const ago = iso => {
 const doc = id => id ? `https://docs.google.com/document/d/${id}/edit` : "";
 const folder = id => id ? `https://drive.google.com/drive/folders/${id}` : "";
 const sheet = gid => drive.site ? `https://docs.google.com/spreadsheets/d/${drive.site.sheet}/edit#gid=${gid ?? 0}` : "";
-const PREVIEW = "https://new.nonfictionhotlist.com";       // until the switch-over; then site.origin
+const PREVIEW = require("./lib/address").PUBLIC;
 
 const pages = read("pages").map(p => ({ ...p, docId: (drive.pages || {})[p.file], changed: changedAt(`content/pages/${p.file}.md`) }))
   .sort((a, b) => a.meta.path.localeCompare(b.meta.path));

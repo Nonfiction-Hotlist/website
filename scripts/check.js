@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const http = require("http");
 const { chromium } = require("playwright");
+const { PUBLIC } = require("./lib/address");
 
 const SITE = path.resolve(__dirname, "..", "site");
 const problems = [];
@@ -22,6 +23,9 @@ for (const f of pages) {
   const html = fs.readFileSync(f, "utf8");
   for (const m of html.matchAll(/(?:href|src)="(\/[^"/][^"]*|\/)"/g))
     if (!exists(m[1])) problems.push(`${path.relative(SITE, f)}: broken link ${m[1]}`);
+  // The shared top bar uses full addresses on this site (so it also works on the list pages).
+  for (const m of html.matchAll(new RegExp(`href="${PUBLIC.replace(/\./g, "\\.")}(/[^"#]*)`, "g")))
+    if (!exists(m[1])) problems.push(`${path.relative(SITE, f)}: broken link ${PUBLIC}${m[1]}`);
 }
 
 // Redirect pages must lead somewhere else.

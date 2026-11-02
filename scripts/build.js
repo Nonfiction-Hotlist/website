@@ -15,6 +15,7 @@ const path = require("path");
 const { marked } = require("marked");
 const blocks = require("./lib/blocks");
 const { videoName } = require("./lib/video");
+const { headerHTML } = require("./lib/header");
 
 const ROOT = path.resolve(__dirname, "..");
 const C = path.join(ROOT, "content");
@@ -93,25 +94,16 @@ function formHTML(key) {
 }
 
 /* ---------- layout ---------- */
-// A menu heading with items under it opens on tap or click (<details>), so it works on phones without script.
-function navHTML(items) {
-  return `<ul>${items.map(i => i.children
-    ? `<li><details><summary>${esc(i.label)}</summary><ul>${i.children.map(c => `<li><a href="${esc(c.href)}">${esc(c.label)}</a></li>`).join("")}</ul></details></li>`
-    : `<li><a href="${esc(i.href)}">${esc(i.label)}</a></li>`).join("")}</ul>`;
-}
+const HEADER = headerHTML(site);
 const layout = fs.readFileSync(path.join(ROOT, "src", "layout.html"), "utf8");
 function page(meta, main) {
   const f = site.footer;
   const footer = f.columns.map(c => `<div><h2>${esc(c.heading)}</h2><ul>${c.links.map(l => `<li><a href="${esc(l.href)}">${esc(l.label)}</a></li>`).join("")}</ul></div>`).join("")
     + (f.newsletter ? `<div>${formHTML("newsletter")}</div>` : "");
-  return layout
-    .replace("{{title}}", esc(meta.path === "/" ? site.name : `${meta.title} · ${site.name}`))
-    .replace("{{description}}", esc(meta.description || ""))
-    .replace("{{canonical}}", esc(site.origin + meta.path))
-    .replace("{{site}}", esc(site.name))
-    .replace("{{nav}}", navHTML(site.nav) + (site.navButton ? `<a class="button" style="margin:0;padding:8px 18px" href="${esc(site.navButton.href)}">${esc(site.navButton.label)}</a>` : ""))
-    .replace("{{main}}", main)
-    .replace("{{footer}}", footer);
+  // Filled in with functions, so a "$" in page text is never read as a replacement pattern.
+  const fill = { title: esc(meta.path === "/" ? site.name : `${meta.title} · ${site.name}`), description: esc(meta.description || ""),
+    canonical: esc(site.origin + meta.path), header: HEADER, main, footer };
+  return layout.replace(/\{\{(\w+)\}\}/g, (m, k) => k in fill ? fill[k] : m);
 }
 function write(p, html) {
   const dir = path.join(OUT, decodeURI(p));
@@ -134,6 +126,9 @@ for (const [from, to] of Object.entries(redirects)) {
 }
 
 for (const d of ["media", "files", "video"]) if (fs.existsSync(path.join(C, d))) fs.cpSync(path.join(C, d), path.join(OUT, d), { recursive: true, filter: f => !path.basename(f).startsWith(".") });
+// The top bar, for the Hotlist list pages to copy in when they build.
+fs.mkdirSync(path.join(OUT, "shared"), { recursive: true });
+fs.writeFileSync(path.join(OUT, "shared", "header.html"), HEADER);
 fs.writeFileSync(path.join(OUT, "404.html"), page({ title: "Page not found", path: "/404" }, `<h1>Page not found</h1><p><a href="/">Go to the home page</a></p>`));
 const urls = [...pages, ...news].map(p => p.meta.path);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${site.origin}${encodeURI(u)}</loc></url>`).join("\n")}\n</urlset>\n`);
