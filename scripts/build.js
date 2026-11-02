@@ -79,9 +79,10 @@ function formHTML(key) {
 }
 
 /* ---------- layout ---------- */
+// A menu heading with items under it opens on tap or click (<details>), so it works on phones without script.
 function navHTML(items) {
   return `<ul>${items.map(i => i.children
-    ? `<li>${esc(i.label)}${navHTML(i.children)}</li>`
+    ? `<li><details><summary>${esc(i.label)}</summary><ul>${i.children.map(c => `<li><a href="${esc(c.href)}">${esc(c.label)}</a></li>`).join("")}</ul></details></li>`
     : `<li><a href="${esc(i.href)}">${esc(i.label)}</a></li>`).join("")}</ul>`;
 }
 const layout = fs.readFileSync(path.join(ROOT, "src", "layout.html"), "utf8");
@@ -94,7 +95,7 @@ function page(meta, main) {
     .replace("{{description}}", esc(meta.description || ""))
     .replace("{{canonical}}", esc(site.origin + meta.path))
     .replace("{{site}}", esc(site.name))
-    .replace("{{nav}}", navHTML(site.nav) + (site.navButton ? `<a class="button" href="${esc(site.navButton.href)}">${esc(site.navButton.label)}</a>` : ""))
+    .replace("{{nav}}", navHTML(site.nav) + (site.navButton ? `<a class="button" style="margin:0;padding:8px 18px" href="${esc(site.navButton.href)}">${esc(site.navButton.label)}</a>` : ""))
     .replace("{{main}}", main)
     .replace("{{footer}}", footer);
 }
