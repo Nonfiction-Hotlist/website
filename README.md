@@ -58,7 +58,7 @@ Markdown, with a few additions for things Squarespace had:
 | `/contributors/` | `/contributors` | The Hotlist > Contributors |
 | `/the-2026-hotlist/` | `/the-2026-hotlist` | The Hotlist > 2026 Hotlist |
 | `/submit2026/` | `/submit2026` | |
-| `/the-2025-hotlist/` | `/the-2025-hotlist` (and `-1`, a copy) | The Hotlist > 2025 Hotlist |
+| list.nonfictionhotlist.com/2025 | `/the-2025-hotlist` (and `-1`, a copy) forward there | The Hotlist > 2025 Hotlist |
 | `/yahoo/` | `/yahoo` | Yahoo x NFH |
 | `/yahooxnfh1/` | `/yahooxnfh-1` (the fuller of two copies of the 1.0 open call) | |
 | `/yahooxnfh/submit/`, `/yahooxnfh/reviewer/` | same | |
@@ -71,6 +71,6 @@ Markdown, with a few additions for things Squarespace had:
 - "Hear From Our Storytellers" on the home page is a heading with nothing under it.
 - The 2026 FAQ says the deadline is September 9th; the banner on the same page says it was extended to September 25th.
 - Contributor names linked through Canva redirect links; they now link straight to each person's page.
-- The 2025 Hotlist page embeds the Canva deck rather than list.nonfictionhotlist.com.
+- The 2025 Hotlist page embedded the Canva deck; the menu and home page now link to list.nonfictionhotlist.com/2025 instead.
 - The Deadline news post links to /yahooxnfh, which was a 404; it now redirects to /yahoo/.
 - Submissions and reviewer login are separate apps (nfh-submission-prod.vercel.app, nfh-custom-build.vercel.app), embedded in the pages.

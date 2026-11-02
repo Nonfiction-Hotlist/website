@@ -11,6 +11,9 @@ for d in ("pages", "news", "media", "files", "forms"):
     os.makedirs(os.path.join(C, d), exist_ok=True)
 ORIGIN = "https://nonfictionhotlist.com"
 
+# The 2025 Hotlist page embedded a Canva deck; the list itself now lives on the list site.
+LIST_2025 = "https://list.nonfictionhotlist.com/2025/"
+
 # Old address -> new path. Pages left out are duplicates; they redirect to the page they copy.
 PAGES = {
     "/": ("index", "/"),
@@ -18,7 +21,6 @@ PAGES = {
     "/contributors": ("contributors", "/contributors/"),
     "/the-2026-hotlist": ("the-2026-hotlist", "/the-2026-hotlist/"),
     "/submit2026": ("submit2026", "/submit2026/"),
-    "/the-2025-hotlist": ("the-2025-hotlist", "/the-2025-hotlist/"),
     "/yahoo": ("yahoo", "/yahoo/"),
     "/yahooxnfh-1": ("yahooxnfh1", "/yahooxnfh1/"),        # the fuller copy (adds the FAQ) of the 1.0 open call
     "/yahooxnfh/submit": ("yahooxnfh-submit", "/yahooxnfh/submit/"),
@@ -33,7 +35,7 @@ NEWS = {
     "/news/Blog Post Title One-3zaa9-zlxng-67tfc-xhhbr-27jam": "realscreen",
 }
 # /yahooxnfh is linked from the Deadline post but was a 404 on Squarespace; it now goes to the Yahoo page.
-REDIRECTS = {"/yahooxnfh": "/yahoo/", "/home": "/", "/the-2025-hotlist-1": "/the-2025-hotlist/", "/yahooxnfh1": "/yahooxnfh1/", "/yahooxnfh-1": "/yahooxnfh1/"}
+REDIRECTS = {"/yahooxnfh": "/yahoo/", "/home": "/", "/the-2025-hotlist": LIST_2025, "/the-2025-hotlist-1": LIST_2025, "/yahooxnfh1": "/yahooxnfh1/", "/yahooxnfh-1": "/yahooxnfh1/"}
 for old, slug in NEWS.items():
     if slug not in old: REDIRECTS[old] = f"/news/{slug}/"
 
@@ -163,7 +165,7 @@ for old, (slug, path) in PAGES.items():
         if not body.strip(): continue
         sid = section_id(body)
         parts.append(f"::: section{(' ' + sid) if sid else ''}\n{body}\n:::")
-    title = {"index": "nonfiction hotlist.", "the-2025-hotlist": "The 2025 Hotlist", "yahooxnfh1": "Yahoo x NFH 1.0"}.get(slug, title_of(p))
+    title = {"index": "nonfiction hotlist.", "yahooxnfh1": "Yahoo x NFH 1.0"}.get(slug, title_of(p))
     meta = {"title": title, "path": path, "description": re.sub(r"\s+", " ", p["description"]).strip()[:300], "source": p["url"]}
     open(os.path.join(C, "pages", slug + ".md"), "w").write(front(meta) + "\n" + "\n\n".join(parts) + "\n")
 

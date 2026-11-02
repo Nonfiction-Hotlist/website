@@ -57,7 +57,7 @@ Deadline to Submit **September 25th, 2026**
 
 The 2025 Nonfiction Hotlist is a curation of 23 nonfiction projects. **Check out the list.**
 
-[Read here.](/the-2025-hotlist/){.button}
+[Read here.](https://list.nonfictionhotlist.com/2025/){.button}
 :::
 
 ::: section subscribe
