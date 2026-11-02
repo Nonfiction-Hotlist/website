@@ -22,7 +22,6 @@ Deadline to Submit September 25th, 2026
 
 [Submit Here](/submit2026/){.button}
 :::
-
 ::: section
 ::: marquee
 - Shorts
@@ -32,7 +31,6 @@ Deadline to Submit September 25th, 2026
 - Reality
 :::
 :::
-
 ::: section where-great-nonfiction-finds-new-pathway
 ![](/media/nfh_events8.jpeg)
 
@@ -44,10 +42,8 @@ Deadline to Submit September 25th, 2026
 
 ![](/media/nfh_events9.jpeg)
 :::
-
 ::: section the-2026-hotlist
 # The 2026 Hotlist
-
 ::: faq
 ### What is the Nonfiction Hotlist?
 
@@ -74,7 +70,6 @@ Yes. Widely pitched, never pitched, fully financed, or still looking for support
 Yes. Projects evolve, and yours may be in a different stage than it was last time. Each cycle is reviewed by a new pool of reviewers alongside a different slate of projects, so every submission gets a fresh look.
 :::
 :::
-
 ::: section what-materials-should-i-submit
 ::: faq
 ### What materials should I submit?
@@ -102,7 +97,6 @@ Every submission is reviewed by multiple people and scored against a shared rubr
 They recuse themselves from scoring it. Every reviewer agrees to a conflict-of-interest and confidentiality policy before each cycle begins.
 :::
 :::
-
 ::: section how-big-is-the-list-and-how-does-it-brea
 ::: faq
 ### How big is the list, and how does it break down by format?
@@ -130,7 +124,6 @@ We'll reach out directly with next steps and a timeline for the list going publi
 No. The Hotlist isn't a grant or funding program. We never ask for money and never take any stake in your project, you keep 100% of your IP.
 :::
 :::
-
 ::: section what-does-inclusion-on-the-hotlist-lead-
 ::: faq
 ### What does inclusion on the Hotlist lead to?
@@ -158,7 +151,6 @@ The Nonfiction Hotlist is distributed as a published list to our industry newsle
 If you're interested in supporting the Nonfiction Hotlist, we'd love to hear from you. [Contact Us Here](mailto:info@nonfictionhotlist.com)
 :::
 :::
-
 ::: section submissions
 ## Submissions
 

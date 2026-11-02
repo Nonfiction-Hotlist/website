@@ -9,7 +9,6 @@ source: "https://nonfictionhotlist.com/contributors"
 
 ## meet the volunteers and reviewers for the nonfiction hotlist
 :::
-
 ::: section
 [Adam Neuhaus](https://www.linkedin.com/in/adam-neuhaus-91b9a44/)
 

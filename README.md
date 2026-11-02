@@ -36,6 +36,26 @@ Every push to `main` runs `.github/workflows/publish.yml`: build, the same check
 
 `scripts/build.js` turns `content/` into `site/` using `src/layout.html`. The layout's styles are placeholders for reading the structure; design comes later. Forms are shown but not connected yet. Old Squarespace addresses in `content/redirects.json` get forwarding pages.
 
+## Editing in Google Drive
+
+The site's text is edited in the "NFH Website" folder in Drive (inside Nonfiction Hotlist CD):
+
+```
+00 How this works            Guide for editors
+01 Pages/                    One Google Doc per page
+02 News/                     One Google Doc per news post
+Media/                       Images the pages use
+Site                         Google Sheet: Pages, News, Menu, Footer, Settings
+Site manifest (do not edit)  The map the website reads
+```
+
+In the Docs, the `:::` blocks below appear as grey bracket lines (`[section about]`, `[button: Submit Here | /submit2026/]`, `[image: photo.jpg]`, `[faq]` ... `[end faq]`). The guide explains them to editors.
+
+- `npm run kit` writes `drive-kit/setup-website.gs` from the current content. Paste it into a new project at script.google.com (as matthew@nonfictionhotlist.com) and run `buildKit`. Put the Site manifest ID it logs in `content/drive.json` as `{ "manifestId": "..." }`.
+- The Publish workflow runs `scripts/kit/pull-drive.js` every 15 minutes (and when the publish trigger in the list repo asks): it turns the Docs and Site sheet back into `content/`, fetches new or replaced images, commits and publishes. Edits that break a rule are skipped, listed in `content/sync-problems.txt`, and the run fails once so the owner gets an email.
+- `refreshKit` runs in the kit every 10 minutes: a new row in the Pages or News tab gets its own Doc, and the Media folder's images are listed for the sync.
+- `npm run test:kit` checks the conversion both ways on every page, then runs the setup script against a stand-in for Google and reads the result back. `npm run test:kit:clean` must report no changes.
+
 ## How pages are written
 
 Markdown, with a few additions for things Squarespace had:

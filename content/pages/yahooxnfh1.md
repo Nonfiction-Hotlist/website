@@ -11,7 +11,6 @@ Yahoo Media Group and The Nonfiction Hotlist are teaming up to create a new path
 
 The Nonfiction Hotlist, a leading documentary content curation and distribution platform known for identifying exceptional stories and connecting filmmakers with major distribution opportunities, will oversee the entire curatorial process.
 :::
-
 ::: section opportunity
 ## Opportunity
 
@@ -31,12 +30,10 @@ The Nonfiction Hotlist, a leading documentary content curation and distribution 
 
 Films will be selected based on **artistic merit, powerful storytelling,** and **cultural relevance.**
 :::
-
 ::: section eligibility
 ## Eligibility
 
 To be eligible for consideration, submitted films must meet the following requirements:
-
 ::: faq
 ### Format
 
@@ -59,18 +56,15 @@ English Spoken or English Subtitled.
 January 13, 2026 to March 6th, 2026
 :::
 :::
-
 ::: section submission
 ## Submission
 
 ### submissions closed
 :::
-
 ::: section frequently-asked-questions
 ### Frequently Asked Questions
 
 Still have questions? Take a look at the FAQ or reach out anytime. If you’re feeling ready, go ahead and apply.
-
 ::: faq
 ### Is this the Nonfiction Hotlist Version 2?
 

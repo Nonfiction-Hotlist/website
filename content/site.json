@@ -50,7 +50,6 @@
     "columns": [
       {
         "heading": "Some Stuff",
-        "note": "Placeholder heading on the Squarespace site.",
         "links": [
           {
             "label": "Terms of Use",
@@ -64,7 +63,16 @@
       },
       {
         "heading": "Follow Us",
-        "links": []
+        "links": [
+          {
+            "label": "Instagram",
+            "href": "https://www.instagram.com/nonfictionhotlist/?hl=en"
+          },
+          {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/company/nonfictionhotlist"
+          }
+        ]
       },
       {
         "heading": "Contact",

@@ -169,6 +169,14 @@ for old, (slug, path) in PAGES.items():
     meta = {"title": title, "path": path, "description": re.sub(r"\s+", " ", p["description"]).strip()[:300], "source": p["url"]}
     open(os.path.join(C, "pages", slug + ".md"), "w").write(front(meta) + "\n" + "\n\n".join(parts) + "\n")
 
+def excerpt(t, limit=400):
+    """Up to `limit` characters, ending at the last full sentence that fits."""
+    if len(t) <= limit: return t.strip()
+    cut = t[:limit]
+    end = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
+    return (cut[:end + 1] if end > 0 else cut).strip()
+
+
 # News posts: listing data (date, excerpt, image) from the news index, body from each post.
 listing = {path_of(ORIGIN + it["href"]): it for sec in pages_by_old["/news"]["sections"] for it in sec.get("items", [])}
 for old, slug in NEWS.items():
@@ -178,7 +186,7 @@ for old, slug in NEWS.items():
     mm, dd, yy = (it.get("date") or "1/1/00").split("/")
     meta = {"title": title_of(p), "date": f"20{yy}-{int(mm):02d}-{int(dd):02d}", "path": f"/news/{slug}/",
             "image": f"/media/{fetch_media(it['image']['src'])}" if it.get("image") else "",
-            "excerpt": (it.get("excerpt") or "").split("\n")[0][:400], "source": p["url"]}
+            "excerpt": excerpt((it.get("excerpt") or "").split("\n")[0]), "source": p["url"]}
     open(os.path.join(C, "news", f"{meta['date']}-{slug}.md"), "w").write(front(meta) + "\n" + body + "\n")
 
 # Site-wide: navigation and footer.
@@ -194,8 +202,8 @@ site = {
     "navButton": {"label": cap["nav"]["buttons"][0]["label"], "href": "/#subscribe"} if cap["nav"]["buttons"] else None,
     "footer": {
         "columns": [
-            {"heading": "Some Stuff", "note": "Placeholder heading on the Squarespace site.", "links": [{"label": "Terms of Use", "href": "/terms-of-use/"}, {"label": "Privacy Policy", "href": "/privacy-policy/"}]},
-            {"heading": "Follow Us", "links": [{"label": l["label"], "href": l["href"]} for b in foot for l in b.get("links", []) if "instagram" in l["href"] or "linkedin" in l["href"]]},
+            {"heading": "Some Stuff", "links": [{"label": "Terms of Use", "href": "/terms-of-use/"}, {"label": "Privacy Policy", "href": "/privacy-policy/"}]},
+            {"heading": "Follow Us", "links": [{"label": m.group(1), "href": m.group(2)} for b in foot for m in re.finditer(r"\[([^\]]+)\]\((https?://[^)]+)\)", b.get("text", "")) if "instagram" in m.group(2) or "linkedin" in m.group(2)]},
             {"heading": "Contact", "links": [{"label": "info@nonfictionhotlist.com", "href": "mailto:info@nonfictionhotlist.com"}]},
         ],
         "newsletter": True,

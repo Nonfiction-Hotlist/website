@@ -7,7 +7,6 @@ source: "https://nonfictionhotlist.com/privacy-policy"
 ::: section privacy-policy
 ## Privacy policy.
 :::
-
 ::: section
 This Nonfiction Hotlist “**Privacy Policy**” applies to our various websites, applications and services located or accessed at [https://nonfictionhotlist.com/](/) (“**Services**”), which is owned and operated by Nonfiction Hotlist, LLC (“**Nonfiction Hotlist**,” or “**we**” or “**us**”). We recognize and respect your privacy. This Privacy Policy explains how we collect, use and disclose personally identifying information (“**Personal Information**”) as well as other data and information that you provide to us or we gather through the Services.
 
@@ -113,7 +112,7 @@ The Services allow users to post information. Any information that you post to t
 
 We may use your email address to communicate with you about orders you have placed, inquiries you have made about our products and services or information you have shared with us. We may send you emails from time to time about information we believe may be of interest to you. We may also send you news and offers about our products and services, or those of our chosen partners. Examples include, but are not limited to, our blog, ebook, webinars, newsletter, information about special offers, or other products or offerings.
 
-If, at any time, you would like to stop receiving promotional e-mails, you may follow the opt-out procedures stated in the email, by using the “Unsubscribe” (or similar) link, or make a request via email to privacy@nonfictionhotlist.com. It may take a few business days for us to process opt-out requests. If you opt-out of receiving emails or promotions, we still may send you e-mails to you in accordance with this Privacy Policy, as requested by you, or in reference to other customer service purposes.
+If, at any time, you would like to stop receiving promotional e-mails, you may follow the opt-out procedures stated in the email, by using the “Unsubscribe” (or similar) link, or make a request via email to [privacy@nonfictionhotlist.com](mailto:privacy@nonfictionhotlist.com). It may take a few business days for us to process opt-out requests. If you opt-out of receiving emails or promotions, we still may send you e-mails to you in accordance with this Privacy Policy, as requested by you, or in reference to other customer service purposes.
 
 **Our Commitment to Security**
 
@@ -121,17 +120,17 @@ We have established safeguards to help prevent unauthorized access to or misuse 
 
 **Your Choices and Rights**
 
-Subject to applicable law, we will make reasonable efforts to ensure your collected information is accurate and complete and we will update or correct your information as needed when notified by you. If you would like to request access to your information including to verify, identify any inaccuracies, or change or delete your information, please contact us at privacy@nonfictionhotlist.com. We strive to respond to these requests within 30 days or as otherwise required under applicable law.
+Subject to applicable law, we will make reasonable efforts to ensure your collected information is accurate and complete and we will update or correct your information as needed when notified by you. If you would like to request access to your information including to verify, identify any inaccuracies, or change or delete your information, please contact us at [privacy@nonfictionhotlist.com](mailto:privacy@nonfictionhotlist.com). We strive to respond to these requests within 30 days or as otherwise required under applicable law.
 
 Whenever you directly provide us with your information, be sure it is accurate and complete. We are not responsible for any information you provide to us that is incomplete or incorrect. At any time, you may access, edit or delete information within your account. If you delete information from your account, or deactivate your account, we may retain certain information as required by law or for legitimate business purposes. We may retain cached or archived copies of your information for a certain period of time.
 
 **Children’s Privacy**
 
-We do not knowingly collect, maintain, or use personal information from children under 13 years of age, and no parts of our Services are directed to children. If you learn that a child has provided us with personal information in violation of this Privacy Policy, then you may alert us at privacy@nonfictionhotlist.com.
+We do not knowingly collect, maintain, or use personal information from children under 13 years of age, and no parts of our Services are directed to children. If you learn that a child has provided us with personal information in violation of this Privacy Policy, then you may alert us at [privacy@nonfictionhotlist.com](mailto:privacy@nonfictionhotlist.com).
 
 **California Privacy Rights**
 
-If you are a resident of California and interact with us as a consumer, you have certain rights under the California Consumer Privacy Act or “**CCPA**” (Cal. Civ. Code § 1798.100 et seq.), including to request access to and deletion of your Personal Information (as defined in the CCPA). You may exercise these rights by contacting us at privacy@nonfictionhotlist.com. We do not sell your Personal Information, but we may allow our advertising partners to collect certain device identifiers and electronic network activity that allows them to show ads within their systems that are targeted to your interests. To opt out of having your Personal Information used for targeted advertising purposes, please visit [www.aboutads.info/choices](http://www.aboutads.info/choices).
+If you are a resident of California and interact with us as a consumer, you have certain rights under the California Consumer Privacy Act or “**CCPA**” (Cal. Civ. Code § 1798.100 et seq.), including to request access to and deletion of your Personal Information (as defined in the CCPA). You may exercise these rights by contacting us at [privacy@nonfictionhotlist.com](mailto:privacy@nonfictionhotlist.com). We do not sell your Personal Information, but we may allow our advertising partners to collect certain device identifiers and electronic network activity that allows them to show ads within their systems that are targeted to your interests. To opt out of having your Personal Information used for targeted advertising purposes, please visit [www.aboutads.info/choices](http://www.aboutads.info/choices).
 
 **International Users**
 
@@ -141,5 +140,5 @@ Personal data collected from the European Union, United Kingdom and Switzerland 
 
 **How to Contact Us**
 
-While we strive for error free performance, we cannot always catch an unintended privacy issue. As a result, we encourage your questions and comments about any privacy concerns. Please direct them to us by an email to the following: privacy@nonfictionhotlist.com.
+While we strive for error free performance, we cannot always catch an unintended privacy issue. As a result, we encourage your questions and comments about any privacy concerns. Please direct them to us by an email to the following: [privacy@nonfictionhotlist.com](mailto:privacy@nonfictionhotlist.com).
 :::

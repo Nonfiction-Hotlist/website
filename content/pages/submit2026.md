@@ -9,7 +9,6 @@ source: "https://nonfictionhotlist.com/submit2026"
 
 # 2026
 :::
-
 ::: section before-you-begin
 ## Before You Begin
 
@@ -25,7 +24,6 @@ source: "https://nonfictionhotlist.com/submit2026"
 
 - Bios for you and your creative team
 :::
-
 ::: section
 ::: embed https://nfh-submission-prod.vercel.app/the-nonfiction-hotlist/the-2026-nonfiction-hotlist/submit?embedded=true
 :::

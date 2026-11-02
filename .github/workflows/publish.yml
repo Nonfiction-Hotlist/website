@@ -1,16 +1,25 @@
 name: Publish
 
 # Builds the website from content/, checks it (every link, every old Squarespace address, each page
-# in a browser) and publishes it with GitHub Pages. Runs on every push to main and on demand.
+# in a browser) and publishes it with GitHub Pages. Runs on every push to main, every 15 minutes (to pick
+# up edits made in the Drive kit) and on demand. A scheduled run with no Drive changes stops early.
 # While the site is a preview (new.nonfictionhotlist.com) its pages tell search engines to skip them.
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "*/15 * * * *"
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "full: rebuild and publish. sync: publish only if Drive changed."
+        type: choice
+        options: [full, sync]
+        default: full
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -21,6 +30,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    outputs:
+      publish: ${{ steps.decide.outputs.publish }}
+      problems_changed: ${{ steps.pull.outputs.problems_changed }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
@@ -28,14 +40,46 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
-      - run: npm run release
-      - uses: actions/upload-pages-artifact@v3
+
+      - name: Pull text and images from the Drive kit
+        id: pull
+        run: node scripts/kit/pull-drive.js
+
+      - name: Decide whether to publish
+        id: decide
+        run: |
+          if { [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.mode }}" = "sync" ]; } && [ "${{ steps.pull.outputs.changed }}" != "true" ] && [ "${{ steps.pull.outputs.problems_changed }}" != "true" ]; then
+            echo "publish=false" >> "$GITHUB_OUTPUT"; echo "No changes in Drive."
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - if: steps.decide.outputs.publish == 'true'
+        run: npx playwright install --with-deps chromium
+      - name: Build and check
+        if: steps.decide.outputs.publish == 'true'
+        run: npm run release
+
+      - name: Commit changes from Drive
+        if: steps.decide.outputs.publish == 'true'
+        env:
+          SUMMARY: ${{ steps.pull.outputs.summary }}
+        run: |
+          git add content
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update from Google Drive: ${SUMMARY}"
+          git push
+
+      - if: steps.decide.outputs.publish == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
     needs: build
+    if: needs.build.outputs.publish == 'true'
     runs-on: ubuntu-24.04
     environment:
       name: github-pages
@@ -43,3 +87,18 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  # Edits that broke a rule were skipped (the site kept the previous text). Failing here sends the
+  # repo owner an email, once each time the list changes.
+  skipped-edits:
+    needs: build
+    if: needs.build.outputs.problems_changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - run: |
+          [ -s content/sync-problems.txt ] || { echo "No skipped edits."; exit 0; }
+          { echo "### Edits skipped"; sed 's/^/- /' content/sync-problems.txt; } >> "$GITHUB_STEP_SUMMARY"
+          cat content/sync-problems.txt; exit 1

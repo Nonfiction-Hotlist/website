@@ -7,7 +7,6 @@ source: "https://nonfictionhotlist.com/"
 ::: section
 ![](/media/website-logo-2-x-1-in-.png)
 :::
-
 ::: section about
 The Nonfiction Hotlist curates and champions exceptional nonfiction storytelling, connecting creators with audiences, industry opportunities, and sustainable pathways forward.
 
@@ -17,11 +16,9 @@ Through thoughtful conversation, community building and curiosity we’re discov
 
 ![](/media/nfh_events12.jpeg)
 :::
-
 ::: section hear-from-our-storytellers
 ### Hear From Our Storytellers
 :::
-
 ::: section values
 ## values
 
@@ -33,7 +30,6 @@ Through thoughtful conversation, community building and curiosity we’re discov
 
 - Everyone is invited.
 :::
-
 ::: section the-2026-hotlist-is-open
 # The 2026 Hotlist is Open!
 
@@ -47,7 +43,6 @@ Deadline to Submit **September 25th, 2026**
 
 [Learn More and Submit](/the-2026-hotlist/){.button}
 :::
-
 ::: section
 ::: marquee
 - 2025 nonfiction hotlist
@@ -59,12 +54,10 @@ The 2025 Nonfiction Hotlist is a curation of 23 nonfiction projects. **Check out
 
 [Read here.](https://list.nonfictionhotlist.com/2025/){.button}
 :::
-
 ::: section subscribe
 ## subscribe
 
 Stay in touch with the latest initiatives from the Nonfiction Hotlist
-
 ::: form contact
 :::
 :::
