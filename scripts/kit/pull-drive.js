@@ -144,7 +144,8 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
   } catch (e) { warn("Menu, Footer or Settings tab", `${e.message}; kept the previous ones`); }
 
   // Images: fetch the ones that are new or changed since the last sync.
-  const index = fs.existsSync(MEDIA_INDEX) ? JSON.parse(fs.readFileSync(MEDIA_INDEX, "utf8")) : {};
+  // A test copy (--from-dir) has its own made-up file IDs, so it starts from no record.
+  const index = !fromDir && fs.existsSync(MEDIA_INDEX) ? JSON.parse(fs.readFileSync(MEDIA_INDEX, "utf8")) : {};
   const nextIndex = {};
   for (const m of mediaRows) {
     const name = toSite(m.key), had = index[name];
@@ -156,7 +157,7 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     try { writes.push([path.join(C, "media", name), await fileBytes(m.fileId)]); changed.push(`image ${name}`); }
     catch (e) { warn(`Image "${m.key}"`, e.message); delete nextIndex[name]; }
   }
-  if (JSON.stringify(nextIndex) !== JSON.stringify(index)) writes.push([MEDIA_INDEX, JSON.stringify(nextIndex, null, 1) + "\n"]);
+  if (!fromDir && JSON.stringify(nextIndex) !== JSON.stringify(index)) writes.push([MEDIA_INDEX, JSON.stringify(nextIndex, null, 1) + "\n"]);
 
   if (!fromDir) {
     const nextDrive = { _about: drive._about, manifestId: drive.manifestId, site: { sheet: S.fileId, tabs: S.tabs },
