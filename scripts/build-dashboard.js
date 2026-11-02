@@ -130,6 +130,19 @@ const html = `<!doctype html>
   .acts { display: flex; gap: 8px; margin-top: auto; padding-top: 10px; }
   .pill.solid { background: var(--forest); color: var(--cream); border-color: var(--forest); }
   .pill.solid:hover { background: var(--deep); }
+  /* News: its own black band, with dark cards */
+  .newsband { background: #0f0f0f; color: #fff; padding: 34px 0 42px; margin-top: 34px; }
+  .bandhead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
+  .newsband h2 { margin: 0; color: #fff; font-size: 26px; }
+  .newsband h2 small { color: rgba(255,255,255,.6); }
+  .newsband .bandhead .acts { margin: 0; padding: 0; }
+  .newsband .card { background: #1b1b1b; border-color: #2c2c2c; color: #fff; }
+  .newsband .shot { border-bottom-color: #2c2c2c; }
+  .newsband .addr, .newsband .meta { color: rgba(255,255,255,.62); }
+  .newsband .pill { background: transparent; color: #fff; border-color: rgba(255,255,255,.25); }
+  .newsband .pill:hover { border-color: #fff; }
+  .newsband .pill.solid { background: #fff; color: #0f0f0f; border-color: #fff; }
+  .newsband .card.warn { background: #2a2210; border-color: #6b5420; }
   .changes { list-style: none; padding: 0; margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
   .changes li { display: flex; gap: 14px; padding: 9px 14px; border-bottom: 1px solid var(--line); }
   .changes li:last-child { border-bottom: 0; }
@@ -168,9 +181,19 @@ const html = `<!doctype html>
   <h2>Pages <small>add a page with a new row in the Pages tab</small></h2>
   <ul class="cards">${pages.map(p => card("pages", p, p.meta.description ? "" : '<span class="flag">No description</span>')).join("")}</ul>
 
-  <h2>News <small>newest first; add a post with a new row in the News tab</small></h2>
-  <ul class="cards">${news.map(n => card("news", n, `<span>${esc(n.meta.date)}</span>`)).join("")}</ul>
+</main>
 
+<section class="newsband" aria-label="News">
+  <div class="wrap">
+    <div class="bandhead">
+      <h2>News <small>${news.length} posts, newest first</small></h2>
+      <div class="acts">${link(sheet(drive.site && drive.site.tabs.News), "Add a post", "pill solid")}${link(folder((drive.folders || {}).news), "News folder", "pill")}</div>
+    </div>
+    <ul class="cards">${news.map(n => card("news", n, `<span>${esc(n.meta.date)}</span>`)).join("")}</ul>
+  </div>
+</section>
+
+<main class="wrap">
   <h2>Recent changes</h2>
   <ul class="changes">${log.map(l => `<li><time>${ago(l.d)}</time><span>${esc(l.s)}</span></li>`).join("") || "<li>None yet.</li>"}</ul>
   <footer>Built ${new Date().toUTCString()}. Rebuilt every time the site publishes.</footer>
