@@ -16,6 +16,7 @@ const { marked } = require("marked");
 const blocks = require("./lib/blocks");
 const { videoName } = require("./lib/video");
 const { headerHTML } = require("./lib/header");
+const { FORMS } = require("./lib/address");
 
 const ROOT = path.resolve(__dirname, "..");
 const C = path.join(ROOT, "content");
@@ -78,20 +79,28 @@ function render(text) {
 
 const fmtDate = d => new Date(d + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
+// The forms send to drive-kit/forms.gs (address.js FORMS), which keeps entries in a private Sheet,
+// emails about contact entries and adds people who ask to the Brevo list. With JavaScript the form
+// answers in place; without it the browser posts to the script and lands on its thank-you page.
+// The "website" field is a trap for spam robots: hidden from people, so a filled-in one is turned away.
 function formHTML(key) {
   const f = forms[key];
   if (!f) return `<!-- unknown form: ${esc(key)} -->`;
-  const field = (x, i) => {
-    const id = `${key}-${i}`, req = x.required ? " required" : "";
-    const label = `<label for="${id}">${esc(x.title)}${x.required ? " (required)" : ""}</label>`;
-    if (x.type === "textarea") return `${label}<textarea id="${id}" name="${esc(x.title)}"${req}></textarea>`;
-    return `${label}<input id="${id}" name="${esc(x.title)}" type="${x.type === "email" ? "email" : "text"}"${req}>`;
+  const field = x => {
+    const id = `${key}-${x.name}`, req = x.required ? " required" : "", ac = x.autocomplete ? ` autocomplete="${x.autocomplete}"` : "";
+    if (x.type === "checkbox") return `<label class="check"><input type="checkbox" id="${id}" name="${x.name}" value="yes"> ${esc(x.title)}</label>`;
+    const label = `<label for="${id}">${esc(x.title)}${x.required ? ' <span class="req">(required)</span>' : ""}</label>`;
+    const input = x.type === "textarea" ? `<textarea id="${id}" name="${x.name}"${req}></textarea>`
+      : `<input id="${id}" name="${x.name}" type="${x.type === "email" ? "email" : "text"}"${ac}${req}>`;
+    return `<div class="field${x.half ? " half" : ""}">${label}${input}</div>`;
   };
-  // Not connected to anything yet: where submissions go is decided with the hosting.
-  return `<form class="form" data-form="${esc(key)}" onsubmit="return false">
-  ${f.heading ? `<p>${esc(f.heading)}</p>` : ""}${f.fields.map(field).join("\n  ")}
+  if (!FORMS) return `<form class="form" onsubmit="return false">${f.heading ? `<p>${esc(f.heading)}</p>` : ""}${f.fields.map(field).join("")}<button type="submit">${esc(f.submit || "Submit")}</button><p class="note">Form not connected yet.</p></form>`;
+  return `<form class="form" method="post" action="${esc(FORMS)}" data-thanks="${esc(f.thanks || "Thank you!")}">
+  ${f.heading ? `<p>${esc(f.heading)}</p>` : ""}<input type="hidden" name="_form" value="${esc(key)}"><input type="hidden" name="_page" value=""><input type="hidden" name="_t" value="">
+  <div class="trap" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="fields">${f.fields.map(field).join("")}</div>
   <button type="submit">${esc(f.submit || "Submit")}</button>
-  <p class="note">Form not connected yet.</p>
+  <p class="form-msg" role="status" aria-live="polite"></p>
 </form>`;
 }
 

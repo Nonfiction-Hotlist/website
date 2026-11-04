@@ -1,27 +1,13 @@
 {
-  "name": "Contact Us Form 3 3 2",
+  "name": "Contact",
   "submit": "Submit",
   "thanks": "Thank you!",
   "fields": [
-    {
-      "type": "name",
-      "title": "Name",
-      "required": true
-    },
-    {
-      "type": "email",
-      "title": "Email",
-      "required": true
-    },
-    {
-      "type": "textarea",
-      "title": "Tell us about you!",
-      "required": false
-    },
-    {
-      "type": "textarea",
-      "title": "How did you find us?",
-      "required": false
-    }
+    { "name": "first", "type": "text", "title": "First Name", "required": true, "half": true, "autocomplete": "given-name" },
+    { "name": "last", "type": "text", "title": "Last Name", "required": true, "half": true, "autocomplete": "family-name" },
+    { "name": "email", "type": "email", "title": "Email", "required": true, "autocomplete": "email" },
+    { "name": "newsletter", "type": "checkbox", "title": "Sign up for news and updates" },
+    { "name": "about", "type": "textarea", "title": "Tell us about you!" },
+    { "name": "found", "type": "textarea", "title": "How did you find us?" }
   ]
 }

@@ -58,6 +58,10 @@ In the Docs, the `:::` blocks below appear as grey bracket lines (`[section abou
 - `refreshKit` runs in the kit every 10 minutes: a new row in the Pages or News tab gets its own Doc, and the Media folder's images are listed for the sync.
 - `npm run test:kit` checks the conversion both ways on every page, then runs the setup script against a stand-in for Google and reads the result back. `npm run test:kit:clean` must report no changes.
 
+## Forms (contact and newsletter)
+
+The contact form (home page, Subscribe) and the newsletter box (footer) are part of the site. They send to a small Apps Script, `drive-kit/forms.gs`, deployed as a web app under matthew@nonfictionhotlist.com; its address is `FORMS` in `scripts/lib/address.js`. For each entry the script turns away spam (a hidden trap field, and forms sent within 3 seconds), saves a row in the private "Website sign-ups" Sheet in matthew@'s Drive (never in the kit folders, which are shared by link), emails NOTIFY_EMAIL about contact entries, and adds the person to the Brevo list only if they ticked "Sign up for news and updates" or used the newsletter box. The Brevo key stays in the script's properties. Field names and labels are in `content/forms/*.json`. `node drive-kit/test/forms-test.js` checks every rule.
+
 ## Top bar (shared with the Hotlist lists)
 
 The menu bar is built once, here, by `scripts/lib/header.js` from the Site sheet's Menu tab and Settings (the button), and published at `/shared/header.html`. The website uses it on every page, and the list site (Nonfiction-Hotlist/list) copies it in when it builds, so list.nonfictionhotlist.com shows the same bar above the list's own controls. Its links are full addresses on the website's current address, set in `scripts/lib/address.js` (the preview address until the switch from Squarespace). On phones the menu folds behind a Menu button.

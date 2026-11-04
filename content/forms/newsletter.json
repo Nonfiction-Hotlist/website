@@ -1,14 +1,9 @@
 {
   "name": "Newsletter",
-  "note": "On Squarespace this block has no storage set, so sign-ups go nowhere.",
   "heading": "Sign up for the latest events and news",
   "fields": [
-    {
-      "type": "email",
-      "title": "Email Address",
-      "required": true
-    }
+    { "name": "email", "type": "email", "title": "Email Address", "required": true, "autocomplete": "email" }
   ],
   "submit": "Sign Up",
-  "thanks": "Thank you!"
+  "thanks": "Thank you! You're on the list."
 }
