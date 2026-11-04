@@ -4,27 +4,6 @@
   "email": "info@nonfictionhotlist.com",
   "nav": [
     {
-      "label": "About",
-      "children": [
-        {
-          "label": "News",
-          "href": "/news/"
-        },
-        {
-          "label": "Terms of Use",
-          "href": "/terms-of-use/"
-        },
-        {
-          "label": "Privacy Policy",
-          "href": "/privacy-policy/"
-        }
-      ]
-    },
-    {
-      "label": "Yahoo x NFH",
-      "href": "/yahoo/"
-    },
-    {
       "label": "The Hotlist",
       "children": [
         {
@@ -40,6 +19,18 @@
           "href": "/contributors/"
         }
       ]
+    },
+    {
+      "label": "News",
+      "href": "/news/"
+    },
+    {
+      "label": "Yahoo x NFH",
+      "href": "/yahoo/"
+    },
+    {
+      "label": "About",
+      "href": "/#about"
     }
   ],
   "navButton": {
