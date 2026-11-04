@@ -4,5 +4,5 @@
 // means the forms show as not connected yet.
 module.exports = {
   PUBLIC: "https://new.nonfictionhotlist.com",
-  FORMS: process.env.FORMS_URL || ""
+  FORMS: process.env.FORMS_URL || "https://script.google.com/macros/s/AKfycbyxYfOaNFMmdlyL2j0FwPGMlDve4YAYJhnXJPc6-BLJH5ohr07osbdQrtGdoBMx7PXO/exec"
 };
