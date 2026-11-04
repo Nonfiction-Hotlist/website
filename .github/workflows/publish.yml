@@ -110,9 +110,11 @@ jobs:
         with:
           path: site
 
+  # always(): the test job is skipped on scheduled and trigger runs, and GitHub would otherwise skip
+  # every job after it too.
   deploy:
     needs: build
-    if: needs.build.outputs.publish == 'true'
+    if: always() && needs.build.result == 'success' && needs.build.outputs.publish == 'true'
     runs-on: ubuntu-24.04
     environment:
       name: github-pages
@@ -125,7 +127,7 @@ jobs:
   # from the repo; failing here sends the repo owner an email.
   drive-error:
     needs: build
-    if: needs.build.outputs.drive_failed == 'true'
+    if: always() && needs.build.result == 'success' && needs.build.outputs.drive_failed == 'true'
     runs-on: ubuntu-24.04
     steps:
       - run: |
@@ -137,7 +139,7 @@ jobs:
   # repo owner an email, once each time the list changes.
   skipped-edits:
     needs: build
-    if: needs.build.outputs.problems_changed == 'true'
+    if: always() && needs.build.result == 'success' && needs.build.outputs.problems_changed == 'true'
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
