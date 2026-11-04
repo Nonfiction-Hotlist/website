@@ -1,5 +1,5 @@
 ---
-title: "nonfiction hotlist."
+title: "Home Page"
 path: "/"
 source: "https://nonfictionhotlist.com/"
 ---
