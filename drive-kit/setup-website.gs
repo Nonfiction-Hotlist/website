@@ -653,7 +653,7 @@ const KIT = {
   },
   {
    "file": "index",
-   "title": "nonfiction hotlist.",
+   "title": "Home Page",
    "path": "/",
    "description": "",
    "doc": [
