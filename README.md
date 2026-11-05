@@ -1,6 +1,6 @@
 # nonfictionhotlist.com
 
-The Nonfiction Hotlist's main website, being rebuilt from the Squarespace site at nonfictionhotlist.com. This repo holds the site's structure and copy. Design and branding come later, so pages are plain on purpose.
+The Nonfiction Hotlist's main website, being rebuilt from the Squarespace site at nonfictionhotlist.com. This repo holds the site's structure and copy, and the shared brand kit every Hotlist site uses. The redesign follows the build brief (`~/Documents/Nonfiction Hotlist/nfh-website-build-brief.md`) and the homepage design canvas; every page now uses it.
 
 The yearly lists live in a separate repo, [Nonfiction-Hotlist/list](https://github.com/Nonfiction-Hotlist/list) (list.nonfictionhotlist.com).
 
@@ -37,6 +37,22 @@ npm run release    # build, then check every link, every old Squarespace address
 Every push to `main` runs `.github/workflows/publish.yml`: build, the same checks, then GitHub Pages publishes `site/`.
 
 `scripts/build.js` turns `content/` into `site/` using `src/layout.html`. The layout's styles are placeholders for reading the structure; design comes later. Forms are shown but not connected yet. Old Squarespace addresses in `content/redirects.json` get forwarding pages.
+
+## Brand kit (shared by every Hotlist site)
+
+`brand/` holds the design system in code: `tokens.json` (exported from the design system artifact), `base.css`, `components.css` (classes start with `nfh-`), `nfh.js` (menu, storytellers, forms, background video), fonts and logos. `scripts/brand/build-brand.js` turns `tokens.json` into CSS variables and publishes the kit at `/brand/v1/` (`nfh.css` is the one stylesheet a page needs). The list sites and dashboards copy `/brand/v1/` in when they build, so a change reaches them after their own checks. A change that would break pages already on v1 goes in `v2`.
+
+The top bar, menu and footer are built once by `scripts/lib/chrome.js` from `content/site.json`.
+
+Colors to know: white reading text sits on `--gradient-green-text` (green to forest, 5:1 or better), not on `--gradient-green` (its light corner is 3.5:1, fine for headlines only). Spark yellow appears once per page.
+
+## Homepage
+
+`scripts/pages/home.js` (markup and copy) and `src/home.css` (layout), built to match the canvas section by section. Its text is changed in code, not in the Drive kit: the "Home Page" Doc still syncs but no longer feeds the homepage. Storyteller quotes are in `content/testimonials.json`. Photos: originals stay outside the repo; `npm run images` makes the web sizes in `content/img/` (list in `scripts/brand/images.js`).
+
+## Other pages
+
+`scripts/pages/page.js` and `src/page.css`. Pages still come from the Drive kit (`content/pages/*.md`, `content/news/*.md`), and page.js decides how each `:::` section looks: the first section is the page's hero; FAQ, contributor names, photo groups, format chips, call-to-action bands, the submission apps and the news list each get their own layout. Per-page settings (the label over the headline, the outlined year on 2026 pages, the Yahoo theme, the reading layout for legal pages) are in `PAGES` at the top of page.js. Yahoo x NFH pages use the purples from the Yahoo artwork (`.nfh-theme-yahoo` in page.css); the bar and footer stay green.
 
 ## Editing in Google Drive
 

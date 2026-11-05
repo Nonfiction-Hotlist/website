@@ -17,6 +17,9 @@ const blocks = require("./lib/blocks");
 const { videoName } = require("./lib/video");
 const { headerHTML } = require("./lib/header");
 const { FORMS } = require("./lib/address");
+const { buildBrand } = require("./brand/build-brand");
+const { homePage } = require("./pages/home");
+const { designedPage, articlePage, notFoundPage } = require("./pages/page");
 
 const ROOT = path.resolve(__dirname, "..");
 const C = path.join(ROOT, "content");
@@ -124,8 +127,12 @@ function write(p, html) {
 
 /* ---------- build ---------- */
 fs.rmSync(OUT, { recursive: true, force: true });
-for (const p of pages) write(p.meta.path, page(p.meta, render(p.body)));
-for (const n of news) write(n.meta.path, page(n.meta, `<article><p><a href="/news/">News</a></p><h1>${esc(n.meta.title)}</h1><time datetime="${n.meta.date}">${fmtDate(n.meta.date)}</time>\n${render(n.body)}</article>`));
+// The homepage is the redesigned one (scripts/pages/home.js, from the design canvas). The other pages
+// still use src/layout.html until they're redesigned too.
+// The other pages and news posts use the same design lines (scripts/pages/page.js).
+const ctx = { news, forms };
+for (const p of pages) write(p.meta.path, p.meta.path === "/" ? homePage(site) : designedPage(site, p.meta, p.body, ctx));
+for (const n of news) write(n.meta.path, articlePage(site, n));
 
 // Old Squarespace addresses forward to their new pages.
 const redirects = JSON.parse(read("redirects.json"));
@@ -136,11 +143,24 @@ for (const [from, to] of Object.entries(redirects)) {
   write(from, `<!doctype html><meta charset="utf-8"><title>Moved</title><link rel="canonical" href="${esc(to)}"><meta http-equiv="refresh" content="0; url=${esc(to)}"><p>This page moved to <a href="${esc(to)}">${esc(to)}</a>.</p>`);
 }
 
-for (const d of ["media", "files", "video"]) if (fs.existsSync(path.join(C, d))) fs.cpSync(path.join(C, d), path.join(OUT, d), { recursive: true, filter: f => !path.basename(f).startsWith(".") });
-// The top bar, for the Hotlist list pages to copy in when they build.
+for (const d of ["media", "files", "video", "img"]) if (fs.existsSync(path.join(C, d))) fs.cpSync(path.join(C, d), path.join(OUT, d), { recursive: true, filter: f => !path.basename(f).startsWith(".") });
+// The shared brand kit (styles, fonts, logos, script) at /brand/v1/, and the homepage's own styles.
+buildBrand(OUT);
+for (const f of ["home.css", "page.css"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, f));
+// The redesign's top bar and footer for the list sites (list.nonfictionhotlist.com), which copy them and the
+// brand kit in when they build (the list repo's scripts/fetch-brand.js). Links point at the website; the
+// logo comes from the list site's own copy of the kit at /brand/v1/.
+const { barHTML, footerHTML } = require("./lib/chrome");
+fs.mkdirSync(path.join(OUT, "shared"), { recursive: true });
+fs.writeFileSync(path.join(OUT, "shared", "bar.html"), barHTML(site));
+fs.writeFileSync(path.join(OUT, "shared", "footer.html"), footerHTML(site));
+const kitFiles = [];
+(function walk(d, rel) { for (const f of fs.readdirSync(d)) { const p = path.join(d, f); fs.statSync(p).isDirectory() ? walk(p, rel + f + "/") : kitFiles.push(rel + f); } })(path.join(OUT, "brand", "v1"), "");
+fs.writeFileSync(path.join(OUT, "brand", "v1", "files.json"), JSON.stringify(kitFiles.sort(), null, 1) + "\n");
+// The first top bar (before the redesign), still read by list builds that haven't moved to the brand kit.
 fs.mkdirSync(path.join(OUT, "shared"), { recursive: true });
 fs.writeFileSync(path.join(OUT, "shared", "header.html"), HEADER);
-fs.writeFileSync(path.join(OUT, "404.html"), page({ title: "Page not found", path: "/404" }, `<h1>Page not found</h1><p><a href="/">Go to the home page</a></p>`));
+fs.writeFileSync(path.join(OUT, "404.html"), notFoundPage(site));
 const urls = [...pages, ...news].map(p => p.meta.path);
 fs.writeFileSync(path.join(OUT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(u => `  <url><loc>${site.origin}${encodeURI(u)}</loc></url>`).join("\n")}\n</urlset>\n`);
 console.log(`site built: ${pages.length} pages, ${news.length} news posts, ${Object.keys(redirects).length} redirects`);

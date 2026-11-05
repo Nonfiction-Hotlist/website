@@ -15,6 +15,7 @@
  *        BREVO_API_KEY   from Brevo > SMTP & API > API keys
  *        BREVO_LIST_ID   the number of the list in Brevo > Contacts > Lists
  *        NOTIFY_EMAIL    who hears about contact form entries (info@nonfictionhotlist.com)
+ *        BREVO_ROLE_ATTRIBUTE  optional: the Brevo contact attribute for the homepage's "I'm a" (for example ROLE)
  *   2. Choose setup in the function menu and click Run. Approve the permissions. It makes the Sheet and
  *      checks the Brevo key and list.
  *   3. Deploy > New deployment > Web app. Execute as: Me. Who has access: Anyone. Copy the web app URL.
@@ -25,7 +26,9 @@
  */
 
 const SHEET_NAME = "Website sign-ups";
-const HEADER = ["Received", "Form", "First name", "Last name", "Email", "Newsletter", "Tell us about you", "How did you find us", "Brevo", "Page"];
+const HEADER = ["Received", "Form", "First name", "Last name", "Email", "Newsletter", "Tell us about you", "How did you find us", "Brevo", "Page", "I'm a"];
+// The homepage sign-up's "I'm a" choices. Anything else is saved as blank.
+const ROLES = ["Filmmaker or creator", "Industry, buyer or programmer", "Brand or funder", "Fan of nonfiction"];
 const MIN_SECONDS = 3;          // a person takes longer than this to fill in a form
 
 /** Makes the private Sheet and checks the Brevo settings. Run once from the editor. */
@@ -70,9 +73,10 @@ function handle_(f) {
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
   let brevo = "";
+  const role = ROLES.indexOf(s(f.role)) >= 0 ? s(f.role) : "";
   try {
-    if (wants) brevo = addToBrevo_(email, s(f.first), s(f.last));
-    sheet_().appendRow([new Date(), form, s(f.first), s(f.last), email, wants ? "yes" : "no", s(f.about), s(f.found), brevo, s(f._page)]);
+    if (wants) brevo = addToBrevo_(email, s(f.first), s(f.last), role);
+    sheet_().appendRow([new Date(), form, s(f.first), s(f.last), email, wants ? "yes" : "no", s(f.about), s(f.found), brevo, s(f._page), role]);
   } finally { lock.releaseLock(); }
 
   const to = PropertiesService.getScriptProperties().getProperty("NOTIFY_EMAIL");
@@ -85,12 +89,15 @@ function handle_(f) {
 }
 
 // Adds (or updates) the contact in the Brevo list. Returns what happened, for the Sheet.
-function addToBrevo_(email, first, last) {
+// "I'm a" goes to Brevo only when the script property BREVO_ROLE_ATTRIBUTE names a contact attribute
+// that exists in Brevo (Contacts > Settings > Contact attributes, type Text), for example ROLE.
+function addToBrevo_(email, first, last, role) {
   const p = PropertiesService.getScriptProperties();
   if (!p.getProperty("BREVO_API_KEY")) return "not sent: no Brevo key";
   const attributes = {};
   if (first) attributes.FIRSTNAME = first;
   if (last) attributes.LASTNAME = last;
+  if (role && p.getProperty("BREVO_ROLE_ATTRIBUTE")) attributes[p.getProperty("BREVO_ROLE_ATTRIBUTE")] = role;
   const res = brevo_("POST", "/contacts", { email, attributes, listIds: [Number(p.getProperty("BREVO_LIST_ID"))], updateEnabled: true });
   const code = res.getResponseCode();
   return code === 201 || code === 204 ? "added" : `failed (${code}): ${res.getContentText().slice(0, 200)}`;
@@ -115,5 +122,8 @@ function sheet_() {
     sh.getRange(1, 1, 1, HEADER.length).setValues([HEADER]).setFontWeight("bold");
     sh.setFrozenRows(1);
   }
-  return ss.getSheetByName("Entries");
+  const sh = ss.getSheetByName("Entries");
+  // A Sheet made before a column was added gets the new heading.
+  if (sh.getLastColumn() < HEADER.length) sh.getRange(1, 1, 1, HEADER.length).setValues([HEADER]).setFontWeight("bold");
+  return sh;
 }

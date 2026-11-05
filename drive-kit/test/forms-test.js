@@ -7,7 +7,7 @@ const vm = require("vm");
 let now = Date.parse("2026-11-04T12:00:00Z");
 const rows = [], mails = [], brevoCalls = [], cache = {};
 const props = { BREVO_API_KEY: "key", BREVO_LIST_ID: "7", NOTIFY_EMAIL: "info@nonfictionhotlist.com" };
-const sheet = { appendRow: r => rows.push(r), getRange: () => ({ setValues: () => ({ setFontWeight: () => {} }) }), setFrozenRows: () => {} };
+const sheet = { appendRow: r => rows.push(r), getRange: () => ({ setValues: () => ({ setFontWeight: () => {} }) }), setFrozenRows: () => {}, getLastColumn: () => 10 };
 const box = {
   Logger: { log: () => {} },
   PropertiesService: { getScriptProperties: () => ({ getProperty: k => props[k] ?? null, setProperty: (k, v) => { props[k] = v; } }) },
@@ -45,6 +45,14 @@ r = send({ _form: "newsletter", email: "cy@x.org" });
 expect("newsletter box: Sheet and Brevo, no email", r.ok && counts() === "3/2/2");
 for (let i = 0; i < 6; i++) r = send({ _form: "newsletter", email: "dee@x.org" });
 expect("sixth send from one address in 10 minutes: refused", !r.ok && /try again later/.test(r.error));
+r = send({ _form: "newsletter", first: "Fay", email: "fay@x.org", role: "Brand or funder" });
+expect("homepage sign-up: I'm a saved in the Sheet", r.ok && rows[rows.length - 1][10] === "Brand or funder");
+expect("I'm a not sent to Brevo without BREVO_ROLE_ATTRIBUTE", !("ROLE" in brevoCalls[brevoCalls.length - 1].body.attributes));
+props.BREVO_ROLE_ATTRIBUTE = "ROLE";
+r = send({ _form: "newsletter", email: "gus@x.org", role: "Fan of nonfiction" });
+expect("I'm a sent to Brevo when the attribute is set", brevoCalls[brevoCalls.length - 1].body.attributes.ROLE === "Fan of nonfiction");
+r = send({ _form: "newsletter", email: "hal@x.org", role: "<script>" });
+expect("an I'm a that isn't one of the four choices is saved blank", rows[rows.length - 1][10] === "" && !("ROLE" in brevoCalls[brevoCalls.length - 1].body.attributes));
 const page = box.doPost({ parameter: { _form: "newsletter", email: "eve@x.org", _t: String(now - 10000), _page: "https://new.nonfictionhotlist.com/news/" } });
 expect("without JavaScript: a thank-you page linking back", /Thank you!/.test(page.html) && /new\.nonfictionhotlist\.com\/news\//.test(page.html));
 console.log(failed ? `${failed} failed` : "all forms rules hold");

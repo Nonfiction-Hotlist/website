@@ -1,0 +1,72 @@
+{
+  "note": "The storytellers on the homepage. 'quote' is the full testimonial as it ran on the Squarespace site (November 2026). 'feature' (the big featured quote) and 'short' (the small cards) are word-for-word excerpts; … marks a cut. The homepage opens on 'start' (counted from 1).",
+  "start": 4,
+  "items": [
+    {
+      "by": "Florrie Priest", "title": "Father Figures",
+      "quote": "It's been a pleasure to be part of the NFH community this year. The social media presence in particular has been fantastic, and that added visibility has given us many opportunities to push forward conversations with potential funders. Being on the Hotlist also helped to connect us with composer Ari Balouzian, who recommended Max Whipple, who's proven to be an amazing collaborator.",
+      "feature": "The social media presence in particular has been fantastic, and that added visibility has given us many opportunities to push forward conversations with potential funders.",
+      "short": "It's been a pleasure to be part of the NFH community this year."
+    },
+    {
+      "by": "Caryn Capotosto, Producer", "title": "Movement",
+      "quote": "The Hotlist exposure in our early development stage of MOVEMENT helped to launch us into meaningful conversations with financiers and potential production partners. Our inclusion on the list highlighted not only the commercial potential of the project but also showcased the storytellers behind the project as artists worthy of support, a huge validation at the beginning of an ambitious project in a challenging doc market.",
+      "feature": "The Hotlist exposure in our early development stage of MOVEMENT helped to launch us into meaningful conversations with financiers and potential production partners.",
+      "short": "…a huge validation at the beginning of an ambitious project in a challenging doc market."
+    },
+    {
+      "by": "Dempsey Rice, Director & Producer", "title": "AMOS", "photo": "story-amos", "alt": "Animated still from AMOS",
+      "quote": "The Nonfiction Hotlist has been pivotal in helping us raise the profile of our film and expand our network; it has also helped us build our community of support within the documentary film world. These connections are invaluable",
+      "feature": "The Nonfiction Hotlist has been pivotal in helping us raise the profile of our film and expand our network…",
+      "short": "These connections are invaluable"
+    },
+    {
+      "by": "Gene Gallerano", "title": "Thank You For Listening", "photo": "story-tyfl", "alt": "Film Q&A for Thank You For Listening",
+      "quote": "The Hotlist felt less like exposure and more like a shift in gravity. Once it landed, the film began moving faster and in clearer alignment. As the Hotlist gained momentum, it carried the film with it. What followed was not noise, but velocity.",
+      "feature": "The Hotlist felt less like exposure and more like a shift in gravity. … What followed was not noise, but velocity.",
+      "short": "What followed was not noise, but velocity."
+    },
+    {
+      "by": "Lynne Gerber", "title": "When We All Get To Heaven", "photo": "poster-heaven", "fit": "contain", "thumb": "poster-heaven", "alt": "Poster for When We All Get to Heaven",
+      "quote": "The Hotlist has supported this project in concrete, tangible ways and have been critical in our success. They connected us with legal, music clearance and other professionals when we needed them. And their support was truly invaluable while negotiating a distribution deal with Slate. Hotlist members played a part in generating Slate’s interest in the project in the first place. We call them the best friends we never knew we needed.",
+      "feature": "They connected us with legal, music clearance and other professionals when we needed them. … We call them the best friends we never knew we needed.",
+      "short": "We call them the best friends we never knew we needed."
+    },
+    {
+      "by": "Dustin Nakao-Haider", "title": "Earth to Michael", "photo": "poster-earth-michael", "thumb": "poster-earth-michael", "alt": "Still from Earth to Michael",
+      "quote": "Since being featured on the Nonfiction Hotlist, we have been welcomed into an unbelievably warm and hospitable community of like-minded filmmakers and colleagues. The Hot List connected us with our fantastic post sound team, Full English Post, who worked tirelessly under a tight deadline to get the film ready for our world premiere. Time and time again, the selfless team behind NonFiction Hotlist has demonstrated that rising tides lift all ships.",
+      "feature": "Since being featured on the Nonfiction Hotlist, we have been welcomed into an unbelievably warm and hospitable community of like-minded filmmakers and colleagues.",
+      "short": "Time and time again, the selfless team behind Nonfiction Hotlist has demonstrated that rising tides lift all ships."
+    },
+    {
+      "by": "Daniel Lombroso", "title": "Manhood", "photo": "poster-manhood", "thumb": "poster-manhood", "alt": "Still from Manhood",
+      "quote": "The Nonfiction Hotlist is an incredible community that represents the best of the documentary world – open, collaborative, non-competitive. We'vre met some extraordinary collaborators on the list.",
+      "feature": "The Nonfiction Hotlist is an incredible community that represents the best of the documentary world…",
+      "short": "An incredible community that represents the best of the documentary world."
+    },
+    {
+      "by": "Zilla Barbosa, Director", "title": "Making the Line", "photo": "story-making-the-line", "thumb": "story-making-the-line", "alt": "Title card for Making the Line",
+      "quote": "Being featured on the Nonfiction Hotlist substantially elevated the visibility of Making The Line, resulting in targeted introductions to funders, executive producers, and investors aligned with the film’s cultural mission. The recognition catalyzed meaningful conversations around finishing funds, impact partnerships, and long-term distribution strategy, while reinforcing the project’s credibility and positioning within the nonfiction film community.",
+      "feature": "Being featured on the Nonfiction Hotlist substantially elevated the visibility of Making The Line, resulting in targeted introductions to funders, executive producers, and investors aligned with the film’s cultural mission.",
+      "short": "Being featured on the Nonfiction Hotlist substantially elevated the visibility of Making The Line…"
+    },
+    {
+      "by": "Cole Sax, Director", "title": "God of Sight", "photo": "story-god-of-sight", "thumb": "story-god-of-sight", "alt": "Key art for God of Sight",
+      "quote": "Being part of the Hotlist has been a huge support. It’s helped us connect with some incredible collaborators and fellow filmmakers. Most notably, we were able to bring on an editor to help shape the initial tape—something we wouldn’t have been able to do without the visibility and validation the Hotlist provided.",
+      "feature": "Being part of the Hotlist has been a huge support. It’s helped us connect with some incredible collaborators and fellow filmmakers.",
+      "short": "Being part of the Hotlist has been a huge support."
+    },
+    {
+      "by": "Hannah Myers, Director & Jessica Epstein, Producer", "title": "DADDY", "photo": "story-daddy", "thumb": "story-daddy", "alt": "Still from DADDY",
+      "quote": "Beyond the first time cold outreach from the list, perhaps some of the more direct benefits have been people who we already knew in our networks or community who have interacted with the project over the years and reached back out because they saw DADDY included in the list. This has felt like the most natural and meaningful result!",
+      "feature": "…people who we already knew in our networks or community who have interacted with the project over the years and reached back out because they saw DADDY included in the list.",
+      "short": "This has felt like the most natural and meaningful result!"
+    },
+    {
+      "by": "Maureen Isern, Director & Producer", "title": "Erin’s Law",
+      "quote": "Multiple connections have been made. The overall support and reaction to the sizzle and project have really kept that wind in our sails. Feels good to have the support of a community, and cheer together for all the projects. Some connections continue to move us toward celeb attachment to the documentary.",
+      "feature": "The overall support and reaction to the sizzle and project have really kept that wind in our sails.",
+      "short": "Feels good to have the support of a community, and cheer together for all the projects."
+    }
+  ]
+}

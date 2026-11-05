@@ -3,3 +3,4 @@ site/
 .DS_Store
 capture/raw/
 .kit-test/
+.canvas-assets/

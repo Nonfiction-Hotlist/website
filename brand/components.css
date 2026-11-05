@@ -1,0 +1,195 @@
+/* Nonfiction Hotlist components, shared by every site. Class names start with nfh-.
+   Values follow the homepage design canvas; the rules behind them are in the build brief:
+   lowercase League Spartan for display, Roboto Serif for reading, square color blocks, 14px frames,
+   no shadows, no grey section grounds, spark yellow once per page. */
+
+/* ---------- layout ---------- */
+.nfh-wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+.nfh-section { position: relative; padding-block: var(--section-pad); }
+/* Most sections: label and headline on the left, short copy and a button on the right, content below. */
+.nfh-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px 32px; flex-wrap: wrap; }
+.nfh-head__title { display: flex; flex-direction: column; gap: 14px; }
+.nfh-stack { display: flex; flex-direction: column; }
+
+/* ---------- grounds ---------- */
+.nfh-ground-white { background: var(--white); color: var(--black); }
+.nfh-ground-black { background: var(--black); color: var(--white); }
+.nfh-ground-green { background: var(--gradient-green); color: var(--white); }   /* headlines, big type, logo panels */
+.nfh-ground-green--text { background: var(--gradient-green-text); }               /* panels with white reading text */
+.nfh-ground-forest { background: var(--gradient-forest); color: var(--white); }
+/* A photo (or video) under the green overlay. The image is a real <img> so it can have a srcset. */
+.nfh-ground-photo { position: relative; color: var(--white); background: var(--pine-deep); isolation: isolate; }
+.nfh-ground-photo > .nfh-ground-photo__media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.nfh-ground-photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--overlay, var(--photo-overlay)); }
+
+/* ---------- type ---------- */
+.nfh-label { font: 700 14px/18px var(--font-display); letter-spacing: .12em; text-transform: lowercase; }
+.nfh-label--green { color: var(--green-label); }
+.nfh-label--sage { color: var(--sage); }
+.nfh-label--forest { color: var(--forest); }
+.nfh-h { font-family: var(--font-display); font-weight: 700; font-size: var(--fs, 36px); line-height: var(--lh, .9); letter-spacing: var(--ls, -0.03em); text-transform: lowercase; }
+.nfh-h--hero { --fs: clamp(56px, 13vw, 204px); --lh: .86; --ls: -0.035em; }
+.nfh-h--xxl { --fs: clamp(56px, 8vw, 120px); --lh: .9; }
+.nfh-h--xl { --fs: clamp(60px, 7.6vw, 116px); --lh: .9; }
+.nfh-h--values { --fs: clamp(56px, 7vw, 108px); --lh: .86; --ls: -0.04em; }
+.nfh-h--l { --fs: clamp(48px, 5.6vw, 84px); --lh: .92; }
+.nfh-h--programs { --fs: clamp(44px, 5.4vw, 80px); --lh: .94; }
+.nfh-h--m { --fs: clamp(48px, 5vw, 72px); --lh: .95; --ls: -0.02em; }
+.nfh-h--card { --fs: 28px; --lh: 1.02; --ls: -0.01em; }
+.nfh-h--item { --fs: 32px; --lh: 1; --ls: -0.01em; }
+.nfh-h--forest { color: var(--forest); }
+@media (max-width: 560px) { .nfh-h--hero { --fs: 18.5vw; } }
+.nfh-lead { font-size: 21px; line-height: 1.5; font-weight: 500; }
+.nfh-copy { font-size: 17px; line-height: 27px; }
+
+/* ---------- buttons ---------- */
+.nfh-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 0 22px; border: 2px solid transparent; border-radius: var(--radius-sm);
+  font: 700 18px/1 var(--font-display); text-transform: lowercase; text-decoration: none; cursor: pointer; white-space: nowrap; transition: background-color .2s, color .2s, border-color .2s; }
+.nfh-btn svg { width: 26px; height: 12px; flex: none; }
+.nfh-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.nfh-btn--light { background: var(--white); color: var(--forest); }          /* primary on dark and green */
+.nfh-btn--light:hover { background: var(--sage); color: var(--pine-deep); }
+.nfh-btn--white { background: var(--white); color: var(--black); }          /* primary on black */
+.nfh-btn--white:hover { background: var(--sage); color: var(--black); }
+.nfh-btn--forest { background: var(--forest); color: var(--white); }        /* primary on white */
+.nfh-btn--forest:hover { background: var(--pine-deep); color: var(--white); }
+.nfh-btn--black { background: var(--black); color: var(--white); }
+.nfh-btn--black:hover { background: var(--pine-deep); color: var(--white); }
+.nfh-btn--ghost { background: transparent; color: inherit; border-color: currentColor; } /* secondary: a 2px outline */
+.nfh-btn--ghost:hover { background: color-mix(in srgb, currentColor 14%, transparent); color: inherit; }
+.nfh-btn--nav { font-size: 17px; }
+.nfh-btn--big { min-height: 52px; padding: 0 28px; font-size: 19px; }
+.nfh-btn--sm { min-height: 44px; padding: 0 16px; gap: 8px; font-size: 16px; }
+.nfh-btn--sm svg { width: 22px; height: 10px; }
+/* Text links keep the canvas's spacing; padding with a matching negative margin gives a 44px tap area. */
+.nfh-link { align-self: flex-start; font: 700 17px/1 var(--font-display); text-transform: lowercase; text-underline-offset: 5px; display: inline-block; padding-block: 13.5px; margin-block: -13.5px; }
+
+/* ---------- pills, chips, tags ---------- */
+.nfh-pill { align-self: flex-start; display: inline-flex; align-items: center; padding: 6px 14px; border-radius: var(--radius-pill); background: var(--forest); color: var(--white); font: 700 13px/18px var(--font-display); text-transform: lowercase; }
+.nfh-chip { display: inline-flex; align-items: center; min-height: 36px; padding: 0 16px; border-radius: var(--radius-pill); border: 1.5px solid var(--forest); color: var(--forest); font: 700 15px/1 var(--font-display); text-transform: lowercase; }
+.nfh-chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; }
+.nfh-tag { display: inline-flex; padding: 3px 10px; border-radius: var(--radius-pill); background: var(--spark); color: var(--black); font: 700 12px/16px var(--font-display); letter-spacing: .04em; } /* spark: once per page */
+
+/* ---------- frames ---------- */
+.nfh-frame { border-radius: var(--radius-md); overflow: hidden; background: var(--gradient-forest); }
+.nfh-frame > img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- hover cards (What we do; the list sites' project grid uses the same pattern) ---------- */
+.nfh-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; align-items: stretch; }
+.nfh-card { position: relative; display: grid; border: 1px solid var(--rule); border-radius: var(--radius-md); color: var(--black); transition: background-color .25s, color .25s, border-color .25s; }
+.nfh-card__rest, .nfh-card__hover { grid-area: 1 / 1; display: flex; flex-direction: column; gap: 14px; padding: 28px 24px; }
+.nfh-card__hover { opacity: 0; padding: 12px 12px 24px; transition: opacity .25s; }
+.nfh-card__num { font: 700 14px/1 var(--font-display); letter-spacing: .12em; color: var(--forest); }
+.nfh-card p { font-size: 16px; line-height: 25px; }
+.nfh-card__more { margin-top: auto; color: inherit; text-decoration: none; font: 700 16px/1 var(--font-display); text-transform: lowercase; opacity: 0; transition: opacity .25s; }
+.nfh-card__more::after { content: ""; position: absolute; inset: 0; border-radius: inherit; } /* the whole card is the link */
+.nfh-card:hover, .nfh-card:focus-within { background: var(--gradient-green-text); color: var(--white); border-color: transparent; }
+.nfh-card:hover .nfh-card__num, .nfh-card:focus-within .nfh-card__num { color: var(--white); }
+.nfh-card:hover .nfh-card__more, .nfh-card:focus-within .nfh-card__more { opacity: 1; color: var(--white); }
+.nfh-card__more:focus-visible { outline: none; }
+.nfh-card:has(.nfh-card__more:focus-visible) { outline: 3px solid var(--focus-light); outline-offset: 3px; }
+/* The featured card shows a photo and a button on hover. Both layers share one grid cell, so the
+   card is always the height of its hover state and nothing below jumps. The hover layer holds the
+   card's link and text for keyboards and screen readers; the rest layer is hidden from them. */
+.nfh-card--feature:hover .nfh-card__rest, .nfh-card--feature:focus-within .nfh-card__rest { visibility: hidden; }
+.nfh-card--feature:hover .nfh-card__hover, .nfh-card--feature:focus-within .nfh-card__hover { opacity: 1; }
+.nfh-card--feature:hover, .nfh-card--feature:focus-within { transform: translateY(-10px); }
+.nfh-card--feature { transition: background-color .25s, color .25s, border-color .25s, transform .25s; }
+.nfh-card__hover img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; }
+.nfh-card__hover .nfh-card__body { padding: 4px 12px 0; display: flex; flex-direction: column; gap: 12px; }
+.nfh-card__hover .nfh-card__num { color: var(--white); }
+.nfh-card__hover .nfh-btn { align-self: flex-start; position: relative; }
+/* Phones and tablets have no hover: show each card's link at rest. */
+@media (hover: none) {
+  .nfh-card__more { opacity: 1; color: var(--forest); }
+}
+/* No hover, or one card per row: the featured card shows its photo version all the time. */
+@media (hover: none), (max-width: 560px) {
+  .nfh-card--feature { background: var(--gradient-green-text); color: var(--white); border-color: transparent; }
+  .nfh-card--feature .nfh-card__rest { visibility: hidden; }
+  .nfh-card--feature .nfh-card__hover { opacity: 1; }
+}
+
+/* ---------- outlined year numeral (one per Hotlist edition) ---------- */
+.nfh-year { position: absolute; font: 700 clamp(240px, 38vw, 560px)/.8 var(--font-display); letter-spacing: -0.05em; color: transparent; -webkit-text-stroke: 2px var(--year-stroke, var(--green)); pointer-events: none; user-select: none; }
+.nfh-year--2025 { --year-stroke: var(--white); }
+
+/* ---------- rotating badge (the homepage's one spark element) ---------- */
+.nfh-badge { position: absolute; top: 36px; right: 36px; width: 156px; height: 156px; display: block; border-radius: 50%; text-decoration: none; z-index: 1; }
+.nfh-badge svg { width: 100%; height: 100%; }
+.nfh-badge .ring { transform-box: view-box; transform-origin: 100px 100px; animation: nfh-spin 28s linear infinite; }
+.nfh-badge:hover .ring, .nfh-badge:focus-visible .ring { animation-duration: 8s; }
+@keyframes nfh-spin { to { transform: rotate(360deg); } }
+@media (max-width: 760px) { .nfh-badge { width: 120px; height: 120px; top: 20px; right: 20px; } }
+
+/* ---------- top bar and menu ---------- */
+.nfh-bar { position: relative; z-index: 30; background: var(--white); border-bottom: 1px solid var(--rule); }
+.nfh-bar__in { max-width: var(--max); margin: 0 auto; padding: 16px clamp(16px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.nfh-bar__logo { display: block; line-height: 0; }
+.nfh-bar__logo img { height: 22px; width: auto; }
+.nfh-bar__actions { display: flex; align-items: center; gap: 12px; }
+.nfh-bar .nfh-btn--ink { color: var(--black); border-color: var(--black); }
+.nfh-bar .nfh-btn--ink:hover { background: var(--black); color: var(--white); }
+.nfh-menu-btn { border: 0; padding: 0 18px 0 20px; gap: 12px; background: var(--black); color: var(--white); min-width: 48px; }
+.nfh-menu-btn:hover { background: var(--pine-deep); color: var(--white); }
+.nfh-menu-btn svg { width: 24px; height: 16px; }
+.nfh-menu-btn .when-open { display: none; }
+.nfh-menu-btn[aria-expanded="true"] .when-open { display: inline; }
+.nfh-menu-btn[aria-expanded="true"] .when-closed { display: none; }
+.nfh-menu-btn[aria-expanded="true"] svg.when-open { display: block; width: 16px; height: 16px; }
+/* The menu: a compact white panel that slides down under the button. */
+.nfh-menu { position: absolute; z-index: 31; top: calc(100% + 11px); right: clamp(16px, 4vw, 48px); width: 380px; max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 110px); overflow-y: auto; background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-md); padding: 16px 24px 24px;
+  display: flex; flex-direction: column; animation: nfh-slide .28s cubic-bezier(.2, .8, .2, 1) both; }
+.nfh-menu[hidden] { display: none; }
+@keyframes nfh-slide { from { transform: translateY(-14px); opacity: 0; } to { transform: none; opacity: 1; } }
+.nfh-menu__group { border-bottom: 1px solid var(--rule); }
+.nfh-menu__group:last-child { border-bottom: 0; }
+.nfh-menu__top { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; padding: 0 4px; background: none; border: 0; cursor: pointer;
+  color: var(--black); text-decoration: none; font: 700 28px/1 var(--font-display); letter-spacing: -0.01em; text-align: left; text-transform: lowercase; }
+.nfh-menu__top:hover { color: var(--forest); }
+.nfh-menu__top .chev { display: inline-flex; transition: transform .2s; }
+.nfh-menu__top[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.nfh-menu__sub { padding: 0 4px 14px 20px; display: flex; flex-direction: column; animation: nfh-sub .2s ease-out both; }
+.nfh-menu__sub[hidden] { display: none; }
+@keyframes nfh-sub { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.nfh-menu__sub a { display: flex; align-items: center; min-height: 44px; color: var(--forest); text-decoration: none; font: 400 18px/1.2 var(--font-body); }
+.nfh-menu__sub a:hover { color: var(--black); text-decoration: underline; text-underline-offset: 4px; }
+.nfh-menu [aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 760px) {
+  .nfh-bar__hide-sm { display: none !important; }
+  .nfh-menu-btn { padding: 0 14px; }
+  .nfh-menu { right: 16px; left: 16px; width: auto; max-width: none; }
+}
+
+/* ---------- forms ---------- */
+.nfh-form { display: flex; flex-direction: column; gap: 20px; }
+.nfh-form__row { display: flex; gap: 16px; flex-wrap: wrap; }
+.nfh-field { display: flex; flex-direction: column; gap: 8px; }
+.nfh-form__row > .nfh-field { flex: 1 1 240px; } /* side by side when there's room, stacked otherwise (as on the canvas) */
+.nfh-field label { font-size: 15px; line-height: normal; }
+.nfh-input { width: 100%; min-height: 48px; padding: 0 18px; border: 1px solid var(--rule); border-radius: var(--radius-pill); background: var(--paper); color: var(--black); font: 400 16px var(--font-body); }
+.nfh-input:hover { border-color: var(--forest); }
+select.nfh-input { appearance: none; padding-right: 48px; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='12' viewBox='0 0 18 12' fill='none' stroke='%233a5a40' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 3l7 7 7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 20px center; background-size: 14px auto; }
+.nfh-form .nfh-btn { align-self: flex-start; }
+.nfh-form__trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.nfh-form__msg { margin: 0; font-size: 16px; }
+.nfh-form__msg:empty { display: none; }
+.nfh-form__msg.error { color: #a12b12; }
+.nfh-form.sent .nfh-form__row, .nfh-form.sent .nfh-field, .nfh-form.sent .nfh-btn { display: none; }
+.nfh-form.sent .nfh-form__msg { font: 700 28px/1.1 var(--font-display); color: var(--forest); text-transform: lowercase; }
+
+/* ---------- footer ---------- */
+.nfh-footer { background: var(--gradient-forest); color: var(--white); }
+.nfh-footer__in { max-width: var(--max); margin: 0 auto; padding: 56px var(--gutter) 40px; display: flex; flex-direction: column; gap: 40px; }
+.nfh-footer__top { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.nfh-footer__logo { display: block; line-height: 0; }
+.nfh-footer__logo img { height: 26px; width: auto; }
+.nfh-footer__links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; font: 700 17px/1.2 var(--font-display); text-transform: lowercase; }
+.nfh-footer__links a { display: inline-block; padding-block: 12px; margin-block: -12px; }
+.nfh-footer__bottom { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; border-top: 1px solid var(--rule-dark); padding-top: 24px; font-size: 14px; line-height: 20px; color: var(--sage); }
+.nfh-footer__bottom a { display: inline-block; padding-block: 12px; margin-block: -12px; }
+.nfh-footer a { color: var(--white); text-decoration: none; }
+.nfh-footer a:hover { color: var(--sage); }

@@ -50,7 +50,7 @@ function serve() {
       let f = path.join(SITE, p);
       if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, "index.html");
       if (!f.startsWith(SITE) || !fs.existsSync(f)) { r.writeHead(404); return r.end(); }
-      const type = { ".html": "text/html", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".pdf": "application/pdf", ".xml": "text/xml" }[path.extname(f).toLowerCase()];
+      const type = { ".html": "text/html", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".pdf": "application/pdf", ".xml": "text/xml", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".mp4": "video/mp4", ".json": "application/json" }[path.extname(f).toLowerCase()];
       r.writeHead(200, { "content-type": type || "application/octet-stream" });
       fs.createReadStream(f).pipe(r);
     }).listen(0, () => res(srv));

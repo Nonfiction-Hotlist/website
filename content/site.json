@@ -4,14 +4,31 @@
   "email": "info@nonfictionhotlist.com",
   "nav": [
     {
+      "label": "About",
+      "children": [
+        {
+          "label": "News",
+          "href": "/news/"
+        },
+        {
+          "label": "Terms of use",
+          "href": "/terms-of-use/"
+        },
+        {
+          "label": "Privacy policy",
+          "href": "/privacy-policy/"
+        }
+      ]
+    },
+    {
       "label": "The Hotlist",
       "children": [
         {
-          "label": "2026 Hotlist",
+          "label": "2026",
           "href": "/the-2026-hotlist/"
         },
         {
-          "label": "2025 Hotlist",
+          "label": "2025",
           "href": "https://list.nonfictionhotlist.com/2025/"
         },
         {
@@ -19,10 +36,6 @@
           "href": "/contributors/"
         }
       ]
-    },
-    {
-      "label": "News",
-      "href": "/news/"
     },
     {
       "label": "Yahoo x NFH",

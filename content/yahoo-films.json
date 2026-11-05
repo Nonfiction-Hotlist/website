@@ -1,0 +1,195 @@
+{
+  "note": "The 20 Yahoo x NFH films as listed on the Squarespace /yahoo page (November 2026), by category. Loglines as written there, with the em dashes replaced (commas, a period, parentheses) and The Baker's Hotline's logline taken from its Yahoo page (the Squarespace one was garbled). Stills: originals in Media For Website/Yahoo films (from Squarespace); web sizes made by npm run images.",
+  "categories": [
+    {
+      "name": "Sports",
+      "color": "#d25442",
+      "films": [
+        {
+          "title": "Confessions of a Jumbotron Addict",
+          "slug": "confessions-of-a-jumbotron-addict",
+          "logline": "An obsessive basketball fan cracks the code for getting on his home arena’s Jumbotron and decides to wield his new power for good.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/confessions-of-a-jumbotron-addict/",
+          "still": "yahoo-confessions-of-a-jumbotron-addict",
+          "source": "confessions-of-a-jumbotron-addict.jpg"
+        },
+        {
+          "title": "Murewa",
+          "slug": "murewa",
+          "logline": "Two boys form a close friendship in a quiet coastal town, sharing passions for skateboarding and photography. As they grow up, life takes them in drastically different directions-one to university, the other to prison.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/murewa/",
+          "still": "yahoo-murewa",
+          "source": "murewa.jpg"
+        },
+        {
+          "title": "Panther Pat",
+          "slug": "panther-pat",
+          "logline": "In 1970, a schoolteacher crashes into the brutal world of professional football, shattering its gender barrier.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/panther-pat/",
+          "still": "yahoo-panther-pat",
+          "source": "panther-pat.png"
+        },
+        {
+          "title": "The Meloneers",
+          "slug": "the-meloneers",
+          "logline": "In small town rural America, “The Meloneers” is a coming of age story, examining the intersection of wrestling and fatherhood as a high school coach uses the sport to help the community’s youth better understand their lives.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/the-meloneers/",
+          "still": "yahoo-the-meloneers",
+          "source": "the-meloneers.png"
+        },
+        {
+          "title": "How We Roll",
+          "slug": "how-we-roll",
+          "logline": "In the Chicago suburbs, an ancient game becomes a local phenomenon as a neighborhood reclaims real-world connection through the Elmwood Park Bocce League.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/how-we-roll/",
+          "still": "yahoo-how-we-roll",
+          "source": "how-we-roll.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Biography & Lifestyle",
+      "color": "#d2752d",
+      "films": [
+        {
+          "title": "The Grandfather Puzzle",
+          "slug": "the-grandfather-puzzle",
+          "logline": "A granddaughter photographs her puzzle-obsessed grandfather's Hungarian past, including his family castle, and turns them into jigsaw puzzles. When locals greet her as \"the baroness,\" she realizes she's piecing together her own story.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/the-grandfather-puzzle/",
+          "still": "yahoo-the-grandfather-puzzle",
+          "source": "the-grandfather-puzzle.jpg"
+        },
+        {
+          "title": "Shanti Rides Shotgun",
+          "slug": "shanti-rides-shotgun",
+          "logline": "On Manhattan's jam-packed streets, NYC's most iconic driving instructor prepares students forthe road ahead.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/shanti-rides-shotgun/",
+          "still": "yahoo-shanti-rides-shotgun",
+          "source": "shanti-rides-shotgun.webp"
+        },
+        {
+          "title": "Dual Wielder",
+          "slug": "dual-wielder",
+          "logline": "Across Los Angeles, the initials E.E. dominate the high score of every Time Crisis cabinet. Who is the mysterious figure who has conquered the 2 player arcade game…as 1 player? Take a glimpse into the world of arcade hero Eddie Esguerra.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/dual-wielder/",
+          "still": "yahoo-dual-wielder",
+          "source": "dual-wielder.jpg"
+        },
+        {
+          "title": "Noggin",
+          "slug": "noggin",
+          "logline": "A man builds a memory palace to fight against brain damage.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/noggin/",
+          "still": "yahoo-noggin",
+          "source": "noggin.png"
+        }
+      ]
+    },
+    {
+      "name": "Arts & Culture",
+      "color": "#8b6abe",
+      "films": [
+        {
+          "title": "TR(ol)L: Total Request Live",
+          "slug": "troll",
+          "logline": "In 1999, an online chain letter sparks a campaign to get New Kids On The Block's decade-old \"Hangin' Tough\" video on MTV's Total Request Live, forcing the show to make a decision that would pioneer modern online trolling.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/troll/",
+          "still": "yahoo-troll",
+          "source": "troll.png"
+        },
+        {
+          "title": "Thank You for Listening",
+          "slug": "thank-you-for-listening",
+          "logline": "Thank You for Listening is a documentary film chronicling Joshua Ray Walker's journey as he battles third-generation cancer and plans his return to the Grand Ole Opry, the mecca of country in a captivating exploration of hope and healing.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/thank-you-for-listening/",
+          "still": "yahoo-thank-you-for-listening",
+          "source": "thank-you-for-listening.png"
+        },
+        {
+          "title": "Chasin' Butterflies",
+          "slug": "chasin-butterflies",
+          "logline": "Rooted in rural Alabama yet untethered from convention, Butch Anthony lives somewhere between myth and memory. This film reveals a deeply human portrait of intertwanglism, self-invention, and what it means to become an original.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/chasin-butterflies/",
+          "still": "yahoo-chasin-butterflies",
+          "source": "chasin-butterflies.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Nature & Environment",
+      "color": "#25c8b3",
+      "films": [
+        {
+          "title": "Love Birds",
+          "slug": "love-birds",
+          "logline": "When George Hunt and Molly Warner discovered ‘lesbian seagulls’ on Santa Barbara Island in 1972, they didn’t expect national headlines. But the media frenzy that followed would upend their lives, and their relationship.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/love-birds/",
+          "still": "yahoo-love-birds",
+          "source": "love-birds.png"
+        },
+        {
+          "title": "Eco-Hack!",
+          "slug": "eco-hack",
+          "logline": "Deep in the Mojave desert, an unconventional field biologist wages a high-tech war against ravens (think laser cannons, drones, exploding turtle shells) in a last-ditch effort to save the last few desert tortoises from extinction.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/eco-hack/",
+          "still": "yahoo-eco-hack",
+          "source": "eco-hack.jpg"
+        },
+        {
+          "title": "The Final Bow",
+          "slug": "the-final-bow",
+          "logline": "A rare wood, a disappearing forest, and the music that could vanish with it.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/the-final-bow/",
+          "still": "yahoo-the-final-bow",
+          "source": "the-final-bow.jpg"
+        }
+      ]
+    },
+    {
+      "name": "Business",
+      "color": "#4793e0",
+      "films": [
+        {
+          "title": "A Home For Everything",
+          "slug": "a-home-for-everything",
+          "logline": "Sharon Baugh’s bin store in rural Georgia becomes a lifeline to an economically disadvantaged community. The store resells discounted returns that would normally go to a landfill - and these forgotten items have a seismic impact in the small town.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/a-home-for-everything/",
+          "still": "yahoo-a-home-for-everything",
+          "source": "a-home-for-everything.png"
+        },
+        {
+          "title": "How Fast Can You Eat A Pickled Egg?",
+          "slug": "how-fast-can-you-eat-a-pickled-egg",
+          "logline": "The Cock Tavern is no ordinary East London pub. Renowned for its larger-than-life regulars it also plays host to one of the capital’s quirkiest underground traditions: the pickled egg eating competition.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/how-fast-can-you-eat-a-pickled-egg/",
+          "still": "yahoo-how-fast-can-you-eat-a-pickled-egg",
+          "source": "how-fast-can-you-eat-a-pickled-egg.jpg"
+        },
+        {
+          "title": "The Baker's Hotline",
+          "slug": "the-bakers-hotline",
+          "logline": "At a hotline for baking emergencies, a small team fields calls from strangers in crisis, only to discover that behind each kitchen catastrophe lies a tender, messy slice of someone's life.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/the-bakers-hotline/",
+          "still": "yahoo-the-bakers-hotline",
+          "source": "the-bakers-hotline.png"
+        },
+        {
+          "title": "The Moleman",
+          "slug": "the-moleman",
+          "logline": "Confronting loss and grief and moles, an aging mole hunter grapples with a decades-long obsession.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/the-moleman/",
+          "still": "yahoo-the-moleman",
+          "source": "the-moleman.jpg"
+        },
+        {
+          "title": "Kowloon!",
+          "slug": "kowloon",
+          "logline": "Saugus, Massachusetts is home to the largest Chinese restaurant in the U.S. Within its colorful and ornamental walls is the story of the Wong family, where their American dream came true.",
+          "link": "https://www.yahoo.com/nonfictionhotlist/film/kowloon/",
+          "still": "yahoo-kowloon",
+          "source": "kowloon.png"
+        }
+      ]
+    }
+  ]
+}

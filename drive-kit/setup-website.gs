@@ -39,19 +39,14 @@ const KIT = {
     "About"
    ],
    [
-    "Terms of Use",
+    "Terms of use",
     "/terms-of-use/",
     "About"
    ],
    [
-    "Privacy Policy",
+    "Privacy policy",
     "/privacy-policy/",
     "About"
-   ],
-   [
-    "Yahoo x NFH",
-    "/yahoo/",
-    ""
    ],
    [
     "The Hotlist",
@@ -59,12 +54,12 @@ const KIT = {
     ""
    ],
    [
-    "2026 Hotlist",
+    "2026",
     "/the-2026-hotlist/",
     "The Hotlist"
    ],
    [
-    "2025 Hotlist",
+    "2025",
     "https://list.nonfictionhotlist.com/2025/",
     "The Hotlist"
    ],
@@ -72,6 +67,11 @@ const KIT = {
     "Contributors",
     "/contributors/",
     "The Hotlist"
+   ],
+   [
+    "Yahoo x NFH",
+    "/yahoo/",
+    ""
    ]
   ],
   "footer": [

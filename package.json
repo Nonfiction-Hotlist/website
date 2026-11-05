@@ -8,6 +8,7 @@
     "release": "npm run build && npm run check",
     "serve": "npm run build && python3 -m http.server 8090 --directory site",
     "kit": "node scripts/kit/build-kit.js",
+    "images": "node scripts/brand/images.js",
     "pull": "node scripts/kit/pull-drive.js",
     "test:kit": "node scripts/kit/build-kit.js && node scripts/kit/test-roundtrip.js && rm -rf .kit-test && node drive-kit/test/mock-run.js .kit-test/mock --slow-clock --new-page \"A New Page=/a-new-page/\" && node scripts/kit/pull-drive.js --from-dir .kit-test/mock --dry-run && node drive-kit/test/forms-test.js",
     "test:kit:clean": "node scripts/kit/build-kit.js && rm -rf .kit-test && node drive-kit/test/mock-run.js .kit-test/clean && node scripts/kit/pull-drive.js --from-dir .kit-test/clean --dry-run --expect-no-changes"
