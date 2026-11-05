@@ -99,6 +99,18 @@
 .nfh-card__hover .nfh-card__body { padding: 4px 12px 0; display: flex; flex-direction: column; gap: 12px; }
 .nfh-card__hover .nfh-card__num { color: var(--white); }
 .nfh-card__hover .nfh-btn { align-self: flex-start; position: relative; }
+/* Photo cards (the homepage's What we do): photo on top, text below; on hover they fill green and the
+   button shows. The button's ::after covers the card, so the whole card is the link. */
+.nfh-card--photo { display: flex; flex-direction: column; gap: 14px; padding: 12px 12px 24px; }
+.nfh-card--photo > img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; }
+.nfh-card--photo .nfh-card__body { padding: 4px 12px 0; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.nfh-card__go { align-self: flex-start; margin-top: auto; opacity: 0; transition: opacity .25s; }
+.nfh-card__go::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-md); }
+.nfh-card--photo:hover .nfh-card__go, .nfh-card--photo:focus-within .nfh-card__go { opacity: 1; }
+.nfh-card--photo:has(.nfh-card__go:focus-visible) { outline: 3px solid var(--focus-light); outline-offset: 3px; }
+.nfh-card__go:focus-visible { outline: none; }
+@media (hover: none) { .nfh-card__go { opacity: 1; } }
+
 /* Phones and tablets have no hover: show each card's link at rest. */
 @media (hover: none) {
   .nfh-card__more { opacity: 1; color: var(--forest); }

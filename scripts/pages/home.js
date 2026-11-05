@@ -73,12 +73,15 @@ const about = () => `<section id="about" class="split">
 </section>`;
 
 function whatWeDo() {
-  const card = (n, title, text, more, href) => `<div class="nfh-card">
-        <div class="nfh-card__rest">
+  // Each card has its photo at the top. On hover (or keyboard focus) it fills green and its button shows;
+  // on phones the button always shows. The whole card is the link.
+  const card = (n, title, text, more, href, photo, alt) => `<div class="nfh-card nfh-card--photo">
+        ${img(photo, { alt, sizes: "(max-width: 760px) 100vw, 300px" })}
+        <div class="nfh-card__body">
           <span class="nfh-card__num">${n}</span>
           <h3 class="nfh-h nfh-h--card">${title}</h3>
           <p>${text}</p>
-          <a class="nfh-card__more" href="${href}">${more} →</a>
+          <a class="nfh-btn nfh-btn--light nfh-btn--sm nfh-card__go" href="${esc(href)}">${esc(more)}${ARROW}</a>
         </div>
       </div>`;
   return `<section class="wwd nfh-ground-white">
@@ -94,26 +97,11 @@ function whatWeDo() {
       </div>
     </div>
     <div class="nfh-cards">
-      ${card("01", "curate projects", "Working industry reviewers read every submission. More than 4,800 reviews so far.", "how curation works", "/the-2026-hotlist/")}
-      <div class="nfh-card nfh-card--feature">
-        <div class="nfh-card__rest" aria-hidden="true">
-          <span class="nfh-card__num">02</span>
-          <h3 class="nfh-h nfh-h--card">discover talent</h3>
-          <p>Point brands and studios to rising voices and veteran makers worth knowing.</p>
-        </div>
-        <div class="nfh-card__hover">
-          ${img("talent-pair", { alt: "Two filmmakers from the Hotlist community", sizes: "(max-width: 760px) 100vw, 300px" })}
-          <div class="nfh-card__body">
-            <span class="nfh-card__num">02</span>
-            <h3 class="nfh-h nfh-h--card">discover talent</h3>
-            <p>Point brands and studios to rising voices and veteran makers worth knowing.</p>
-            ${btn("nfh-btn--light nfh-btn--sm", "/contributors/", "meet the talent", true)}
-          </div>
-        </div>
-      </div>
-      ${card("03", "build partnerships", "Bring funders, brands and industry organizations to the table for the work.", "partner with us", "#partner")}
-      ${card("04", "connect content", "Match finished films with distribution, like our 20-film run with Yahoo.", "see the yahoo films", "/yahoo/")}
-      ${card("05", "engage communities", "Fill rooms and inboxes, with live events and a newsletter read by 6,000+ people.", "upcoming events", "/news/")}
+      ${card("01", "curate projects", "Working industry reviewers read every submission. More than 4,800 reviews so far.", "how curation works", "/the-2026-hotlist/", "wwd-curate", "Filmmakers on stage at Nonfiction Hotlist Live")}
+      ${card("02", "discover talent", "Point brands and studios to rising voices and veteran makers worth knowing.", "meet the talent", "/contributors/", "talent-pair", "Two filmmakers from the Hotlist community")}
+      ${card("03", "build partnerships", "Bring funders, brands and industry organizations to the table for the work.", "partner with us", "#partner", "wwd-partners", "Filmmakers on stage at the Yahoo x Nonfiction Hotlist screening")}
+      ${card("04", "connect content", "Match finished films with distribution, like our 20-film run with Yahoo.", "see the yahoo films", "/yahoo/", "wwd-content", "Screens listing the Yahoo x Nonfiction Hotlist short films")}
+      ${card("05", "engage communities", "Fill rooms and inboxes, with live events and a newsletter read by 6,000+ people.", "upcoming events", "/news/", "wwd-community", "A full theater at a Nonfiction Hotlist screening")}
     </div>
   </div>
 </section>`;

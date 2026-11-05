@@ -21,6 +21,11 @@ const IMAGES = {
   "about-firehouse": { src: `${MEDIA}/Tribeca Selects/IMG_6649.jpeg`, widths: [800, 1200, 1800] },
   "values-group": { src: `${CANVAS}/b85fb0b0e405aacd67a4eff5d50ff9af.jpg`, widths: [800, 1200, 1800] },
   "talent-pair": { src: `${MEDIA}/Tribeca Selects/IMG_6628.jpeg`, crop: "2736:1824:1460:1824", widths: [600, 1000] },
+  // What we do: a photo on each card (shown on hover, and always on phones)
+  "wwd-curate": { src: `${MEDIA}/Tribeca Selects/IMG_6703.jpeg`, widths: [600, 1000] },
+  "wwd-partners": { src: `${MEDIA}/Yahoo Selects/edits-552.jpg`, widths: [600, 1000] },
+  "wwd-content": { src: `${MEDIA}/Yahoo Selects/edits-640.jpg`, widths: [600, 1000] },
+  "wwd-community": { src: `${MEDIA}/Tribeca Selects/IMG_6655.jpeg`, widths: [600, 1000] },
   "yahoo-stage": { src: `${MEDIA}/Yahoo Selects/edits-659.jpg`, widths: [600, 1000, 1400] },
   "retreat-campus": { src: `${CANVAS}/232aea101705a4d53c71489dcfe13774.jpg`, widths: [600, 1000, 1200] },
   "events-crowd": { src: `${MEDIA}/Tribeca Selects/IMG_6568.jpeg`, widths: [600, 1000, 1400] },
