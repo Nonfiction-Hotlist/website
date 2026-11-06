@@ -41,8 +41,8 @@ const momentum = () => `<section class="momentum nfh-ground-white">
   <div class="nfh-wrap momentum__in">
     <h2 class="nfh-h nfh-h--xxl nfh-h--forest">we make momentum.</h2>
     <div class="momentum__copy">
-      <p class="nfh-lead">In 18 months, 2,377 projects have come through our open calls. 43 made the list.</p>
-      <p class="nfh-copy momentum__note">Getting picked is the start. Then come the screenings, the press and the calls that get a project to its next stage.</p>
+      <p class="nfh-lead">Over the last two years, 2,377 projects have come through our open calls.</p>
+      <p class="nfh-copy momentum__note">Getting selected is just the start. Then come the screenings, the press and a community that helps get a project to its next stage.</p>
     </div>
   </div>
 </section>`;
@@ -51,7 +51,6 @@ const hotlist2026 = () => `<section id="hotlist" class="edition edition--2026 nf
   <div class="nfh-year edition__year" aria-hidden="true">2026</div>
   <div class="nfh-wrap edition__in">
     <div class="edition__title">
-      <p class="nfh-label nfh-label--green">second edition</p>
       <h2 class="nfh-h nfh-h--xl">the 2026 hotlist <span class="edition__accent">is almost here.</span></h2>
     </div>
     <div class="edition__row">
@@ -88,7 +87,6 @@ function whatWeDo() {
   <div class="nfh-wrap nfh-section wwd__in">
     <div class="nfh-head">
       <div class="nfh-head__title">
-        <p class="nfh-label nfh-label--forest">five ways we help</p>
         <h2 class="nfh-h nfh-h--l">what we do</h2>
       </div>
       <div class="wwd__formats">
@@ -98,7 +96,7 @@ function whatWeDo() {
     </div>
     <div class="nfh-cards">
       ${card("01", "curate projects", "Working industry reviewers read every submission. More than 4,800 reviews so far.", "how curation works", "/the-2026-hotlist/", "wwd-curate", "Filmmakers on stage at Nonfiction Hotlist Live")}
-      ${card("02", "discover talent", "Point brands and studios to rising voices and veteran makers worth knowing.", "meet the talent", "/contributors/", "talent-pair", "Two filmmakers from the Hotlist community")}
+      ${card("02", "discover talent", "Point brands and studios to rising voices and veteran makers worth knowing.", "meet the talent", "/contributors/", "talent-pair", "Two filmmakers on stage at Nonfiction Hotlist Live")}
       ${card("03", "build partnerships", "Bring funders, brands and industry organizations to the table for the work.", "partner with us", "#partner", "wwd-partners", "Filmmakers on stage at the Yahoo x Nonfiction Hotlist screening")}
       ${card("04", "connect content", "Match finished films with distribution, like our 20-film run with Yahoo.", "see the yahoo films", "/yahoo/", "wwd-content", "Screens listing the Yahoo x Nonfiction Hotlist short films")}
       ${card("05", "engage communities", "Fill rooms and inboxes, with live events and a newsletter read by 6,000+ people.", "upcoming events", "/news/", "wwd-community", "A full theater at a Nonfiction Hotlist screening")}
@@ -111,7 +109,6 @@ const values = () => `<section class="values nfh-ground-photo nfh-dark">
   ${img("values-group", { cls: "nfh-ground-photo__media", alt: "", sizes: "100vw" })}
   <div class="nfh-wrap values__in">
     <div class="values__title">
-      <p class="nfh-label">our values</p>
       <h2 class="nfh-h nfh-h--values">everyone is invited.</h2>
     </div>
     <ol class="values__list">
@@ -186,7 +183,6 @@ function list2025() {
   <div class="nfh-wrap edition__in edition__in--2025">
     <div class="nfh-head">
       <div class="nfh-head__title">
-        <p class="nfh-label nfh-label--green">first edition</p>
         <h2 class="nfh-h nfh-h--l">the 2025 list</h2>
       </div>
       <div class="edition__aside">

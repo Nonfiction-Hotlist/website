@@ -24,17 +24,17 @@ const { barHTML, footerHTML, ARROW, esc } = require("../lib/chrome");
 const { FORMS } = require("../lib/address");
 
 const PAGES = {
-  "/the-2026-hotlist/": { label: "open call", year: "2026" },
-  "/submit2026/": { label: "submit", year: "2026", title: "submit to the 2026 hotlist" },
-  "/contributors/": { label: "the hotlist" },
-  "/news/": { label: "about" },
-  "/yahoo/": { theme: "yahoo", label: "2026 partnership", films: true },
-  "/yahooxnfh1/": { theme: "yahoo", label: "the first open call" },
-  "/yahooxnfh/submit/": { theme: "yahoo", label: "submit" },
-  "/yahooxnfh/reviewer/": { theme: "yahoo", label: "reviewers" },
-  "/terms-of-use/": { label: "legal", legal: true },
-  "/privacy-policy/": { label: "legal", legal: true },
-  "/submission-agreement/": { label: "legal", legal: true }
+  "/the-2026-hotlist/": { year: "2026" },
+  "/submit2026/": { year: "2026", title: "submit to the 2026 hotlist" },
+  "/contributors/": {},
+  "/news/": {},
+  "/yahoo/": { theme: "yahoo", films: true },
+  "/yahooxnfh1/": { theme: "yahoo" },
+  "/yahooxnfh/submit/": { theme: "yahoo" },
+  "/yahooxnfh/reviewer/": { theme: "yahoo" },
+  "/terms-of-use/": { legal: true },
+  "/privacy-policy/": { legal: true },
+  "/submission-agreement/": { legal: true }
 };
 // Images that are logos or lockups (shown on black, never cropped); everything else is a photo.
 const isGraphic = src => /\.png$/i.test(src) || /logo|yahoo-options/i.test(src);
@@ -91,7 +91,7 @@ function hero(p, meta, cfg, used) {
   const h1Visible = !(graphics.length && !p.heading); // a lockup with no heading is the headline itself
   const tag = p.marquee.length ? `<p class="nfh-tag pg-hero__tag">${p.marquee.map(esc).join(" · ")}</p>` : "";
   const intro = parse(p.prose, p.links, "nfh-btn--light");
-  const head = `${cfg.label ? `<p class="nfh-label pg-hero__label">${esc(cfg.label)}</p>` : ""}${tag}
+  const head = `${tag}
       <h1 class="nfh-h pg-hero__h${h1Visible ? "" : " nfh-sr"}">${esc(title)}</h1>`;
   const body = `${graphics.map(g => `<img class="pg-hero__lockup" src="${esc(g.src)}" alt="${esc(g.alt || meta.title)}">`).join("")}
       ${head}
@@ -114,7 +114,7 @@ const headCol = (p, cls = "nfh-h--l") => p.heading ? `<h2 class="nfh-h ${cls} nf
 
 function faqSection(p) {
   // "questions" over the headline, when the items are questions and the headline doesn't already say so.
-  const label = p.faq.every(x => /\?\s*$/.test(x.q)) && !/question|faq/i.test(p.heading || "") ? `<p class="nfh-label nfh-label--forest">questions</p>` : "";
+  const label = "";
   const items = p.faq.map(x => `<details class="pg-faq__item"><summary><span>${esc(x.q)}</span><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M2 9h14"/><path class="v" d="M9 2v14"/></svg></summary><div class="pg-faq__a">${parse(marked.lexer(x.a), {})}</div></details>`).join("\n");
   return `<section class="pg-section pg-white">
   <div class="nfh-wrap pg-cols">
@@ -239,7 +239,6 @@ function yahooHero(p, meta, used) {
   ${img("yahoo-wall", { cls: "yh__bg", alt: "", sizes: "100vw", lazy: false })}
   <div class="nfh-wrap yh__in">
     ${lockup ? `<img class="yh__lockup" src="${esc(lockup.src)}" alt="Yahoo x Nonfiction Hotlist">` : ""}
-    <p class="nfh-label yh__label">2026 partnership</p>
     <h1 class="nfh-h yh__h">${films.length} short documentaries, streaming on <span>yahoo.</span></h1>
     <div class="yh__row">
       <div class="yh__intro">${parse(p.prose, p.links, "nfh-btn--light")}</div>
@@ -267,7 +266,7 @@ function filmsSection() {
   const jump = `<section id="the-films" class="pg-section pg-white yf-intro">
   <div class="nfh-wrap pg-stack">
     <div class="nfh-head">
-      <div class="nfh-head__title"><p class="nfh-label nfh-label--forest">by category</p><h2 class="nfh-h nfh-h--xl nfh-h--forest">the films</h2></div>
+      <div class="nfh-head__title"><h2 class="nfh-h nfh-h--xl nfh-h--forest">the films</h2></div>
     </div>
     <ul class="yf-jump" aria-label="Categories">${data.categories.map(c => `<li><a class="yf-cat" style="--cat: ${c.color}" href="#${slug(c.name)}">${esc(c.name)} <span>${c.films.length}</span></a></li>`).join("")}</ul>
   </div>

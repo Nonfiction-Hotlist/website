@@ -44,6 +44,8 @@ Every push to `main` runs `.github/workflows/publish.yml`: build, the same check
 
 The top bar, menu and footer are built once by `scripts/lib/chrome.js` from `content/site.json`.
 
+No small labels (eyebrows) over headlines: removed 6 Nov 2026 at Matthew's request. Labels that carry information (counts, dates, form and fact labels) stay.
+
 Colors to know: white reading text sits on `--gradient-green-text` (green to forest, 5:1 or better), not on `--gradient-green` (its light corner is 3.5:1, fine for headlines only). Spark yellow appears once per page.
 
 ## Homepage
@@ -52,7 +54,7 @@ Colors to know: white reading text sits on `--gradient-green-text` (green to for
 
 ## Other pages
 
-`scripts/pages/page.js` and `src/page.css`. Pages still come from the Drive kit (`content/pages/*.md`, `content/news/*.md`), and page.js decides how each `:::` section looks: the first section is the page's hero; FAQ, contributor names, photo groups, format chips, call-to-action bands, the submission apps and the news list each get their own layout. Per-page settings (the label over the headline, the outlined year on 2026 pages, the Yahoo theme, the reading layout for legal pages) are in `PAGES` at the top of page.js. Yahoo x NFH pages use the purples from the Yahoo artwork (`.nfh-theme-yahoo` in page.css); the bar and footer stay green.
+`scripts/pages/page.js` and `src/page.css`. Pages still come from the Drive kit (`content/pages/*.md`, `content/news/*.md`), and page.js decides how each `:::` section looks: the first section is the page's hero; FAQ, contributor names, photo groups, format chips, call-to-action bands, the submission apps and the news list each get their own layout. Per-page settings (the outlined year on 2026 pages, the Yahoo theme, the reading layout for legal pages) are in `PAGES` at the top of page.js. Yahoo x NFH pages use the purples from the Yahoo artwork (`.nfh-theme-yahoo` in page.css); the bar and footer stay green.
 
 ## Editing in Google Drive
 
