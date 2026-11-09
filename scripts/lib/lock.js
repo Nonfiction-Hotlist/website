@@ -31,7 +31,7 @@ function lockPage(html, title = "Team dashboard") {
   form { width: min(380px, calc(100vw - 32px)); display: flex; flex-direction: column; gap: 14px; }
   h1 { margin: 0 0 6px; font: 700 44px/.95 var(--font-display, sans-serif); letter-spacing: -0.03em; text-transform: lowercase; }
   label { font: 700 14px/18px var(--font-display, sans-serif); letter-spacing: .12em; text-transform: lowercase; color: var(--mint, #c9e3ca); }
-  input { min-height: 48px; padding: 0 18px; border: 0; border-radius: 9999px; font: 16px var(--font-body, serif); }
+  input { min-height: 48px; padding: 0 18px; border: 0; border-radius: 9999px; font: 16px var(--font-body, serif); background: #fff; color: #000; caret-color: #000; }
   button { min-height: 48px; border: 0; border-radius: 6px; background: #fff; color: var(--forest, #3a5a40); font: 700 18px var(--font-display, sans-serif); text-transform: lowercase; cursor: pointer; }
   p { margin: 0; min-height: 22px; font-size: 15px; }
 </style>
