@@ -27,14 +27,14 @@ const PAGES = {
   "/the-2026-hotlist/": { year: "2026" },
   "/submit2026/": { year: "2026", title: "submit to the 2026 hotlist" },
   "/contributors/": {},
-  "/news/": {},
+  "/news/": { photo: "banner-news" },
   "/yahoo/": { theme: "yahoo", films: true },
   "/yahooxnfh1/": { theme: "yahoo" },
   "/yahooxnfh/submit/": { theme: "yahoo" },
   "/yahooxnfh/reviewer/": { theme: "yahoo" },
-  "/terms-of-use/": { legal: true },
-  "/privacy-policy/": { legal: true },
-  "/submission-agreement/": { legal: true }
+  "/terms-of-use/": { legal: true, photo: "banner-terms" },
+  "/privacy-policy/": { legal: true, photo: "banner-privacy" },
+  "/submission-agreement/": { legal: true, photo: "banner-agreement" }
 };
 // Images that are logos or lockups (shown on black, never cropped); everything else is a photo.
 const isGraphic = src => /\.png$/i.test(src) || /logo|yahoo-options/i.test(src);
@@ -78,6 +78,14 @@ function analyze(text) {
 }
 
 /* ---------- pieces ---------- */
+// A page banner: a photo from content/img under the green overlay, the headline on it.
+function photoBanner(name, body, cls = "") {
+  const { img } = require("../lib/img");
+  return `<section class="pg-hero pg-hero--banner nfh-ground-photo nfh-dark${cls}">
+  ${img(name, { cls: "nfh-ground-photo__media", alt: "", sizes: "100vw", lazy: false })}
+  <div class="nfh-wrap pg-hero__in">${body}</div>
+</section>`;
+}
 const btns = (list, cls) => list.length ? `<div class="nfh-btns">${list.map(b => `<a class="nfh-btn ${cls}" href="${esc(b.href)}">${esc(b.label)}${/^https?:/.test(b.href) || /submit/i.test(b.href) ? ARROW : ""}</a>`).join("")}</div>` : "";
 const frame = (im, cls = "") => `<figure class="nfh-frame pg-photo ${cls}"><img src="${esc(im.src)}" alt="${esc(im.alt || "")}" loading="lazy" decoding="async"></figure>`;
 // Names stay as editors typed them; the display face lowercases them, as the voice guide asks.
@@ -104,6 +112,8 @@ function hero(p, meta, cfg, used) {
   <div class="nfh-wrap pg-hero__in">${body}</div>
 </section>`;
   }
+  // A banner photo set for the page (News, legal pages) under the green overlay.
+  if (cfg.photo) return photoBanner(cfg.photo, body);
   return `<section class="pg-hero nfh-ground-black nfh-dark${cfg.year ? " edition" : ""}">
   ${cfg.year ? `<div class="nfh-year pg-hero__year" aria-hidden="true">${esc(cfg.year)}</div>` : ""}
   <div class="nfh-wrap pg-hero__in">${body}</div>
@@ -318,12 +328,8 @@ function renderBody(text, meta, cfg, ctx) {
 function articleBody(n) {
   const fmt = new Date(n.meta.date + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).toLowerCase();
   const list = marked.lexer(n.body);
-  return `<section class="pg-hero nfh-ground-black nfh-dark">
-  <div class="nfh-wrap pg-hero__in">
-    <p class="nfh-label pg-hero__label"><a href="/news/">news</a> · <time datetime="${n.meta.date}">${fmt}</time></p>
-    <h1 class="nfh-h pg-hero__h">${esc(n.meta.title)}</h1>
-  </div>
-</section>
+  return `${photoBanner("banner-news", `<p class="nfh-label pg-hero__label"><a href="/news/">news</a> · <time datetime="${n.meta.date}">${fmt}</time></p>
+    <h1 class="nfh-h pg-hero__h">${esc(n.meta.title)}</h1>`)}
 <section class="pg-section pg-white">
   <div class="nfh-wrap"><article class="pg-prose pg-prose--doc pg-article">${parse(list, list.links)
     .replace(/<p><img ([^>]*)><\/p>/g, '<figure class="nfh-frame pg-photo"><img $1></figure>')}
@@ -344,6 +350,9 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical
 <link rel="preload" href="/brand/v1/fonts/LeagueSpartan-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/brand/v1/fonts/RobotoSerif-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/brand/v1/nfh.css">
+<link rel="icon" href="/brand/v1/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/v1/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/v1/apple-touch-icon.png">
 <link rel="stylesheet" href="/page.css">
 <script src="/brand/v1/nfh.js" defer></script>
 </head>
@@ -367,10 +376,9 @@ function articlePage(site, n) {
   return shell(site, n.meta, articleBody(n), {});
 }
 function notFoundPage(site) {
-  return shell(site, { title: "Page not found", path: "/404" }, `<section class="pg-hero nfh-ground-black nfh-dark"><div class="nfh-wrap pg-hero__in">
-  <p class="nfh-label pg-hero__label">404</p><h1 class="nfh-h pg-hero__h">this page isn't here.</h1>
+  return shell(site, { title: "Page not found", path: "/404" }, photoBanner("banner-404", `<h1 class="nfh-h pg-hero__h">this page isn't here.</h1>
   <div class="pg-hero__intro"><p>It may have moved when the site was rebuilt.</p></div>
-  <div class="nfh-btns"><a class="nfh-btn nfh-btn--white" href="/">go to the home page${ARROW}</a></div></div></section>`, {});
+  <div class="nfh-btns"><a class="nfh-btn nfh-btn--white" href="/">go to the home page${ARROW}</a></div>`), {});
 }
 
 module.exports = { designedPage, articlePage, notFoundPage, PAGES };

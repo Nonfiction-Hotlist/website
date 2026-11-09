@@ -24,3 +24,5 @@ em, i, cite { font-style: italic; }
   *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
 }
 html { scroll-behavior: smooth; }
+/* Sections reached by a link stop below the sticky top bar. */
+[id] { scroll-margin-top: 90px; }

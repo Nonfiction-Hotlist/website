@@ -135,7 +135,12 @@
 @media (max-width: 760px) { .nfh-badge { width: 120px; height: 120px; top: 20px; right: 20px; } }
 
 /* ---------- top bar and menu ---------- */
-.nfh-bar { position: relative; z-index: 30; background: var(--white); border-bottom: 1px solid var(--rule); }
+/* The bar stays at the top as you scroll. On the homepage (.nfh-bar--catch, set by nfh.js) it scrolls away with
+   the hero, then drops in and sticks once the section marked data-nfh-catch reaches the top. */
+.nfh-bar { position: sticky; top: 0; z-index: 30; background: var(--white); border-bottom: 1px solid var(--rule); }
+.nfh-bar--catch { position: relative; }
+.nfh-bar--catch.is-stuck { position: fixed; top: 0; left: 0; right: 0; animation: nfh-bar-in .3s cubic-bezier(.2, .8, .2, 1) both; }
+@keyframes nfh-bar-in { from { transform: translateY(-100%); } to { transform: none; } }
 .nfh-bar__in { max-width: var(--max); margin: 0 auto; padding: 16px clamp(16px, 4vw, 48px); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .nfh-bar__logo { display: block; line-height: 0; }
 .nfh-bar__logo img { height: 22px; width: auto; }

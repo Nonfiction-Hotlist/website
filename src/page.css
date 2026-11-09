@@ -14,6 +14,8 @@
 .pg-hero__tag { font-size: 14px; line-height: 18px; padding: 6px 14px; }
 .pg-hero__lockup { width: min(720px, 100%); height: auto; margin-bottom: 8px; }
 .pg-hero--photo .pg-hero__in { min-height: 560px; justify-content: flex-end; }
+.pg-hero--banner .pg-hero__in { min-height: 420px; }
+.pg-hero--banner .pg-hero__label { color: var(--mint); }
 .pg-hero--photo .pg-hero__label { color: var(--mint); }
 .pg-hero__year { right: -2vw; top: -4vw; } /* up top, as on the list covers */
 

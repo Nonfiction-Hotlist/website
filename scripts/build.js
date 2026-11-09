@@ -146,6 +146,8 @@ for (const [from, to] of Object.entries(redirects)) {
 for (const d of ["media", "files", "video", "img"]) if (fs.existsSync(path.join(C, d))) fs.cpSync(path.join(C, d), path.join(OUT, d), { recursive: true, filter: f => !path.basename(f).startsWith(".") });
 // The shared brand kit (styles, fonts, logos, script) at /brand/v1/, and the homepage's own styles.
 buildBrand(OUT);
+// Browsers ask for /favicon.ico on their own; the 32px PNG answers.
+fs.copyFileSync(path.join(ROOT, "brand", "favicon-32.png"), path.join(OUT, "favicon.ico"));
 for (const f of ["home.css", "page.css"]) fs.copyFileSync(path.join(ROOT, "src", f), path.join(OUT, f));
 // The redesign's top bar and footer for the list sites (list.nonfictionhotlist.com), which copy them and the
 // brand kit in when they build (the list repo's scripts/fetch-brand.js). Links point at the website; the

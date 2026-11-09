@@ -43,6 +43,28 @@
     });
   });
 
+  /* ---------- the bar catching on a section (homepage) ---------- */
+  // The bar scrolls away with the hero; when the section marked data-nfh-catch reaches the top of the
+  // window, the bar drops in and stays. A spacer holds its place so the page doesn't jump.
+  (function () {
+    var bar = document.querySelector(".nfh-bar"), mark = document.querySelector("[data-nfh-catch]");
+    if (!bar || !mark) return;
+    bar.classList.add("nfh-bar--catch");
+    var spacer = document.createElement("div");
+    bar.parentNode.insertBefore(spacer, bar);
+    var stuck = false, ticking = false;
+    function update() {
+      ticking = false;
+      var want = mark.getBoundingClientRect().top <= 0;
+      if (want === stuck) return;
+      stuck = want;
+      spacer.style.height = stuck ? bar.offsetHeight + "px" : "";
+      bar.classList.toggle("is-stuck", stuck);
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  })();
+
   /* ---------- storytellers ---------- */
   // The quotes are in a JSON block next to the markup. Previous and next move the featured quote; the
   // three cards show the quotes after it. The page is built showing the canvas's starting point.

@@ -26,6 +26,12 @@ const IMAGES = {
   "wwd-partners": { src: `${MEDIA}/Yahoo Selects/edits-552.jpg`, widths: [600, 1000] },
   "wwd-content": { src: `${MEDIA}/Yahoo Selects/edits-640.jpg`, widths: [600, 1000] },
   "wwd-community": { src: `${MEDIA}/Tribeca Selects/IMG_6655.jpeg`, widths: [600, 1000] },
+  // Page banners (photo under the green overlay)
+  "banner-news": { src: `${MEDIA}/Tribeca Selects/IMG_6597.jpeg`, widths: [1000, 1800] },
+  "banner-terms": { src: `${MEDIA}/Tribeca Selects/IMG_6631.jpeg`, widths: [1000, 1800] },
+  "banner-privacy": { src: `${MEDIA}/Tribeca Selects/IMG_6609.jpeg`, widths: [1000, 1800] },
+  "banner-agreement": { src: `${MEDIA}/Tribeca Selects/IMG_6623.jpeg`, widths: [1000, 1800] },
+  "banner-404": { src: `${MEDIA}/Tribeca Selects/IMG_6634.jpeg`, widths: [1000, 1800] },
   "yahoo-stage": { src: `${MEDIA}/Yahoo Selects/edits-659.jpg`, widths: [600, 1000, 1400] },
   "retreat-campus": { src: `${CANVAS}/232aea101705a4d53c71489dcfe13774.jpg`, widths: [600, 1000, 1200] },
   "events-crowd": { src: `${MEDIA}/Tribeca Selects/IMG_6568.jpeg`, widths: [600, 1000, 1400] },

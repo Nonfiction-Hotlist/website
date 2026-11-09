@@ -80,6 +80,8 @@ function buildBrand(outDir) {
   fs.writeFileSync(path.join(dest, "nfh.css"), css);
   fs.copyFileSync(path.join(SRC, "nfh.js"), path.join(dest, "nfh.js"));
   for (const d of ["fonts", "logos", "marks"]) fs.cpSync(path.join(SRC, d), path.join(dest, d), { recursive: true });
+  // Icons: the nfh. disc mark in the signature green (#588257), a 32px PNG and the 180px app icon (white mark on green).
+  for (const f of ["favicon.svg", "favicon-32.png", "apple-touch-icon.png"]) fs.copyFileSync(path.join(SRC, f), path.join(dest, f));
   fs.copyFileSync(path.join(SRC, "tokens.json"), path.join(dest, "tokens.json"));
   return dest;
 }

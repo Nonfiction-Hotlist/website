@@ -37,7 +37,7 @@ function hero() {
 </section>`;
 }
 
-const momentum = () => `<section class="momentum nfh-ground-white">
+const momentum = () => `<section class="momentum nfh-ground-white" data-nfh-catch>
   <div class="nfh-wrap momentum__in">
     <h2 class="nfh-h nfh-h--xxl nfh-h--forest">we make momentum.</h2>
     <div class="momentum__copy">
@@ -242,6 +242,9 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical
 <link rel="preload" href="/brand/v1/fonts/LeagueSpartan-Bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/brand/v1/fonts/RobotoSerif-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/brand/v1/nfh.css">
+<link rel="icon" href="/brand/v1/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/brand/v1/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/brand/v1/apple-touch-icon.png">
 <link rel="stylesheet" href="/home.css">
 <meta property="og:title" content="nonfiction hotlist.">
 <meta property="og:description" content="The Nonfiction Hotlist is a discovery platform for exceptional nonfiction storytelling.">
