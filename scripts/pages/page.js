@@ -22,6 +22,7 @@ const { marked } = require("marked");
 const blocks = require("../lib/blocks");
 const { barHTML, footerHTML, ARROW, esc } = require("../lib/chrome");
 const { FORMS } = require("../lib/address");
+const { analyticsHTML } = require("../lib/analytics");
 
 const PAGES = {
   "/the-2026-hotlist/": { year: "2026" },
@@ -355,6 +356,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical
 <link rel="apple-touch-icon" href="/brand/v1/apple-touch-icon.png">
 <link rel="stylesheet" href="/page.css">
 <script src="/brand/v1/nfh.js" defer></script>
+${analyticsHTML}
 </head>
 <body${cfg.theme ? ` class="nfh-theme-${cfg.theme}"` : ""}>
 <a class="nfh-skip" href="#main">Skip to content</a>

@@ -6,6 +6,7 @@ const path = require("path");
 const { barHTML, footerHTML, ARROW, esc } = require("../lib/chrome");
 const { img, srcset } = require("../lib/img");
 const { FORMS } = require("../lib/address");
+const { analyticsHTML } = require("../lib/analytics");
 
 const C = path.join(__dirname, "../../content");
 const LIST_2025 = "https://list.nonfictionhotlist.com/2025/";
@@ -250,6 +251,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical
 <meta property="og:description" content="The Nonfiction Hotlist is a discovery platform for exceptional nonfiction storytelling.">
 <meta property="og:image" content="${esc(site.origin)}/img/hero-still-1512.jpg">
 <script src="/brand/v1/nfh.js" defer></script>
+${analyticsHTML}
 </head>
 <body>
 <a class="nfh-skip" href="#main">Skip to content</a>
