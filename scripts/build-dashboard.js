@@ -197,5 +197,6 @@ const html = `<!doctype html>
 </html>
 `;
 fs.mkdirSync(path.join(ROOT, "site", "dashboard"), { recursive: true });
-fs.writeFileSync(path.join(ROOT, "site", "dashboard", "index.html"), html);
+// Encrypted behind the team password when DASHBOARD_PASSWORD is set (the Publish workflow).
+fs.writeFileSync(path.join(ROOT, "site", "dashboard", "index.html"), require("./lib/lock").lockPage(html, "website dashboard"));
 console.log(`dashboard written: ${pages.length} pages, ${news.length} news posts, ${problems.length} skipped edits`);
