@@ -9,6 +9,7 @@ const fs = require("fs");
 const path = require("path");
 const { fromExport, toMarkdown, check, MARKER } = require("./convert");
 const { C, parse, format, read, pageFile, newsFile, rowsToSite } = require("./site-files");
+const { read: readHome } = require("../pages/home-copy");
 const { encode, videoName, hasFfmpeg } = require("../lib/video");
 const os = require("os");
 
@@ -124,7 +125,12 @@ const siteName = n => n.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().r
     seenPages.add(file);
     ids.pages[file] = id;
     const prev = oldPages[file];
-    const text = await fromDoc(`Page "${title}"`, id);
+    let text = await fromDoc(`Page "${title}"`, id);
+    // The homepage's Doc fills fixed spots in the design, so it has its own rules (home-copy.js).
+    if (text != null && address === "/") {
+      const { issues } = readHome(text);
+      if (issues.length) { issues.forEach(i => warn(`Page "${title}"`, i + "; kept the previous text")); text = null; }
+    }
     const next = format({ title, path: address, description, source: prev && prev.meta.source }, text ?? (prev ? prev.body : ""));
     if (!prev || format(prev.meta, prev.body) !== next) { writes.push([path.join(C, "pages", file + ".md"), next]); changed.push(title); }
   }

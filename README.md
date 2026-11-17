@@ -50,7 +50,7 @@ Colors to know: white reading text sits on `--gradient-green-text` (green to for
 
 ## Homepage
 
-`scripts/pages/home.js` (markup and copy) and `src/home.css` (layout), built to match the canvas section by section. Its text is changed in code, not in the Drive kit: the "Home Page" Doc still syncs but no longer feeds the homepage. Storyteller quotes are in `content/testimonials.json`. Photos: originals stay outside the repo; `npm run images` makes the web sizes in `content/img/` (list in `scripts/brand/images.js`).
+`scripts/pages/home.js` (markup) and `src/home.css` (layout), built to match the canvas section by section. The words come from the "Home Page" Doc in the Drive kit (`content/pages/index.md`): one heading per section and lines like `Headline: we make momentum.`, read by `scripts/pages/home-copy.js`, which also holds each line's length limit. Links, photos and the number of boxes per section stay in home.js. The sync checks every new version of the Doc against those rules and keeps the previous text if anything is wrong, listing why in `content/sync-problems.txt`. Storyteller quotes are not in the Doc; they're in `content/testimonials.json`. Photos: originals stay outside the repo; `npm run images` makes the web sizes in `content/img/` (list in `scripts/brand/images.js`).
 
 ## Other pages
 
