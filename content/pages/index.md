@@ -6,7 +6,7 @@ source: "https://nonfictionhotlist.com/"
 
 # Homepage text
 
-The words on the homepage as they are now (9 November 2026), in page order. Edit the wording here. When the team is happy with it, Matthew will update the site. This Doc doesn't change the site on its own, and the layout, photos and links stay as they are.
+The words on the homepage, in page order. Edits here go live on the site within about 15 minutes. The layout, photos and links stay as they are. Keep the headings and the labels (like "Headline:") as they are, and separate list items with ·. Each line has a length limit so it fits the design. If an edit is too long or a label is missing, the site keeps the previous words and Matthew gets an email saying what to fix.
 
 Headlines on the site are shown in lowercase. The menu and footer are shared with every page and are set in the Site sheet.
 
@@ -98,73 +98,7 @@ Headlines on the site are shown in lowercase. The menu and footer are shared wit
 
 # Hear from our storytellers
 
-Word-for-word excerpts from what each filmmaker wrote to us. The big quote shows one at a time; the small cards show the next three. Change a quote only with the filmmaker's OK.
-
-## Florrie Priest, Father Figures
-
-**Big quote:** The social media presence in particular has been fantastic, and that added visibility has given us many opportunities to push forward conversations with potential funders.
-
-**Card quote:** It's been a pleasure to be part of the NFH community this year.
-
-## Caryn Capotosto, Producer, Movement
-
-**Big quote:** The Hotlist exposure in our early development stage of MOVEMENT helped to launch us into meaningful conversations with financiers and potential production partners.
-
-**Card quote:** …a huge validation at the beginning of an ambitious project in a challenging doc market.
-
-## Dempsey Rice, Director & Producer, AMOS
-
-**Big quote:** The Nonfiction Hotlist has been pivotal in helping us raise the profile of our film and expand our network…
-
-**Card quote:** These connections are invaluable
-
-## Gene Gallerano, Thank You For Listening
-
-**Big quote:** The Hotlist felt less like exposure and more like a shift in gravity. … What followed was not noise, but velocity.
-
-**Card quote:** What followed was not noise, but velocity.
-
-## Lynne Gerber, When We All Get To Heaven
-
-**Big quote:** They connected us with legal, music clearance and other professionals when we needed them. … We call them the best friends we never knew we needed.
-
-**Card quote:** We call them the best friends we never knew we needed.
-
-## Dustin Nakao-Haider, Earth to Michael
-
-**Big quote:** Since being featured on the Nonfiction Hotlist, we have been welcomed into an unbelievably warm and hospitable community of like-minded filmmakers and colleagues.
-
-**Card quote:** Time and time again, the selfless team behind Nonfiction Hotlist has demonstrated that rising tides lift all ships.
-
-## Daniel Lombroso, Manhood
-
-**Big quote:** The Nonfiction Hotlist is an incredible community that represents the best of the documentary world…
-
-**Card quote:** An incredible community that represents the best of the documentary world.
-
-## Zilla Barbosa, Director, Making the Line
-
-**Big quote:** Being featured on the Nonfiction Hotlist substantially elevated the visibility of Making The Line, resulting in targeted introductions to funders, executive producers, and investors aligned with the film’s cultural mission.
-
-**Card quote:** Being featured on the Nonfiction Hotlist substantially elevated the visibility of Making The Line…
-
-## Cole Sax, Director, God of Sight
-
-**Big quote:** Being part of the Hotlist has been a huge support. It’s helped us connect with some incredible collaborators and fellow filmmakers.
-
-**Card quote:** Being part of the Hotlist has been a huge support.
-
-## Hannah Myers, Director & Jessica Epstein, Producer, DADDY
-
-**Big quote:** …people who we already knew in our networks or community who have interacted with the project over the years and reached back out because they saw DADDY included in the list.
-
-**Card quote:** This has felt like the most natural and meaningful result!
-
-## Maureen Isern, Director & Producer, Erin’s Law
-
-**Big quote:** The overall support and reaction to the sizzle and project have really kept that wind in our sails.
-
-**Card quote:** Feels good to have the support of a community, and cheer together for all the projects.
+The storyteller quotes aren't edited in this Doc. To change one, ask Matthew, and only with the filmmaker's OK.
 
 # Programs
 
