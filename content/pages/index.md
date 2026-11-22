@@ -18,7 +18,7 @@ Headlines on the site are shown in lowercase. The menu and footer are shared wit
 
 **Buttons:** see the hotlist · partner with us
 
-**Rotating badge:** the 2026 hotlist · coming soon
+**Rotating badge:** the 2026 hotlist · check it out
 
 # We make momentum
 
