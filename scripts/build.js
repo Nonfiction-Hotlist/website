@@ -131,10 +131,9 @@ fs.rmSync(OUT, { recursive: true, force: true });
 // still use src/layout.html until they're redesigned too.
 // The other pages and news posts use the same design lines (scripts/pages/page.js).
 const ctx = { news, forms };
-for (const p of pages) write(p.meta.path, p.meta.path === "/" ? homePage(site) : designedPage(site, p.meta, p.body, ctx));
+// The homepage uses the studio design: section shadows, parallax and the travelling period (nfh.js).
+for (const p of pages) write(p.meta.path, p.meta.path === "/" ? homePage(site, { studio: true }) : designedPage(site, p.meta, p.body, ctx));
 for (const n of news) write(n.meta.path, articlePage(site, n));
-// A trial of the homepage with studio index lines and a little parallax. Not linked or indexed.
-write("/studio-preview/", homePage(site, { noindex: true, canonical: site.origin + "/", studio: true }));
 
 // Old Squarespace addresses forward to their new pages.
 const redirects = JSON.parse(read("redirects.json"));

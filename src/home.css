@@ -106,7 +106,7 @@
 .poster__more { font: 700 18px/1.1 var(--font-display); }
 .poster--more .poster__title { font-style: normal; font-weight: 400; }
 
-/* ---------- trial: studio lines and parallax (only on /studio-preview/, body.nfh-studio) ---------- */
+/* ---------- section shadows and parallax (body.nfh-studio) ---------- */
 /* Each section casts a shadow up onto the section above as it slides over it (nfh.js sets the
    shadow's length and strength). Darkest right at the edge, falling off softly. */
 .nfh-studio main > section { position: relative; }
@@ -120,7 +120,7 @@
 /* "everyone is invited." is a short section, so its words stay above the shadow and only the photo darkens. */
 .nfh-studio .values__in { position: relative; z-index: 4; }
 
-/* ---------- trial: the travelling period (body.nfh-dotted, set by nfh.js) ---------- */
+/* ---------- the travelling period (body.nfh-dotted, set by nfh.js) ---------- */
 /* The headlines' own periods turn invisible (they keep their space); one dot stands in for them all
    and travels between them as you scroll. Text, photos and cards sit above it unless it's in front. */
 .nfh-dotted .nfh-stop { color: transparent; }

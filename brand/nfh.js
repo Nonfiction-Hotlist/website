@@ -43,6 +43,20 @@
     });
   });
 
+  /* ---------- logo: back to the top ---------- */
+  // On the homepage (and its preview versions), the logo in the bar scrolls you back to the top
+  // instead of reloading the page. Elsewhere it goes to the homepage as usual.
+  var topHome = document.querySelector("main > section.hero");
+  document.querySelectorAll(".nfh-bar__logo").forEach(function (logo) {
+    logo.addEventListener("click", function (e) {
+      if (!topHome || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button) return;
+      e.preventDefault();
+      var calmTop = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: calmTop ? "auto" : "smooth" });
+      if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    });
+  });
+
   /* ---------- the bar catching on a section (homepage) ---------- */
   // The bar scrolls away with the hero; when the section marked data-nfh-catch reaches the top of the
   // window, the bar drops in and stays. A spacer holds its place so the page doesn't jump.
@@ -163,7 +177,7 @@
     start();
   });
 
-  /* ---------- trial: studio lines and parallax ---------- */
+  /* ---------- homepage: section shadows and parallax ---------- */
   // Only on pages whose body has class nfh-studio. Each section casts a shadow up onto the one above
   // it, as if it were sliding over the top: as its edge rises up the screen the shadow grows longer
   // and darker, and it keeps stretching until the section above has gone. Scrolling back up reverses
