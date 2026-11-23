@@ -190,3 +190,9 @@ a.yf-cat:hover { color: var(--black); box-shadow: inset 0 0 0 2px var(--black); 
   .yh__stats dd { font-size: 28px; }
   .yh-still { width: 180px; }
 }
+
+/* Each section casts a shadow up onto the one above as it slides over it (nfh.js sets the shadow's
+   length and strength). White sections take none. Same as the homepage. */
+.nfh-shadows main > section { position: relative; }
+.nfh-wash { position: absolute; left: 0; right: 0; bottom: 0; height: 0; z-index: 3; pointer-events: none; visibility: hidden;
+  background: linear-gradient(to top, rgba(6, 12, 9, .86) 0%, rgba(6, 12, 9, .62) 14%, rgba(6, 12, 9, .36) 38%, rgba(6, 12, 9, .14) 68%, rgba(6, 12, 9, 0) 100%); }

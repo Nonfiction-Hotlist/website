@@ -358,7 +358,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical
 <script src="/brand/v1/nfh.js" defer></script>
 ${analyticsHTML}
 </head>
-<body${cfg.theme ? ` class="nfh-theme-${cfg.theme}"` : ""}>
+<body class="nfh-shadows${cfg.theme ? ` nfh-theme-${cfg.theme}` : ""}">
 <a class="nfh-skip" href="#main">Skip to content</a>
 ${barHTML(site, { origin: "" })}
 <main id="main">
