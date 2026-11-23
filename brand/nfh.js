@@ -215,6 +215,12 @@
       add("main > section + section .nfh-ground-photo__media, .split__photo img, .program__photo img", 0.07);
       add("main > section + section h2.nfh-h", -0.035);
     }
+    // The Yahoo page: its headlines barely shift, the wall of stills behind its hero drifts slower than the
+    // page, and each film card's still pans slowly inside its frame as it passes up the screen.
+    var yahooPage = document.body.classList.contains("nfh-theme-yahoo") && !calm2;
+    if (yahooPage) add("main > section + section h2.nfh-h", -0.035);
+    var yhBg = yahooPage && document.querySelector(".yh__bg"), yhSec = yhBg && yhBg.closest("section");
+    var yfImgs = yahooPage ? [].slice.call(document.querySelectorAll(".yf-card__img")) : [];
     var hero2 = secs2[0], heroIn = studioPage && hero2 && hero2.querySelector(".hero__frame");
     var tick2 = false, drawDot = null, knockDown = function () { return false; };
     var draw2 = function () {
@@ -247,6 +253,13 @@
         heroIn.style.transform = "translate3d(0," + (y * 0.18).toFixed(1) + "px,0)";
         heroIn.style.opacity = Math.max(0, 1 - y / (vh * 0.9)).toFixed(3);
       }
+      if (yhBg) yhBg.style.setProperty("--py", (Math.max(0, -yhSec.getBoundingClientRect().top) * 0.35).toFixed(1) + "px");
+      yfImgs.forEach(function (im) {
+        var fr = im.parentNode, r = fr.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        var t = Math.max(-1, Math.min(1, (r.top + r.height / 2 - vh / 2) / (vh / 2)));   // -1 at the top of the window, 1 at the bottom
+        im.style.setProperty("--py", (t * r.height * 0.06).toFixed(1) + "px");        // within the 7% spare the 1.14 scale leaves
+      });
       if (drawDot) drawDot();   // the travelling period, placed after everything it follows has moved
     };
     var ask2 = function () { if (!tick2) { tick2 = true; requestAnimationFrame(draw2); } };

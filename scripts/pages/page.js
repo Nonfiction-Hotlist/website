@@ -288,7 +288,7 @@ function filmsSection() {
   <div class="nfh-wrap pg-stack">
     <div class="nfh-head"><div class="nfh-head__title"><p class="yf-cat yf-cat--tag">${c.films.length} film${c.films.length === 1 ? "" : "s"}</p><h2 class="nfh-h nfh-h--l">${esc(c.name)}</h2></div></div>
     <div class="yf-grid">${c.films.map(f => `<a class="yf-card" href="${esc(f.link)}">
-        ${img(f.still, { alt: `Still from ${f.title}`, sizes: "(max-width: 760px) 100vw, 420px", cls: "yf-card__img" })}
+        <span class="yf-card__frame">${img(f.still, { alt: `Still from ${f.title}`, sizes: "(max-width: 760px) 100vw, 420px", cls: "yf-card__img" })}</span>
         <span class="yf-card__body"><span class="yf-card__title nfh-title">${esc(f.title)}</span><span class="yf-card__line">${esc(f.logline)}</span><span class="yf-card__watch">watch on yahoo →</span></span>
       </a>`).join("\n      ")}</div>
   </div>
