@@ -128,7 +128,11 @@
 
 /* ---------- rotating badge (the homepage's one spark element) ---------- */
 .nfh-badge { position: absolute; top: 36px; right: 36px; width: 156px; height: 156px; display: block; border-radius: 50%; text-decoration: none; z-index: 1; }
-.nfh-badge svg { width: 100%; height: 100%; }
+.nfh-badge svg { width: 100%; height: 100%; display: block; border-radius: 50%; }
+/* The middle words sit on their own layer over the disc, so they stay still while the disc tilts and spins. */
+.nfh-badge__words { position: absolute; inset: 0; pointer-events: none; }
+/* With nfh.js the badge is drawn frame by frame (tilt, shadow and spin together), so the CSS spin stands down. */
+.nfh-badge.is-live .ring { animation: none; }
 .nfh-badge .ring { transform-box: view-box; transform-origin: 100px 100px; animation: nfh-spin 28s linear infinite; }
 .nfh-badge:hover .ring, .nfh-badge:focus-visible .ring { animation-duration: 8s; }
 @keyframes nfh-spin { to { transform: rotate(360deg); } }

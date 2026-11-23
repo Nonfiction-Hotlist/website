@@ -32,10 +32,12 @@ function badge([ring, center]) {
   const ys = lines.length > 1 ? [97, 128] : [112];
   const style = "font: 700 32px 'League Spartan', sans-serif; letter-spacing: -0.5px; fill: #1a2821; text-anchor: middle;";
   return `<a href="#hotlist" class="nfh-badge" aria-label="${esc(`${ring}, ${center}`)}">
-      <svg viewBox="0 0 200 200" aria-hidden="true">
+      <svg class="nfh-badge__disc" viewBox="0 0 200 200" aria-hidden="true">
         <defs><path id="ringpath" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
         <circle cx="100" cy="100" r="100" fill="#fcb100"/>
         <g class="ring"><text style="font: 700 15.5px 'League Spartan', sans-serif; letter-spacing: 1.2px; fill: #1a2821;"><textPath href="#ringpath" textLength="472" lengthAdjust="spacing">${esc(Array(3).fill(ring + " •").join(" "))}</textPath></text></g>
+      </svg>
+      <svg class="nfh-badge__words" viewBox="0 0 200 200" aria-hidden="true">
         ${lines.map((l, k) => `<text x="100" y="${ys[k]}" style="${style}">${esc(l)}</text>`).join("\n        ")}
       </svg>
     </a>`;
@@ -271,7 +273,7 @@ function subscribe() {
 </section>`;
 }
 
-function homePage(site, { noindex = true, canonical } = {}) {
+function homePage(site, { noindex = true, canonical, studio = false } = {}) {
   T = words();
   const description = esc(T["hero"].line);
   return `<!doctype html>
@@ -295,7 +297,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<link rel="canonical
 <script src="/brand/v1/nfh.js" defer></script>
 ${analyticsHTML}
 </head>
-<body>
+<body${studio ? ' class="nfh-studio"' : ""}>
 <a class="nfh-skip" href="#main">Skip to content</a>
 ${barHTML(site, { origin: "" })}
 <main id="main">

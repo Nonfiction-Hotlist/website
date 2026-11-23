@@ -105,3 +105,34 @@
 .poster__count { font: 700 64px/.9 var(--font-display); letter-spacing: -0.03em; }
 .poster__more { font: 700 18px/1.1 var(--font-display); }
 .poster--more .poster__title { font-style: normal; font-weight: 400; }
+
+/* ---------- trial: studio lines and parallax (only on /studio-preview/, body.nfh-studio) ---------- */
+/* Each section casts a shadow up onto the section above as it slides over it (nfh.js sets the
+   shadow's length and strength). Darkest right at the edge, falling off softly. */
+.nfh-studio main > section { position: relative; }
+.nfh-studio .nfh-wash { position: absolute; left: 0; right: 0; bottom: 0; height: 0; z-index: 3; pointer-events: none; visibility: hidden;
+  background: linear-gradient(to top, rgba(6, 12, 9, .86) 0%, rgba(6, 12, 9, .62) 14%, rgba(6, 12, 9, .36) 38%, rgba(6, 12, 9, .14) 68%, rgba(6, 12, 9, 0) 100%); }
+.nfh-studio .hero { overflow: hidden; }
+/* Room for the drifting layers without showing an edge. */
+.nfh-studio .nfh-ground-photo, .nfh-studio .split__photo, .nfh-studio .program__photo { overflow: hidden; }
+.nfh-studio .nfh-ground-photo > .nfh-ground-photo__media, .nfh-studio .split__photo img, .nfh-studio .program__photo img, .nfh-studio .nfh-year { will-change: transform; }
+.nfh-studio .hero .nfh-ground-photo__media { transform: scale(1.06); }
+/* "everyone is invited." is a short section, so its words stay above the shadow and only the photo darkens. */
+.nfh-studio .values__in { position: relative; z-index: 4; }
+
+/* ---------- trial: the travelling period (body.nfh-dotted, set by nfh.js) ---------- */
+/* The headlines' own periods turn invisible (they keep their space); one dot stands in for them all
+   and travels between them as you scroll. Text, photos and cards sit above it unless it's in front. */
+.nfh-dotted .nfh-stop { color: transparent; }
+.nfh-stop__base { display: inline-block; width: 0; height: 0; vertical-align: baseline; }
+.nfh-dot { position: absolute; left: 0; top: 0; z-index: 1; border-radius: 50%; pointer-events: none; will-change: transform; }
+.nfh-dot.is-front { z-index: 6; }
+.nfh-dotted main :is(h1, h2, p, .nfh-btns, .nfh-btn, .nfh-card, .nfh-chips, .nfh-story__photo, .nfh-story__text, .stories__btn, .poster, .program__photo, .program, blockquote) { position: relative; z-index: 2; }
+.nfh-dotted .split__photo img, .nfh-dotted .nfh-year { z-index: 2; }
+/* The burst disc sits inside the momentum section, under its words, and under the black section after it. */
+.nfh-dotted .momentum { overflow: hidden; }
+.nfh-burst { position: absolute; left: 0; top: 0; border-radius: 50%; background: var(--green-glow); visibility: hidden; pointer-events: none; }
+/* The cards are solid white (green on hover, as before), so the dot vanishes behind them. */
+.nfh-dotted .wwd .nfh-card:not(:hover):not(:focus-within) { background: var(--white); }
+/* Nothing the dot does can make the page scroll sideways. */
+.nfh-dotted { overflow-x: clip; }

@@ -133,6 +133,8 @@ fs.rmSync(OUT, { recursive: true, force: true });
 const ctx = { news, forms };
 for (const p of pages) write(p.meta.path, p.meta.path === "/" ? homePage(site) : designedPage(site, p.meta, p.body, ctx));
 for (const n of news) write(n.meta.path, articlePage(site, n));
+// A trial of the homepage with studio index lines and a little parallax. Not linked or indexed.
+write("/studio-preview/", homePage(site, { noindex: true, canonical: site.origin + "/", studio: true }));
 
 // Old Squarespace addresses forward to their new pages.
 const redirects = JSON.parse(read("redirects.json"));
