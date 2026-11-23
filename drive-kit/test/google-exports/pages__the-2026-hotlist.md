@@ -1,13 +1,13 @@
 `[section the-2026-hotlist-is-open]`  
-`[marquee: Deadline Extended · September 25th, 2026]`
+`[marquee: Submissions Closed · List Coming Soon]`
 
-# The 2026 Hotlist is Open\!
+# The 2026 Hotlist is Almost Here.
 
-Submissions are open\!  
+Submissions are closed. Thank you to everyone who sent us a project.  
 The 2026 Hotlist is a curated slate of standout nonfiction works in progress, spanning documentary features, shorts, series, podcasts, and reality.  
 We connect creators with audiences, industry opportunities, and partners who can move a project forward.  
-Deadline to Submit September 25th, 2026  
-`[button: Submit Here | /submit2026/]`  
+The list goes to our newsletter first. Sign up to see it the day it's released.  
+`[button: Get Notified | /#subscribe]`  
 `[section]`  
 `[marquee: Shorts · Podcasts · Features · Series · Reality]`  
 `[section where-great-nonfiction-finds-new-pathway]`  
@@ -32,9 +32,9 @@ A curated list of standout nonfiction projects, spanning documentary features, s
 
 Nothing. Submission is free, and it stays free through every stage of the process.
 
-### What is the deadline to submit?
+### Can I still submit?
 
-September 9th, 2026
+Not for 2026\. Submissions closed on September 25th, 2026\. Join the mailing list to hear when the next open call begins.
 
 ### Can I submit multiple projects?
 
@@ -96,7 +96,7 @@ Our first cycle drew 639 submissions. We selected 23 for the list.
 
 ### What happens if my project is selected?
 
-We'll reach out directly with next steps and a timeline for the list going public.
+We reach out directly to selected teams with next steps before the list goes public.
 
 ### Is there any pay or compensation if my project is selected?
 
@@ -113,17 +113,17 @@ Real industry exposure: your project on a published, curated list that reaches f
 
 Almost none. Beyond reviewing and approving your listing, there's no required commitment. We're happy to be a resource for strategy, feedback, and guidance as your project moves forward.
 
-### When do submissions open?
+### When is the next open call?
 
-Now open.
+We'll announce it to the mailing list first.
 
-### When will the Nonfiction Hotlist be released?
+### When will the 2026 Hotlist be released?
 
-November.
+Soon. Newsletter subscribers will see it first.
 
 ### Where will the list be released?
 
-The Nonfiction Hotlist is distributed as a published list to our industry newsletter and made available to the wider media community. It will live in our instagram link in bio. If you haven’t seen the [2025 Nonfiction Hotlist](https://nonfictionhotlist.com/the-2025-hotlist/)please check it out before submitting. [Join the mailing list here to receive it.](https://nonfictionhotlist.com/#contact)
+The Nonfiction Hotlist is distributed as a published list to our industry newsletter and made available to the wider media community. It will live in our instagram link in bio. If you haven’t seen the [2025 Nonfiction Hotlist](https://nonfictionhotlist.com/the-2025-hotlist/), take a look. [Join the mailing list here to receive it.](https://nonfictionhotlist.com/#subscribe)
 
 ### How can I support the Nonfiction Hotlist?
 
@@ -131,7 +131,7 @@ If you're interested in supporting the Nonfiction Hotlist, we'd love to hear fro
 `[end faq]`  
 `[section submissions]`
 
-## Submissions
+## Get the list first
 
-Submit your documentary feature, short, series, podcast, or reality project, still in progress. Every submission gets genuine consideration from nonfiction professionals, reviewed for craft, originality, impact and potential.  
-`[button: Submit Here | /submit2026/]`
+Submissions for 2026 are closed. The list goes to our newsletter before anywhere else, along with news of the next open call.  
+`[button: Get Notified | /#subscribe]`
