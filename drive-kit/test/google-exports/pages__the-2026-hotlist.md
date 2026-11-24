@@ -80,13 +80,13 @@ They recuse themselves from scoring it. Every reviewer agrees to a conflict-of-i
 
 ### How big is the list, and how does it break down by format?
 
-The 2026 Hotlist is one list of 20-25 projects, mixing formats within: documentary feature, documentary short, podcast, series, and reality. There's no fixed number of slots per format. We're building the strongest possible slate, wherever it comes from.
+The 2026 Hotlist is one list of 23 projects, mixing formats within: documentary feature, documentary short, podcast, series, and reality. There's no fixed number of slots per format. We're building the strongest possible slate, wherever it comes from.
 
 ### Can I submit a project that crosses formats?
 
 Yes. Series/podcast hybrids, docu-reality crossovers, whatever the project actually is. Submit under whichever format fits best and note the crossover in your materials.
 
-### What happens to strong projects that don't make the final 20-25?
+### What happens to strong projects that don't make the final 23?
 
 Not making the list isn't the same as not being valuable. We're building more ways to connect projects that don't make the final cut with opportunities and community, and that work is expanding in 2026\.
 
